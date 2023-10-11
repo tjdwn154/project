@@ -3,7 +3,7 @@ import Check from "./components/Check";
 import SignUp from "./components/Signup";
 import Login from "./components/Login";
 
-function App() {
+export default function App() {
   return (
     <div>
       <SignUp />
@@ -12,5 +12,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
