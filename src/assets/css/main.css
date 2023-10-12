@@ -1,0 +1,159 @@
+:root {
+    --point-color1: 
+    --sub-color1: 
+    --swiper-theme-color: #;
+    --bs-link-color: #000;
+    --bs-border-radius: ;
+  }
+  .app {
+    height: 100%;
+  }
+  
+  .title1{font-size: 28px; font-weight: bold; margin: 5% 2%; text-align: center;}
+  
+  /* 메인 장르별 랭킹 Bootstrap NAV: */
+  .sliderTabs {
+    margin: 2% 3% !important;
+  }
+  .sliderTabs .nav-link{
+    border: 1px solid #e8e8e8;
+    border-radius: 3.2rem !important;
+    cursor: pointer;
+    padding: 10px 18px;
+    height: 40px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    color: #000;}
+  .sliderTabs .nav-link.active{font-weight: bold;}
+  .sliderTabs .nav-item{margin-right: 1%;}
+  /* 메인 장르별 랭킹 swiper: */
+  #carousel .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  #carousel .swiper .swiper-slide {
+    height: 100%;
+    text-align: center;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #carousel .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #carousel .swiper-button-next,
+  #carousel .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: 48px !important;
+    height: 48px !important;
+    transform: none;
+    background: hsla(0, 0%, 100%, 0.9);
+    color: #999;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.13);
+    border-radius: 10rem;
+    font-size: 0;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .swiper-button-next{right: 1%;}
+  .swiper-button-prev{left: 1%;}
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover{background-color: white;}
+  .autoplay-progress {
+    position: absolute;
+    right: 1%;
+    bottom: 0%;
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--swiper-theme-color);
+  }
+  
+  .autoplay-progress svg {
+    --progress: 0;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    stroke-width: 4px;
+    stroke: var(--swiper-theme-color);
+    fill: none;
+    stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+    stroke-dasharray: 125.6;
+    transform: rotate(-90deg);
+  }
+  #carousel{padding: 3%;
+    background-color: #edfbfa;}
+  .slideWrap {
+    display: flex;
+  }
+  .slideWrap li{margin-right: 2%; cursor: pointer; height: 100%;}
+  .slideWrap li .movieBox{display: flex; flex-direction: column; justify-content: space-between; align-items: center;}
+  .slideWrap li .movieBox .posterBox {
+    position: relative;
+    height: 70%;
+    margin-top: 20px;
+  }
+  .slideWrap li .movieBox .posterBox img {
+    border-radius: 4px;
+  }
+  .slideWrap li .movieBox .posterBox img::after{
+    content: 'counter';
+    position: absolute;
+      left: 9px;
+      bottom: -4px;
+      font-weight: 400;
+      font-size: 50px;
+      font-style: italic;
+      color: #fff;
+      line-height: 1em;
+      z-index: 3;
+      text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.45);
+  }
+  .slideWrap li .movieBox .posterBox .hoverBox {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 100%;
+  }
+  .slideWrap li .movieBox .posterBox .hoverBox button{width:120px; height: 34px; display:block; margin: 3% auto; transform: translate(0,100%); font-size: .6rem;}
+  
+  .swiper-button-prev:after, .swiper-button-next:after{
+    font-size: 1.1rem !important;
+    color: black;
+  }
+  .slideWrap li .movieInfoBox {
+    margin-top: 4%;
+    height: 30%;
+    
+  }
+  .slideWrap li .movieBox .movieInfoBox strong{
+    font-size: 1rem;
+    margin-bottom: 5%;
+  }
+  .slideWrap li .movieBox .movieInfoBox span{
+    font-size: .6rem;
+    display: block;
+  }
+  
+  
