@@ -11,6 +11,7 @@ function ReCalendar() {
       <Calendar onChange={onChange} value={value} />
       <div className="text">회차</div>
       <button>1회: 19:30</button>
+      <button>1회: 19:30</button>
     </div>
   );
 }
