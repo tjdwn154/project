@@ -1,8 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Reservation from "./ReservationInfo/Reservation";
 
 function App() {
-  return <div className="App">테스트용입니다</div>;
+  return (
+    <div className="App">
+      <Reservation></Reservation>
+    </div>
+  );
 }
 
 export default App;
