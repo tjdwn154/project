@@ -3,6 +3,7 @@ import Home from './pages/Home.js'
 import Check from "./components/Check";
 import SignUp from "./components/Signup";
 import Login from "./components/Login";
+import Footer from "./components/Footer.js";
 import Error404 from './pages/Error404.js'
 import {Routes,Route} from 'react-router-dom'
 
@@ -19,6 +20,7 @@ export default function App() {
       </Routes>
 
       <Check />
+      <Footer />
     </div>
   );
 }
