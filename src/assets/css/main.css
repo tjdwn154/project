@@ -1,21 +1,28 @@
 :root {
-    --point-color1: 
+    --pointBtn1: lightBlue;
     --sub-color1: 
     --swiper-theme-color: #;
-    --bs-link-color: #000;
     --bs-border-radius: ;
+    --bs-link-color: #000;
   }
-  .app {
-    height: 100%;
+
+/* COMMON: */
+.title1{font-size: 28px; font-weight: bold; margin: 2%; text-align: center;}
+
+/* 메인-장르별랭킹(Carousel1): */
+#carousel1Box{
+  padding: 50px 2% 3%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(232, 232, 232, 0.37));
+  background-color: #edfbfa;
+  width: 100%; height: 100%;
+}
+#carousel1Box .inner1{width:1280px; margin: 0 auto;}
+/* 메인 장르별랭킹-Bootstrap NAV: */
+#carousel1Box .sliderTabs {
+    display: flex;
+    justify-content: center;
   }
-  
-  .title1{font-size: 28px; font-weight: bold; margin: 5% 2%; text-align: center;}
-  
-  /* 메인 장르별 랭킹 Bootstrap NAV: */
-  .sliderTabs {
-    margin: 2% 3% !important;
-  }
-  .sliderTabs .nav-link{
+#carousel1Box .sliderTabs .nav-link{
     border: 1px solid #e8e8e8;
     border-radius: 3.2rem !important;
     cursor: pointer;
@@ -26,82 +33,16 @@
     background-color: #fff;
     border: 1px solid #e8e8e8;
     color: #000;}
-  .sliderTabs .nav-link.active{font-weight: bold;}
-  .sliderTabs .nav-item{margin-right: 1%;}
-  /* 메인 장르별 랭킹 swiper: */
- #carousel1 .swiper {
-    width: 100%;
-    height: 100%;
-  }
- #carousel1 .swiper .swiper-slide {
-    height: 100%;
-    text-align: center;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
- #carousel1 .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
- #carousel1 .swiper-button-next,
- #carousel1 .swiper-button-prev {
-    position: absolute;
-    top: 50%;
-    width: 48px !important;
-    height: 48px !important;
-    transform: none;
-    background: hsla(0, 0%, 100%, 0.9);
-    color: #999;
-    border: 0.1rem solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.13);
-    border-radius: 10rem;
-    font-size: 0;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1;
-  }
-  .swiper-button-next{right: 1%;}
-  .swiper-button-prev{left: 1%;}
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover{background-color: white;}
-  .autoplay-progress {
-    position: absolute;
-    right: 1%;
-    bottom: 0%;
-    z-index: 10;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: var(--swiper-theme-color);
-  }
-  
-  .autoplay-progress svg {
-    --progress: 0;
-    position: absolute;
-    left: 0;
-    top: 0px;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    stroke-width: 4px;
-    stroke: var(--swiper-theme-color);
-    fill: none;
-    stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
-    stroke-dasharray: 125.6;
-    transform: rotate(-90deg);
-  }
- #carousel1{padding: 3%;
-    background-color: #edfbfa;}
+
+#carousel1Box .sliderTabs .nav-link.active{
+  font-weight: bold; background-color: var(--pointBtn1);
+}
+.sliderTabs .nav-item{margin-right: 1%;}
+
+
   .slideWrap {
-    display: flex;
+    display: flex; justify-content: center;
+
   }
   .slideWrap li{margin-right: 2%; cursor: pointer; height: 100%;}
   .slideWrap li .movieBox{display: flex; flex-direction: column; justify-content: space-between; align-items: center;}
@@ -111,6 +52,8 @@
     margin-top: 20px;
   }
   .slideWrap li .movieBox .posterBox img {
+    width: 100%;
+    max-height: 280px;
     border-radius: 4px;
   }
   .slideWrap li .movieBox .posterBox img::after{
@@ -143,7 +86,7 @@
     color: black;
   }
   .slideWrap li .movieInfoBox {
-    margin-top: 4%;
+    margin-top: 8%;
     height: 40%;
     
   }
@@ -156,4 +99,72 @@
     display: block;
   }
   
-  
+
+/* swiper 기본 css: */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper .swiper-slide {
+  height: 100%;
+  text-align: center;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  width: 48px !important;
+  height: 48px !important;
+  transform: none;
+  background: hsla(0, 0%, 100%, 0.9);
+  color: #999;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.13);
+  border-radius: 10rem;
+  font-size: 0;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1;
+}
+.swiper-button-next{right: 3%;}
+.swiper-button-prev{left: 3%;}
+.swiper-button-next:hover,
+.swiper-button-prev:hover{background-color: white;}
+.autoplay-progress {
+  position: absolute;
+  right: 1%;
+  bottom: 0%;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--swiper-theme-color);
+}
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
