@@ -7,9 +7,10 @@ function ReCalendar() {
 
   return (
     <div id="calendarBox">
-      <div className="text">관람일</div>
+      <div className="text1">관람일</div>
       <Calendar onChange={onChange} value={value} />
-      <div className="text">회차</div>
+      <div className="line"></div>
+      <div className="text2">회차</div>
       <button>1회: 19:30</button>
     </div>
   );

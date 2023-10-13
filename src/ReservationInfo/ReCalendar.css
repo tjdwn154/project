@@ -6,8 +6,27 @@
   padding: 20px;
 }
 
-.text {
+.text1 {
   text-align: left;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.line {
+  width: 350px;
+  margin: 30px 0px 30px 0px;
+}
+
+.text2 {
+  text-align: left;
+  font-weight: 800;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin: 30px;
 }
 
 /*react-calendar 기본 설정*/
@@ -19,6 +38,7 @@
   /* border: 1px solid #a0a096; */
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.125em;
+  border-radius: 10px;
 }
 
 .react-calendar--doubleView {
