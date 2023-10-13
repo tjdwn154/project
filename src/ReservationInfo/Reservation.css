@@ -1,7 +1,13 @@
+#mainContent {
+  width: 1500px;
+  margin: 0 auto;
+  height: 1200px;
+}
+
 #content {
   width: 1500px;
+  height: 750px;
   background-color: rgb(236, 236, 236);
-  margin: 0 auto;
 }
 
 #innerContent {
@@ -9,4 +15,8 @@
   flex-direction: row;
   justify-content: space-between;
   width: 1500px;
+}
+
+#downContent {
+  text-align: left;
 }

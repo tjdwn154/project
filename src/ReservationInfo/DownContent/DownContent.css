@@ -1,0 +1,18 @@
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px;
+}
+
+.tabs li {
+  margin: 10px 10px 20px 20px;
+  padding: 10px 30px;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.tabs li:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
