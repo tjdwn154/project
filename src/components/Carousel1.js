@@ -4,7 +4,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Button } from "react-bootstrap";
+import { Button,Nav } from "react-bootstrap";
 
 export default function App() {
   const progressCircle = useRef(null);
@@ -15,6 +15,34 @@ export default function App() {
   };
   return (
     <>
+      <h1 className="title1">장르별 랭킹</h1>
+      <Nav className="sliderTabs" variant="pills" defaultActiveKey="link-0">
+        <Nav.Item>
+          <Nav.Link href="/home" className="" eventKey="link-0">
+            콘서트
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/home" eventKey="link-1">
+            뮤지컬
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/home" eventKey="link-2">
+            스포츠
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/home" eventKey="link-3">
+            전시
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/home" eventKey="link-4">
+            클래식
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
