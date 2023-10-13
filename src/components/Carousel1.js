@@ -15,7 +15,7 @@ export default function Carousel1() {
   };
   return (
     <div id="carousel1Box" >
-      <div className="inner1">
+      <div className="inner">
         <h1 className="title1">장르별 랭킹</h1>
         <Nav className="sliderTabs" variant="pills" defaultActiveKey="link-0">
           <Nav.Item>
@@ -53,7 +53,7 @@ export default function Carousel1() {
             disableOnInteraction: false
           }}
           pagination={{
-            clickable: false
+            dynamicBullets: true,
           }}
           loop={true}
           navigation={true}

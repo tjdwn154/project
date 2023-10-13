@@ -8,6 +8,30 @@
 
 /* COMMON: */
 .title1{font-size: 28px; font-weight: bold; margin: 2%; text-align: center;}
+/* 메인-랜딩슬라이드(Carousel0): */
+#carousel0Box {
+  position: relative;
+}
+#carousel0Box .swiper.swiper-initialized.swiper-horizontal.mySwiper2.swiper-backface-hidden
+  .swiper-wrapper
+  img {
+  width: 100%;
+  height: 400px;
+}
+#carousel0Box .swiper-thumbs .swiper-wrapper {
+  width: 100%;
+  position: fixed;
+  top: 40%;
+  display: flex;
+  justify-content: center;
+}
+#carousel0Box .swiper.mySwiper.swiper-thumbs .swiper-wrapper div {
+  width: 52px !important;
+  height: 52px;
+}
+#carousel0Box .swiper.mySwiper.swiper-thumbs .swiper-wrapper div img {
+  height: 52px;
+}
 
 /* 메인-장르별랭킹(Carousel1): */
 #carousel1Box{
@@ -167,4 +191,7 @@
   stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
+}
+.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+  bottom: 0;
 }
