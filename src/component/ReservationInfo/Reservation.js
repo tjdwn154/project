@@ -1,7 +1,7 @@
 import ReTitle from "./ReTitle";
-import ReInfoContent from "./Content/ReInfoContent";
+import ReInfoContent from "./content/ReInfoContent";
 import "./Reservation.css";
-import ReCalendar from "./Content/ReCalendar";
+import ReCalendar from "./content/ReCalendar";
 import DownContent from "./DownContent/DownContent";
 
 const Reservation = () => {

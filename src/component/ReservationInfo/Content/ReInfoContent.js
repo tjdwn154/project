@@ -36,6 +36,7 @@ const ReInfoContent = () => {
             </li>
           </ul>
         </div>
+
         <div id="btn">
           <button class="btn btn-primary btn-lg">예약하기</button>
         </div>
