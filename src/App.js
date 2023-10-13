@@ -1,5 +1,5 @@
 import "./App.css";
-import Reservation from "./ReservationInfo/Reservation";
+import Reservation from "./component/ReservationInfo/Reservation";
 
 function App() {
   return (
