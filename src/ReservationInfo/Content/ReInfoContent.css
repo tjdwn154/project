@@ -27,7 +27,7 @@
 
 .inLabel {
   display: inline-block;
-  padding: 10px;
+  padding: 10px 0px 10px 0px;
   width: 140px;
 }
 
@@ -38,13 +38,13 @@
 .line {
   width: 500px;
   border: 1px solid lightgray;
-  margin: 10px 0px 10px 100px;
+  margin: 10px 0px 10px 80px;
   padding-left: 10px;
 }
 
 #addText {
   text-align: left;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .addInLabel {

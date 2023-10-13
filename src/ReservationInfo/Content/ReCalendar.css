@@ -1,9 +1,11 @@
 #calendarBox {
   margin-right: 80px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
+  background-color: white;
   border: 1px solid lightgray;
   border-radius: 10px;
   padding: 20px;
+  padding-bottom: 50px;
 }
 
 .text1 {
@@ -19,14 +21,10 @@
 }
 
 .text2 {
-  text-align: left;
+  text-align: center;
   font-weight: 800;
   margin-top: 30px;
   margin-bottom: 10px;
-}
-
-button {
-  margin: 30px;
 }
 
 /*react-calendar 기본 설정*/
