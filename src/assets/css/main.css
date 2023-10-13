@@ -29,11 +29,11 @@
   .sliderTabs .nav-link.active{font-weight: bold;}
   .sliderTabs .nav-item{margin-right: 1%;}
   /* 메인 장르별 랭킹 swiper: */
-  #carousel .swiper {
+ #carousel1 .swiper {
     width: 100%;
     height: 100%;
   }
-  #carousel .swiper .swiper-slide {
+ #carousel1 .swiper .swiper-slide {
     height: 100%;
     text-align: center;
     background: #fff;
@@ -42,14 +42,14 @@
     align-items: center;
   }
   
-  #carousel .swiper-slide img {
+ #carousel1 .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  #carousel .swiper-button-next,
-  #carousel .swiper-button-prev {
+ #carousel1 .swiper-button-next,
+ #carousel1 .swiper-button-prev {
     position: absolute;
     top: 50%;
     width: 48px !important;
@@ -98,7 +98,7 @@
     stroke-dasharray: 125.6;
     transform: rotate(-90deg);
   }
-  #carousel{padding: 3%;
+ #carousel1{padding: 3%;
     background-color: #edfbfa;}
   .slideWrap {
     display: flex;
@@ -107,7 +107,7 @@
   .slideWrap li .movieBox{display: flex; flex-direction: column; justify-content: space-between; align-items: center;}
   .slideWrap li .movieBox .posterBox {
     position: relative;
-    height: 70%;
+    height: 60%;
     margin-top: 20px;
   }
   .slideWrap li .movieBox .posterBox img {
@@ -144,7 +144,7 @@
   }
   .slideWrap li .movieInfoBox {
     margin-top: 4%;
-    height: 30%;
+    height: 40%;
     
   }
   .slideWrap li .movieBox .movieInfoBox strong{
