@@ -2,16 +2,18 @@ import React from "react";
 import Home from './pages/Home.js'
 import Check from "./components/Check";
 import SignUp from "./components/Signup";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Login from "./components/Login";
-import Footer from "./components/Footer.js";
+
 import Error404 from './pages/Error404.js'
 import {Routes,Route} from 'react-router-dom'
 
 export default function App() {
   return (
-    <div id="wrap">
+    <div>
       <Routes>
-        <Route path="/" element={<Home />}>
+        <Route path="/" element={<div id="wrap"><Header /><Home /><Footer /></div>}>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
         </Route>
@@ -20,7 +22,7 @@ export default function App() {
       </Routes>
 
       {/* <Check /> */}
-      <Footer />
+      
     </div>
   );
 }
