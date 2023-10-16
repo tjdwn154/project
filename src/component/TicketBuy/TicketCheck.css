@@ -1,0 +1,15 @@
+#ticketContent {
+  border-right: 1px solid rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+}
+
+#ticketForm {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.ticketInnerForm {
+  display: flex;
+  flex-direction: column;
+}
