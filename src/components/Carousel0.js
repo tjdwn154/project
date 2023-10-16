@@ -1,9 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { Autoplay, Pagination, FreeMode, Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
-import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 export default function Carousel0() {
@@ -12,10 +11,17 @@ export default function Carousel0() {
     <div id="carousel0Box">
       <Swiper
         style={{}}
-        spaceBetween={10}
-        navigation={true}
+        spaceBetween={20}
+        centeredSlides={true}
+        pagination={{
+          clickable: true
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false
+        }}
         thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
+        modules={[Autoplay, FreeMode, Thumbs, Pagination]}
         className="mySwiper2"
       >
         <SwiperSlide>
@@ -55,7 +61,7 @@ export default function Carousel0() {
         slidesPerView={4}
         freeMode={true}
         watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
+        modules={[FreeMode, Thumbs]}
         className="mySwiper"
       >
         <SwiperSlide>

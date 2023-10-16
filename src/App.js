@@ -19,7 +19,7 @@ export default function App() {
         <Route path="*" element={<Error404 />} />
       </Routes>
 
-      <Check />
+      {/* <Check /> */}
       <Footer />
     </div>
   );
