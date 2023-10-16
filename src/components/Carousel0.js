@@ -22,6 +22,12 @@ export default function Carousel0() {
         className="mySwiper2"
       >
         <SwiperSlide>
+          {/* <div className="titleBox">
+            <h1 className="title1">공연 제목</h1>
+            <p className="title2">공연 소제목</p>
+            <p className="sub1">공연 장소</p>
+            <p className="sub2">공연 일자</p>
+          </div> */}
           <img src="https://picsum.photos/1600/400?random=1" alt="공연제목 바인딩" />
         </SwiperSlide>
         <SwiperSlide>
