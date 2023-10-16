@@ -1,23 +1,65 @@
+import "./CustomerCheck.css";
+
 const CustomerCheck = () => {
   return (
-    <div>
+    <div id="customerContent">
       <h2>예매자 확인</h2>
-      <form>
-        <p>이름</p>
-        <input type="text" maxLength="4" required />
-        <p>생년월일</p>
-        <input type="text" required minLength="6" maxLength="6" />
-        <p>
-          예{")"} 980110{"("}YYMMDD{")"}
-        </p>
-        <p>연락처</p>
-        <input type="text" minLength="3" maxLength="3" required />
-        <p>-</p>
-        <input type="text" minLength="3" maxLength="3" required />
-        <p>-</p>
-        <input type="text" minLength="3" maxLength="3" required />
-        <p>이메일</p>
-        <input type="email" required />
+      <form id="customerForm">
+        <ul>
+          <li className="customer-formList">
+            <label id="name">이름</label>
+            <input id="name" type="text" maxLength="4" required />
+          </li>
+          <li className="customer-formList">
+            <label id="birth">생년월일</label>
+            <input
+              id="birth"
+              type="text"
+              required
+              minLength="6"
+              maxLength="6"
+            />
+            <p>
+              예{")"} 980110{"("}YYMMDD{")"}
+            </p>
+          </li>
+          <li className="customer-formList">
+            <label id="num">연락처</label>
+            <input
+              className="num"
+              id="num"
+              type="text"
+              size="3"
+              minLength="3"
+              maxLength="3"
+              required
+            />
+            <p className="num">-</p>
+            <input
+              className="num"
+              id="num"
+              type="text"
+              size="3"
+              minLength="3"
+              maxLength="3"
+              required
+            />
+            <p className="num">-</p>
+            <input
+              className="num"
+              id="num"
+              type="text"
+              size="3"
+              minLength="3"
+              maxLength="3"
+              required
+            />
+          </li>
+          <li className="customer-formList">
+            <label id="email">이메일</label>
+            <input id="email" type="email" required />
+          </li>
+        </ul>
       </form>
     </div>
   );

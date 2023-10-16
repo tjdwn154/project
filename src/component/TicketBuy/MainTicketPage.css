@@ -1,0 +1,17 @@
+#mainContent {
+  text-align: center;
+  padding: 50px;
+  margin: 0 auto;
+}
+
+#ticket-innerContent {
+  border: 1px solid black;
+  background-color: rgb(238, 238, 238);
+  border-radius: 20px;
+  width: 750px;
+  height: 630px;
+  margin-top: 40px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+}
