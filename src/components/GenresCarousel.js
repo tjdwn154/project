@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Button,Nav } from "react-bootstrap";
 
-export default function RanksCarousel() {
+export default function GenresCarousel() {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
@@ -14,7 +14,7 @@ export default function RanksCarousel() {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
   return (
-    <div id="ranksCarouselBox" >
+    <div id="genresCarouselBox" >
       <div className="inner">
         <h1 className="title1">장르별 공연</h1>
         <Nav className="sliderTabs" variant="pills" defaultActiveKey="link-0">
