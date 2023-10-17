@@ -1,7 +1,5 @@
 import { gsap } from "gsap";
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import Home from "./Home";
+import React, { useEffect, useRef } from "react";
 export default function Error404() {
   useEffect(() => {
     gsap.set("svg", { visibility: "visible" });
@@ -798,8 +796,9 @@ export default function Error404() {
             <button
               className="btn green"
               // className={`${styles.btn.green} btn green`}
+              href="/"
             >
-              <Link to={<Home />}>홈으로</Link>
+              홈으로
             </button>
           </div>
         </div>
