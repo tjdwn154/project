@@ -1,10 +1,11 @@
-#mainContent {
+#mainticket-content {
   text-align: center;
   padding: 50px;
   margin: 0 auto;
+  width: 1500px;
 }
 
-#mainContent h1 {
+#mainticket-content h1 {
   text-align: left;
   font-size: 30px;
   font-weight: 600;

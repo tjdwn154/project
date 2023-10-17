@@ -6,7 +6,7 @@ import DownContent from "./DownContent/DownContent";
 
 const Reservation = () => {
   return (
-    <div id="mainContent">
+    <div id="reservation-mainContent">
       <div id="content">
         <ReTitle />
         <div id="innerContent">

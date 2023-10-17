@@ -5,7 +5,7 @@ import MyticketInfo from "./MyticketInfo";
 
 const MainTicketPage = () => {
   return (
-    <div id="mainContent">
+    <div id="mainticket-content">
       <h1>티켓 예매하기</h1>
       <div id="main-innerContent">
         <div id="ticket-innerContent">
