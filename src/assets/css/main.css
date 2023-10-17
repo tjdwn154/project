@@ -7,43 +7,37 @@
   }
 
 /* COMMON: */
-.title1{font-size: 28px; font-weight: bold; margin: 2%; text-align: center;}
+.title1{font-size: 28px; font-weight: bold; padding: 2%; text-align: center;}
+
 /* 메인-랜딩슬라이드(Carousel0): */
-#carousel0Box {
+#ladingCarouselBox {
   position: relative;
 }
-
-#carousel0Box .swiper.swiper-initialized.swiper-horizontal.mySwiper2.swiper-backface-hidden
-  .swiper-wrapper
-  img {
+#ladingCarouselBox .swiper.swiper-initialized.swiper-horizontal.mySwiper2.swiper-backface-hidden
+  .swiper-wrapper img {
     cursor: pointer;
   width: 100%;
   height: 400px;
 
 }
-/* #carousel0Box .mySwiper2.swiper-backface-hidden .titleBox{position: absolute;}
-#carousel0Box .mySwiper2.swiper-backface-hidden .titleBox .title1{}
-#carousel0Box .mySwiper2.swiper-backface-hidden .titleBox .title2{}
-#carousel0Box .mySwiper2.swiper-backface-hidden .titleBox .sub1{}
-#carousel0Box .mySwiper2.swiper-backface-hidden .titleBox .sub2{} */
-#carousel0Box .swiper-horizontal.swiper-free-mode.mySwiper.swiper-thumbs{
+#ladingCarouselBox .swiper-horizontal.swiper-free-mode.mySwiper.swiper-thumbs{
   width: 100%;
   position: absolute;
   top: 80%;
   height: 52px;
 }
-#carousel0Box .swiper.mySwiper.swiper-thumbs .swiper-wrapper{
+#ladingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper{
   display: flex;
   justify-content: center;
 }
-#carousel0Box .swiper.mySwiper.swiper-thumbs .swiper-wrapper>div {
+#ladingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper>div {
   cursor: pointer;
   width: 52px !important;
   height: 52px !important;
   
 }
-#carousel0Box .swiper.mySwiper.swiper-thumbs .swiper-wrapper .swiper-slide-thumb-active img{border: 2px solid hsla(0,0%,100%,.7); }
-#carousel0Box .swiper.mySwiper.swiper-thumbs .swiper-wrapper div:hover::before{content: "";
+#ladingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper .swiper-slide-thumb-active img{border: 2px solid hsla(0,0%,100%,.7); }
+#ladingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper div:hover::before{content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -51,25 +45,24 @@
   border-radius: 6px;
   z-index: 1;
   box-sizing: border-box}
-#carousel0Box .swiper.mySwiper.swiper-thumbs .swiper-wrapper div img {
+#ladingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper div img {
   height: 52px;
   border-radius: 6px;
 }
 
 /* 메인-장르별랭킹(Carousel1): */
-#carousel1Box{
+#ranksCarouselBox{
   padding: 50px 2% 3%;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(232, 232, 232, 0.37));
   background-color: #edfbfa;
   width: 100%; height: 100%;
 }
-#carousel1Box .inner1{width:1280px; margin: 0 auto;}
-/* 메인 장르별랭킹-Bootstrap NAV: */
-#carousel1Box .sliderTabs {
+#ranksCarouselBox .inner1{width:1280px; margin: 0 auto;}
+#ranksCarouselBox .sliderTabs {
     display: flex;
     justify-content: center;
   }
-#carousel1Box .sliderTabs .nav-link{
+#ranksCarouselBox .sliderTabs .nav-link{
     border: 1px solid #e8e8e8;
     border-radius: 3.2rem !important;
     cursor: pointer;
@@ -81,9 +74,10 @@
     border: 1px solid #e8e8e8;
     color: #000;}
 
-#carousel1Box .sliderTabs .nav-link.active{
+#ranksCarouselBox .sliderTabs .nav-link.active{
   font-weight: bold; background-color: var(--pointBtn1);
 }
+#ranksCarouselBox .slideWrap li .movieBox .posterBox::before{content: '1'; position: absolute; color: whitesmoke; font-weight: bold; font-size: 38px; left: 10%; bottom: 5%;}
 .sliderTabs .nav-item{margin-right: 1%;}
 
 
@@ -98,7 +92,7 @@
     height: 60%;
     margin-top: 20px;
   }
-  .slideWrap li .movieBox .posterBox::before{content: '1'; position: absolute; color: whitesmoke; font-weight: bold; font-size: 38px; left: 10%; bottom: 5%;}
+
   .slideWrap li .movieBox .posterBox img {
     width: 100%;
     max-height: 280px;
@@ -146,7 +140,20 @@
     font-size: .6rem;
     display: block;
   }
-/* Footer:   */
+/* 오픈 공연 캐러셀 NEW CAROUSEL CAROUSEL3: */
+#newCarouselBox{
+  width: 100%;
+  height: 100%;
+  padding: 50px 2% 3%;
+  background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(232, 232, 232, 0.37));
+}
+#newCarouselBox .slideWrap li .movieBox .posterBox span.badge {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    font-size: 10px;
+    border-radius: 4px;
+  }
 /* FOOTER: */
 #footerWrap {
   width: 100%;

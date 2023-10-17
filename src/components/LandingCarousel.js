@@ -5,10 +5,10 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
 
-export default function Carousel0() {
+export default function LandingCarousel() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
-    <div id="carousel0Box">
+    <div id="ladingCarouselBox">
       <Swiper
         style={{}}
         spaceBetween={20}
