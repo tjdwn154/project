@@ -77,7 +77,7 @@
 #ranksCarouselBox .sliderTabs .nav-link.active{
   font-weight: bold; background-color: var(--pointBtn1);
 }
-#ranksCarouselBox .slideWrap li .movieBox .posterBox::before{content: '1'; position: absolute; color: whitesmoke; font-weight: bold; font-size: 38px; left: 10%; bottom: 5%;}
+#newCarouselBox .slideWrap li .movieBox .posterBox::before{content: '1'; position: absolute; color: whitesmoke; font-weight: bold; font-size: 38px; left: 10%; bottom: 5%;}
 .sliderTabs .nav-item{margin-right: 1%;}
 
 

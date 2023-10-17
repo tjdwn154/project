@@ -16,7 +16,7 @@ export default function RanksCarousel() {
   return (
     <div id="ranksCarouselBox" >
       <div className="inner">
-        <h1 className="title1">장르별 랭킹</h1>
+        <h1 className="title1">장르별 공연</h1>
         <Nav className="sliderTabs" variant="pills" defaultActiveKey="link-0">
           <Nav.Item>
             <Nav.Link href="/home" className="" eventKey="link-0">
