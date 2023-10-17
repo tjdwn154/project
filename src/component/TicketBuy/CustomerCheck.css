@@ -1,14 +1,15 @@
 #customerContent {
   display: flex;
   flex-direction: column;
-  width: 380px;
+  width: 600px;
   height: 600px;
   text-align: left;
-  padding: 15px;
+  padding: 15px 15px 15px 30px;
 }
 
 #customerContent h2 {
   font-size: 20px;
+  font-weight: 600;
 }
 
 label {
@@ -37,4 +38,12 @@ label {
 .num {
   display: inline;
   margin: 3px;
+}
+
+.birth-ex {
+  color: red;
+  font-size: 12px;
+  margin: 0px;
+  padding-left: 5px;
+  padding-top: 5px;
 }

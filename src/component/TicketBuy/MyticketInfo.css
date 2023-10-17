@@ -1,0 +1,8 @@
+#myticketInfo-content {
+  display: flex;
+  flex-direction: column;
+  width: 430px;
+  height: 630px;
+  padding: 15px;
+  border: 1px solid black;
+}

@@ -19,8 +19,8 @@ const CustomerCheck = () => {
               minLength="6"
               maxLength="6"
             />
-            <p>
-              예{")"} 980110{"("}YYMMDD{")"}
+            <p className="birth-ex">
+              예{")"} 980110 {"("}YYMMDD{")"}
             </p>
           </li>
           <li className="customer-formList">
