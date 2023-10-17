@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode, Thumbs } from "swiper/modules";
 import "swiper/css";
@@ -15,7 +15,9 @@ export default function Carousel0() {
         centeredSlides={true}
         autoplay={{
           delay: 2500,
-          disableOnInteraction: false
+          disableOnInteraction: false,
+          pauseOnMouseEnter:true,
+
         }}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[Autoplay, FreeMode, Thumbs ]}

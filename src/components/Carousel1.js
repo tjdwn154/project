@@ -36,7 +36,7 @@ export default function Carousel1() {
           <Nav.Item>
             <Nav.Link href="/home" eventKey="link-3">
               전시
-            </Nav.Link>
+            </Nav.Link>                    
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/home" eventKey="link-4">
