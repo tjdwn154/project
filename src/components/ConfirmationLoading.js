@@ -3,7 +3,7 @@ import React from "react";
 export default function ConfirmationLoading() {
   return (
     <div id="confirmationLoadingWrap">
-      <div className="container">
+      <div className="confirmationLoadingContainer">
         <svg
           version="1.1"
           id="Layer_1"
