@@ -6,7 +6,6 @@
   height: 600px;
   text-align: left;
   padding: 15px;
-  /* margin-top: 40px; */
 }
 
 #ticketContent h2 {
@@ -20,4 +19,8 @@
   border-top: 1px solid black;
   border-bottom: 1px solid #000000;
   margin-top: 10px;
+}
+
+#ticketForm label {
+  padding-left: 15px;
 }

@@ -12,8 +12,8 @@
   font-weight: 600;
 }
 
-label {
-  margin-right: 10px;
+.customer-formList label {
+  margin-right: 20px;
 }
 
 #customerForm {
@@ -37,7 +37,7 @@ label {
 
 .num {
   display: inline;
-  margin: 3px;
+  width: 175px;
 }
 
 .birth-ex {
