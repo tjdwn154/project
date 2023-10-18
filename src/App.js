@@ -43,8 +43,6 @@ export default function App() {
         <Route path="/orderComplete" element={<OrderConfirmation />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
-
-      {/* <Check /> */}
     </div>
   );
 }
