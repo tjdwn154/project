@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import './App.css';
 import Home from './pages/Home.js'
+import OrderConfirmation from './pages/OrderConfirmation.js'
 import Check from "./components/Check";
 import Loading from "./components/Loading";
 import SignUp from "./components/Signup";
@@ -28,7 +29,7 @@ export default function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
         </Route>
-        <Route path="" element={<></>}></Route>
+        <Route path="/orderComplete" element={<OrderConfirmation />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
 

@@ -9,12 +9,16 @@ import { BrowserRouter } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import {
+  faPaperPlane,
+  faCircleCheck
+} from "@fortawesome/free-regular-svg-icons";
+import {
   faInstagram,
   faTwitter,
   faYoutube
 } from "@fortawesome/free-brands-svg-icons";
 
-library.add(fas, faInstagram, faTwitter, faYoutube);
+library.add(fas, faInstagram, faTwitter, faYoutube,faCircleCheck,faPaperPlane);
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

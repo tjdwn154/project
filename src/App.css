@@ -180,6 +180,400 @@
         margin-bottom: 70px;
     }
 }
+/* 예매완료OrderConfirmation: */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color1: #c13870;
+  --primary-color2: #540d18;
+  --light-color1: #f5e0c9;
+}
+.fade-in {
+  opacity: 1;
+  animation: fadeIn ease-in-out 1s;
+}
+
+.fade-out {
+  opacity: 0;
+  animation: fadeOut ease-in-out 1s;
+}
+#confirmationLoadingWrap {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.04);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+#confirmationLoadingWrap .container {
+  width: 100px;
+  margin: 0 auto;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}
+
+#confirmationLoadingWrap .checkmark {
+  stroke: green;
+  stroke-dashoffset: 745.74853515625;
+  stroke-dasharray: 745.74853515625;
+  animation: dash 2s ease-out forwards 1;
+}
+#orderCononfirmationWrap {
+  position: relative;
+  text-align: center;
+  background-image: linear-gradient(-45deg, #fdf8d8 0%, #f3dfda 100%);
+  width: 100%;
+  height: 100vh;
+}
+#orderCononfirmationWrap .container {
+  border-radius: 13px;
+  background: white;
+  position: absolute;
+  top: 15%;
+  left: 30%;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 2% 3%;
+}
+@media screen and (max-width: px) {
+}
+#orderCononfirmationWrap .container .top {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#orderCononfirmationWrap .container .top .iconBox {
+  margin: 1% auto;
+  padding-top: 1%;
+}
+#orderCononfirmationWrap .container .top .iconBox svg {
+  color: #c13870;
+  height: 9vh;
+}
+#orderCononfirmationWrap .container .top h1 {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+#orderCononfirmationWrap .container .top h1 img {
+  height: 40px;
+}
+
+#orderCononfirmationWrap .container .top h2 {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 5% auto 2%;
+}
+#orderCononfirmationWrap .container .top > p {
+  font-size: 14px;
+  margin: 0 auto 2%;
+  padding: 0;
+}
+#orderCononfirmationWrap .container .top hr {
+  border: 1px solid maroon;
+  width: 76%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#orderCononfirmationWrap .container .bottom {
+  height: 40%;
+  font-size: 12px;
+  padding: 1% 0 2% 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#orderCononfirmationWrap .container .bottom > p {
+  margin: 0;
+  padding-right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#orderCononfirmationWrap .container .bottom > p button {
+  color: #c13870;
+  background: transparent;
+  border-radius: 50%;
+  border: none;
+  font-size: 13px;
+}
+#orderCononfirmationWrap .container .bottom .orderReceipt {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+}
+#orderCononfirmationWrap .container .bottom .orderReceipt .left {
+  margin-right: 10px;
+  width: 25%;
+}
+#orderCononfirmationWrap .container .bottom .orderReceipt .left img {
+}
+#orderCononfirmationWrap .container .bottom .orderReceipt .right {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#orderCononfirmationWrap .container .bottom .orderReceipt .right p {
+}
+#orderCononfirmationWrap .container .bottom .orderReceipt .right p span {
+  font-weight: bold;
+}
+#orderCononfirmationWrap .container .btnBox {
+}
+#orderCononfirmationWrap .container .btnBox button:first-child.btn-primary {
+  margin-right: 8%;
+  font-size: 12px;
+  border: none;
+  width: 110px;
+  height: 38px;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: maroon;
+  --bs-btn-border-color: none;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #a62121c4;
+  --bs-btn-hover-border-color: none;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: maroon;
+}
+#orderCononfirmationWrap .container .btnBox button:last-child.btn-primary {
+  font-weight: bold;
+  font-size: 12px;
+  border: none;
+  width: 100px;
+  height: 38px;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--primary-color1);
+  --bs-btn-border-color: none;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #b13568;
+  --bs-btn-hover-border-color: none;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--primary-color1);
+}
+#orderCononfirmationWrap .container .btnBox .sendBtn ._form-thank-you {
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+
+#orderCononfirmationWrap .container .btnBox .sendBtn ._form-thank-you p {
+  margin: 0;
+}
+
+#orderCononfirmationWrap .container .btnBox .sendBtn ._form-thank-you span {
+  display: block;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes drawCircle {
+  0% {
+    stroke-dashoffset: 151px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawCheck {
+  0% {
+    stroke-dashoffset: 36px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#successAnimationCircle {
+  stroke-dasharray: 151px 151px;
+  stroke: #16a085;
+}
+
+#successAnimationCheck {
+  stroke-dasharray: 36px 36px;
+  stroke: #fff;
+}
+
+#successAnimationResult {
+  fill: #16a085;
+  opacity: 0;
+}
+
+#successAnimation.animated {
+  animation: 1s ease-out 0s 1 both scaleAnimation;
+}
+
+#successAnimation.animated #successAnimationCircle {
+  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle,
+    0.3s linear 0.9s 1 both fadeOut;
+}
+
+#successAnimation.animated #successAnimationCheck {
+  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck,
+    0.3s linear 0.9s 1 both fadeOut;
+}
+
+#successAnimation.animated #successAnimationResult {
+  animation: 0.3s linear 0.9s both fadeIn;
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 745.74853515625;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+#emailModalWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#emailModalWrap .container {
+  position: relative;
+  top: 30%;
+  left: 40%;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 300px;
+  height: 140px;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#emailModalWrap .container .closeBtn {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-weight: bold;
+}
+#emailModalWrap .container > p {
+  font-size: 12px;
+  font-weight: bold;
+}
+a:hover {
+  color: #7f8ff4;
+}
+#emailModalWrap .container .form {
+  display: flex;
+}
+#emailModalWrap .uppercase {
+  text-transform: uppercase;
+}
+#emailModalWrap .btn {
+  display: inline-block;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  transition: all 200ms ease-in;
+  cursor: pointer;
+}
+#emailModalWrap .btn--primary {
+  background: #c13870;
+  color: #fff;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 2%;
+  width: 40%;
+  font-size: 14px;
+  font-weight: bold;
+}
+#emailModalWrap .btn--primary:hover {
+  background-color: maroon;
+}
+#emailModalWrap .btn--primary:active {
+  background: #7f8ff4;
+  box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+#emailModalWrap .form__field {
+  width: 60%;
+    background: #fff;
+    color: #a3a3a3;
+    font: inherit;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    border: 0;
+    outline: 0;
+    padding: 1% 3%;
+    font-size: 12px;
+    min-width: 140px;
+}
 
 /* FOOTER 푸터: */
 #footer {

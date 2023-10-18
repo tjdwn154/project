@@ -49,20 +49,27 @@
   height: 52px;
   border-radius: 6px;
 }
-
-/* 메인-장르별랭킹(Carousel1): */
-#ranksCarouselBox{
-  padding: 50px 2% 3%;
+/* 메인-순위캐러셀: */
+#ranksCarouselBox {padding: 50px 2% 5%;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(232, 232, 232, 0.37));
   background-color: #edfbfa;
+  width: 100%; height: 100%;}
+/* 메인-장르별공연(Carousel1): */
+#genresCarouselBox{
+  padding: 50px 2% 5%;
   width: 100%; height: 100%;
+  /* background: url(https://cdn.pixabay.com/photo/2018/06/17/10/38/artist-3480274_1280.jpg)center fixed no-repeat #282725; */
+    background-size: 100% 87%;
+    height: auto;
+    position: relative;
+    background-position: bottom;
 }
-#ranksCarouselBox .inner1{width:1280px; margin: 0 auto;}
-#ranksCarouselBox .sliderTabs {
+#genresCarouselBox .inner1{width:1280px; margin: 0 auto;}
+#genresCarouselBox .sliderTabs {
     display: flex;
     justify-content: center;
   }
-#ranksCarouselBox .sliderTabs .nav-link{
+#genresCarouselBox .sliderTabs .nav-link{
     border: 1px solid #e8e8e8;
     border-radius: 3.2rem !important;
     cursor: pointer;
@@ -74,77 +81,16 @@
     border: 1px solid #e8e8e8;
     color: #000;}
 
-#ranksCarouselBox .sliderTabs .nav-link.active{
+#genresCarouselBox .sliderTabs .nav-link.active{
   font-weight: bold; background-color: var(--pointBtn1);
 }
-#newCarouselBox .slideWrap li .movieBox .posterBox::before{content: '1'; position: absolute; color: whitesmoke; font-weight: bold; font-size: 38px; left: 10%; bottom: 5%;}
+#ranksCarouselBox .slideWrap li .movieBox .posterBox::before{content: '1'; position: absolute; color: whitesmoke; font-weight: bold; font-size: 38px; left: 10%; bottom: 5%;}
 .sliderTabs .nav-item{margin-right: 1%;}
-
-
-  .slideWrap {
-    display: flex; justify-content: center;
-
-  }
-  .slideWrap li{margin-right: 2%; cursor: pointer; height: 100%;}
-  .slideWrap li .movieBox{display: flex; flex-direction: column; justify-content: space-between; align-items: center;}
-  .slideWrap li .movieBox .posterBox {
-    position: relative;
-    height: 60%;
-    margin-top: 20px;
-  }
-
-  .slideWrap li .movieBox .posterBox img {
-    width: 100%;
-    max-height: 280px;
-    border-radius: 4px;
-  }
-  .slideWrap li .movieBox .posterBox img::after{
-    content: 'counter';
-    position: absolute;
-      left: 9px;
-      bottom: -4px;
-      font-weight: 400;
-      font-size: 50px;
-      font-style: italic;
-      color: #fff;
-      line-height: 1em;
-      z-index: 3;
-      text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.45);
-  }
-  .slideWrap li .movieBox .posterBox .hoverBox {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.4);
-    height: 100%;
-  }
-  .slideWrap li .movieBox .posterBox .hoverBox button{width:120px; height: 34px; display:block; margin: 3% auto; transform: translate(0,100%); font-size: .6rem;}
-  
-  .swiper-button-prev:after, .swiper-button-next:after{
-    font-size: 1.1rem !important;
-    color: black;
-  }
-  .slideWrap li .movieInfoBox {
-    margin-top: 8%;
-    height: 40%;
-    
-  }
-  .slideWrap li .movieBox .movieInfoBox strong{
-    font-size: 1rem;
-    margin-bottom: 5%;
-  }
-  .slideWrap li .movieBox .movieInfoBox span{
-    font-size: .6rem;
-    display: block;
-  }
 /* 오픈 공연 캐러셀 NEW CAROUSEL CAROUSEL3: */
 #newCarouselBox{
   width: 100%;
   height: 100%;
-  padding: 50px 2% 3%;
+  padding: 50px 2% 8%;
   background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(232, 232, 232, 0.37));
 }
 #newCarouselBox .slideWrap li .movieBox .posterBox span.badge {
@@ -154,23 +100,6 @@
     font-size: 10px;
     border-radius: 4px;
   }
-/* FOOTER: */
-#footerWrap {
-  width: 100%;
-  height: 250px;
-  background: whitesmoke url("") no-repeat;
-}
-#footerWrap .inner {
-  max-width: 980px;
-  margin: 0 auto;
-  display: flex;
-  padding: 40px 0;
-  height: 100%;
-  justify-content: space-between;
-}
-#footerWrap .inner address {
-}
-
 
 /* swiper 기본 css: */
 .swiper {
@@ -191,6 +120,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
@@ -208,10 +138,15 @@
   cursor: pointer;
   z-index: 1;
 }
-.swiper-button-next{right: 3%;}
-.swiper-button-prev{left: 3%;}
+.swiper-button-next{right: 13% !important;}
+.swiper-button-prev{left: 13% !important;}
 .swiper-button-next:hover,
 .swiper-button-prev:hover{background-color: white;}
+
+/* .swiper-button-disabled{display: none !important;} */
+.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+  bottom: 0 !important;
+}
 .autoplay-progress {
   position: absolute;
   right: 1%;
@@ -240,6 +175,64 @@
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
-.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+
+/* 슬라이드 ul부분 */
+.slideWrap {
+  display: flex; justify-content: center;
+
+}
+.slideWrap li{margin-right: 3%; cursor: pointer; height: 100%;}
+.slideWrap li .movieBox{display: flex; flex-direction: column; justify-content: space-between; align-items: center;}
+.slideWrap li .movieBox .posterBox {
+  position: relative;
+  height: 60%;
+  margin-top: 20px;
+}
+
+.slideWrap li .movieBox .posterBox img {
+  width: 100%;
+  max-height: 280px;
+  border-radius: 4px;
+}
+.slideWrap li .movieBox .posterBox img::after{
+  content: 'counter';
+  position: absolute;
+    left: 9px;
+    bottom: -4px;
+    font-weight: 400;
+    font-size: 50px;
+    font-style: italic;
+    color: #fff;
+    line-height: 1em;
+    z-index: 3;
+    text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.45);
+}
+.slideWrap li .movieBox .posterBox .hoverBox {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 100%;
+}
+.slideWrap li .movieBox .posterBox .hoverBox button{width:120px; height: 34px; display:block; margin: 3% auto; transform: translate(0,100%); font-size: .6rem;}
+
+.swiper-button-prev:after, .swiper-button-next:after{
+  font-size: 1.1rem !important;
+  color: black;
+}
+.slideWrap li .movieInfoBox {
+  margin-top: 8%;
+  height: 40%;
+  
+}
+.slideWrap li .movieBox .movieInfoBox strong{
+  font-size: 1rem;
+  margin-bottom: 5%;
+}
+.slideWrap li .movieBox .movieInfoBox span{
+  font-size: .6rem;
+  display: block;
 }
