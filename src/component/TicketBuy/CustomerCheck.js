@@ -1,7 +1,7 @@
 import "./CustomerCheck.css";
 import { useState } from "react";
 
-const CustomerCheck = () => {
+const CustomerCheck = (props) => {
   const [name, setName] = useState("");
   const [birth, setBirth] = useState("");
   const [num, setNum] = useState("");
@@ -20,11 +20,14 @@ const CustomerCheck = () => {
     setEmail(e.currentTarget.value);
   };
 
-  const onSubmitHandler = (e) => {
-    e.preventDefault();
-
-    console.log(name, birth, email, num);
+  const customerInfo = {
+    name: setName,
+    birth: setBirth,
+    num: setNum,
+    email: setEmail,
   };
+
+  props.saveCustomerData(customerInfo);
 
   return (
     <div id="customerContent">
@@ -85,7 +88,6 @@ const CustomerCheck = () => {
           </li>
         </ul>
       </form>
-      <button onClick={onSubmitHandler}></button>
     </div>
   );
 };
