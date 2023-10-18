@@ -1,6 +1,11 @@
 import "./MyticketInfo.css";
 
-const MyticketInfo = () => {
+const MyticketInfo = (props) => {
+  const addDataHandler = (e) => {
+    e.preventDefault();
+    console.log(props.saveCustomerData);
+  };
+
   return (
     <div id="myticketInfo-content">
       <div id="myticketInfo-inner">
@@ -31,7 +36,9 @@ const MyticketInfo = () => {
           <p className="price-info">원</p>
         </div>
 
-        <button id="reservation-ing-btn">예매하기</button>
+        <button id="reservation-ing-btn" onClick={addDataHandler}>
+          예매하기
+        </button>
       </div>
     </div>
   );

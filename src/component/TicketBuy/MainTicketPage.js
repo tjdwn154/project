@@ -9,7 +9,7 @@ const MainTicketPage = (props) => {
     const customerInfo = {
       ...enteredInfo,
     };
-    console.log(customerInfo);
+    // console.log(customerInfo);
   };
 
   return (

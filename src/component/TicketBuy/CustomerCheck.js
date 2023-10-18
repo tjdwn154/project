@@ -2,10 +2,10 @@ import "./CustomerCheck.css";
 import { useState } from "react";
 
 const CustomerCheck = (props) => {
-  const [name, setName] = useState("");
-  const [birth, setBirth] = useState("");
-  const [num, setNum] = useState("");
-  const [email, setEmail] = useState("");
+  const [enteredName, setName] = useState("");
+  const [enteredBirth, setBirth] = useState("");
+  const [enteredNum, setNum] = useState("");
+  const [enteredEmail, setEmail] = useState("");
 
   const onNameHandler = (e) => {
     setName(e.currentTarget.value);
@@ -27,6 +27,7 @@ const CustomerCheck = (props) => {
     email: setEmail,
   };
 
+  console.log(customerInfo);
   props.saveCustomerData(customerInfo);
 
   return (
@@ -41,7 +42,7 @@ const CustomerCheck = (props) => {
               type="text"
               maxLength="4"
               required
-              value={name}
+              value={enteredName}
               onChange={onNameHandler}
             />
           </li>
@@ -53,7 +54,7 @@ const CustomerCheck = (props) => {
               required
               minLength="6"
               maxLength="6"
-              value={birth}
+              value={enteredBirth}
               onChange={onBirthHandler}
             />
             <p className="birth-ex">
@@ -69,7 +70,7 @@ const CustomerCheck = (props) => {
               minLength="10"
               maxLength="11"
               required
-              value={num}
+              value={enteredNum}
               onChange={onNumHandler}
             />
             <p className="birth-ex">
@@ -82,7 +83,7 @@ const CustomerCheck = (props) => {
               id="email"
               type="email"
               required
-              value={email}
+              value={enteredEmail}
               onChange={onEmailHandler}
             />
           </li>
