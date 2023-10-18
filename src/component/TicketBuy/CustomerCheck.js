@@ -21,12 +21,11 @@ const CustomerCheck = (props) => {
   };
 
   const customerInfo = {
-    name: setName,
-    birth: setBirth,
-    num: setNum,
-    email: setEmail,
+    name: enteredName,
+    birth: enteredBirth,
+    num: enteredNum,
+    email: enteredEmail,
   };
-
   console.log(customerInfo);
   props.saveCustomerData(customerInfo);
 
