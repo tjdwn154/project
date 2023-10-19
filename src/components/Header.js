@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from "react";
-
 import {
   Nav,
   Container,
   Navbar,
   Form,
   Button,
-  Offcanvas,
-  NavDropdown
+  Offcanvas
 } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(true);
-  const [logoSrc, setLogoSrc] = useState("/white_logo.png"); // Provide the initial image source URL
+  const [logoSrc, setLogoSrc] = useState("/white_logo.png");
   const handleImageHover = () => {
     setLogoSrc("/color_logo.png");
   };
