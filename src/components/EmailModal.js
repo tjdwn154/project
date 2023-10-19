@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 export const EmailModal = (props) => {
+  const [isClicked, setIsClicked] = useState(false);
   const form = useRef();
-
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -46,8 +46,11 @@ export const EmailModal = (props) => {
             />
             <input
               type="submit"
-              value="발송"
+              value={isClicked?"완료":"발송"}
               className="submitBtn btn btn--primary btn--inside uppercase"
+              onClick={()=>{
+                setIsClicked(true);
+              }}
             />
           </form>
         </div>
