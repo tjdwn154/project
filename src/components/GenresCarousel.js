@@ -18,7 +18,6 @@ export default function GenresCarousel() {
 
   const [selectedGenre, setSelectedGenre] = useState("AAAA");
   const [performances, setPerformances] = useState([]);
-  const [noDataMessage, setNoDataMessage] = useState("");
 
   const maxRank = 10;
 
@@ -27,19 +26,18 @@ export default function GenresCarousel() {
       .get(`http://localhost:3001/api/boxoffice?catecode=${selectedGenre}`)
       .then((response) => {
         const boxOfData = response.data.boxofs.boxof;
-        // 순위가 10 이하인 항목만 필터링
-        const filterData = boxOfData.filter((performance) => performance.rnum <= maxRank);
-        setPerformances(filterData);
 
-        if (filterData.length === 0) {
-          setNoDataMessage("데이터가 없어요");
+        if (boxOfData && boxOfData.length > 0) {
+          // 데이터가 있는 경우
+          const filterData = boxOfData.filter((performance) => performance.rnum <= maxRank);
+          setPerformances(filterData);
         } else {
-          setNoDataMessage("");
+          // 데이터가 없는 경우
+          setPerformances([]); // 데이터를 빈 배열로 설정
         }
       })
       .catch((error) => {
         console.error("API 에러:", error);
-        setNoDataMessage("데이터를 불러오는 중에 오류가 발생했습니다");
       });
   }, [selectedGenre]);
 
@@ -63,7 +61,7 @@ export default function GenresCarousel() {
           </Nav.Item>
           <Nav.Item>
             <Nav.Link eventKey="link-2" onClick={() => handleGenreChange("BBBR")}>
-              대중무용(클릭시 에러처리 아직 안했어요 클릭 ㄴㄴㄴㄴㄴ)
+              대중무용
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
@@ -112,38 +110,42 @@ export default function GenresCarousel() {
           modules={[Navigation, Pagination]}
           className="mySwiper"
         >
-          {performances.map((performance) => {
-            return (
-              <SwiperSlide key={performance.mt20id}>
-                <Link to={`/Reservation/${performance.mt20id}`}>
-                  <ul className="slideWrap">
-                    <li>
-                      <div className="movieBox">
-                        <div className="posterBox">
-                          <p>{performance.cate}</p> {/* 장르 정보 출력 */}
-                          <p>순위 : {performance.rnum}</p>
-                          <img
-                            src={"http://www.kopis.or.kr" + performance.poster}
-                            alt={performance.prfnm}
-                            className="poster-image"
-                            style={{ width: "300px", height: "400px" }}
-                          />
-                          <div className="hoverBox">
-                            <Button variant="light">상세보기</Button>
-                            <Button variant="danger">예매하기</Button>
+          {performances.length > 0 ? (
+            performances.map((performance) => {
+              return (
+                <SwiperSlide key={performance.mt20id}>
+                  <Link to={`/Reservation/${performance.mt20id}`}>
+                    <ul className="slideWrap">
+                      <li>
+                        <div className="movieBox">
+                          <div className="posterBox">
+                            <p>{performance.cate}</p> {/* 장르 정보 출력 */}
+                            <p>순위 : {performance.rnum}</p>
+                            <img
+                              src={"http://www.kopis.or.kr" + performance.poster}
+                              alt={performance.prfnm}
+                              className="poster-image"
+                              style={{ width: "300px", height: "400px" }}
+                            />
+                            <div className="hoverBox">
+                              <Button variant="light">상세보기</Button>
+                              <Button variant="danger">예매하기</Button>
+                            </div>
+                          </div>
+                          <div className="movieInfoBox">
+                            <strong className="movieName">{performance.prfnm}</strong>
+                            <span className="movieDate">공연기간 : {performance.prfpd}</span>
                           </div>
                         </div>
-                        <div className="movieInfoBox">
-                          <strong className="movieName">{performance.prfnm}</strong>
-                          <span className="movieDate">공연기간 : {performance.prfpd}</span>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </Link>
-              </SwiperSlide>
-            );
-          })}
+                      </li>
+                    </ul>
+                  </Link>
+                </SwiperSlide>
+              );
+            })
+          ) : (
+            <div>데이터가 없습니다.</div>
+          )}
         </Swiper>
       </div>
     </div>
