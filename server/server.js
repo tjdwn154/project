@@ -1,4 +1,7 @@
 const express = require("express");
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
+const crypto = require("crypto");
 const axios = require("axios");
 const { parseString } = require("xml2js");
 const cors = require("cors");
@@ -101,17 +104,27 @@ app.get("/api/boxoffice/:mt20id", async (req, res) => {
 
 /////////////////////////////////////////////////////////////////////
 
-// // 멤버 정보 가져오기 라우팅
-// const memberRouter = require("./routes/member");
-// app.use("/", memberRouter);
+app.use(cookieParser()); // cookie-parser 미들웨어 설정
 
-// // 회원가입 라우팅
-// const signupRouter = require("./routes/signup");
-// app.use("/", signupRouter);
+app.use(
+  session({
+    secret: crypto.randomBytes(32).toString("hex"), // 32바이트 길이의 랜덤 키 생성
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
-// // 로그인 라우팅
-// const loginRouter = require("./routes/login");
-// app.use("/", loginRouter);
+// 멤버 정보 가져오기 라우팅
+const memberRouter = require("./routes/member");
+app.use("/", memberRouter);
+
+// 회원가입 라우팅
+const signupRouter = require("./routes/signup");
+app.use("/", signupRouter);
+
+// 로그인 라우팅
+const loginRouter = require("./routes/login");
+app.use("/", loginRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

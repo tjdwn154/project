@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Form, Button, Row, Col, Card } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../logo.png";
 
 function Signup() {
   const [formData, setFormData] = useState({
@@ -126,7 +125,7 @@ function Signup() {
               <Card.Body>
                 <div className="mb-3 mt-md-4">
                   <h2 className="fw-bold mb-2 text-center text-uppercase ">
-                    <img src={logo} alt="" />
+                    <img src="/logo.png" alt="" />
                   </h2>
                   <div className="mb-3">
                     <Form onSubmit={handleSubmit}>

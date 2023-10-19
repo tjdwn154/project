@@ -14,24 +14,36 @@ router.post("/api/login", async (req, res) => {
       console.error("에러: " + err);
       res.status(500).json({ message: "로그인에 실패했습니다." });
       return;
-    }
-
-    if (results.length === 0) {
+    } else if (results.length === 0) {
       res.status(401).json({ message: "아이디가 존재하지 않습니다." });
       return;
+    } else {
+      const user = results[0];
+
+      // 비밀번호 비교(사용자가 입력한 pw, DB에 저장된 pw)
+      const isPasswordValid = await bcrypt.compare(memberPw, user.memberPw);
+      if (!isPasswordValid) {
+        res.status(401).json({ message: "비밀번호가 일치하지 않습니다." });
+        return;
+      } else {
+        // 사용자 인증 성공: 세션 설정
+        req.session.user = user;
+        res.cookie("user", user.memberId);
+        res.json({ message: "로그인 성공" });
+      }
     }
+  });
+});
 
-    const user = results[0];
-
-    // 비밀번호 비교(사용자가 입력한 pw, DB에 저장된 pw)
-    const isPasswordValid = await bcrypt.compare(memberPw, user.memberPw);
-    if (!isPasswordValid) {
-      res.status(401).json({ message: "비밀번호가 일치하지 않습니다." });
-      return;
+// 로그아웃 요청 처리
+router.post("/api/logout", (req, res) => {
+  // 세션 해제
+  req.session.destroy((err) => {
+    if (err) {
+      res.status(500).json({ message: "로그아웃 실패" });
+    } else {
+      res.json({ message: "로그아웃 성공" });
     }
-
-    // 로그인 성공
-    res.json({ message: "로그인 성공", user: user });
   });
 });
 

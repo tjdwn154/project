@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import logo from "../logo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -43,6 +42,8 @@ function Login() {
         .then((response) => {
           // 로그인 성공 시 처리
           console.log("로그인 성공", response.data);
+          // 쿠키 정의 및 유효기간
+          document.cookie = `memberId=${formData.memberId}; expires=${new Date(Date.now() + 3600000).toUTCString()}`;
           navigate("/");
           // 로그인 성공 후의 동작을 정의
         })
@@ -70,7 +71,7 @@ function Login() {
         style={{ width: "350px", padding: "20px", borderRadius: "10px", boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)" }}
       >
         <div style={{ display: "flex", justifyContent: "center", marginBottom: "20px" }}>
-          <img src={logo} alt="" style={{ width: "150px" }} />
+          <img src="/logo.png" alt="" style={{ width: "150px" }} />
         </div>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formBasicEmail" className="mb-2">
