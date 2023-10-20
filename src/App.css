@@ -4,8 +4,9 @@
   --primary-color1: #c13870;
   --primary-color2: #540d18;
   --light-color1: #f5e0c9;
+  --green-color1:rgb(58, 94, 96);
 }
-
+body{font-family: 'Noto Sans', sans-serif;}
 /* COMMON: */
 .fade-in {
   opacity: 1;
@@ -75,7 +76,7 @@
   letter-spacing: 2.2px;
 }
 
-#header .inner .nav-item:hover .nav-link {
+#header .inner .nav0 .nav-item:hover .nav-link,#nav2 .nav-link:hover {
   color: var(--primary-color1);
   text-decoration: underline 1.3px solid var(--primary-color1);
 }
@@ -197,7 +198,7 @@
 #loadingWrap {
   background-color: rgba(0, 0, 0, 0.02);
   width: 100%;
-  height: 95vh;
+  height: 98vh;
   display: flex;
   justify-content: center;
   align-items: center;

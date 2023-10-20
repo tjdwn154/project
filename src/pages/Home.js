@@ -9,6 +9,12 @@ export default function Home() {
   return (
     <div id="container">
         <LandingCarousel />
+        <div className="scrollDownBox">
+        <p>SCROLL DOWN</p>
+        <a className="mouseDown" href="/" title="Scroll Down">
+          <span></span>
+        </a>
+      </div>
         <RanksCarousel />
         <GenresCarousel />
         <NewCarousel />
