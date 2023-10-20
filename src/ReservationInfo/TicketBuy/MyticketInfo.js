@@ -26,13 +26,13 @@ const MyticketInfo = (props) => {
       <div id="myticketInfo-inner">
         <img src={performanceData.poster} />
         <div id="myticketInfo-inner-content">
-          <h1>
-            뮤지컬 {"<"}오페라의 유령{">"} - 서울
-          </h1>
+          <h1>{performanceData.prfnm}</h1>
           <p className="myticketInfo">{performanceData.prfpdfrom}</p>
           <p className="myticketInfo">{performanceData.prfpdto}</p>
           <p className="myticketInfo">{performanceData.fcltynm}</p>
-          <p className="myticketInfo">관람 시간 : {performanceData.prfruntime}</p>
+          <p className="myticketInfo">
+            관람 시간 : {performanceData.prfruntime}
+          </p>
         </div>
       </div>
 
@@ -51,7 +51,10 @@ const MyticketInfo = (props) => {
           <p className="price-info">원</p>
         </div>
 
-        <button id="reservation-ing-btn" onClick={props.saveCustomerDataHandler}>
+        <button
+          id="reservation-ing-btn"
+          onClick={props.saveCustomerDataHandler}
+        >
           예매하기
         </button>
       </div>
