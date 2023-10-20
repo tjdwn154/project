@@ -1,60 +1,68 @@
-* {
-  text-decoration: none;
-  list-style-type: none;
-  /* border: solid 1px black; */
-}
-
-#contentBox {
+#reinfo-contentBox {
   display: flex;
   justify-content: space-evenly;
-  width: 1000px;
+  width: 930px;
+  text-decoration: none;
+  list-style-type: none;
   /* padding-left: 100px; */
 }
 
-#contentBox img {
+#reinfo-contentBox img {
   width: 300px;
   height: 400px;
 }
 
-#content-in {
+#reinfo-content-in {
   display: flex;
   flex-direction: column;
 }
 
-#ulContent {
+#reinfo-ulContent {
   text-align: left;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 25px;
 }
 
-.inLabel {
+#reinfo-ticketPrice {
+  text-wrap: wrap;
+  width: 300px;
+}
+
+#reinfo-performTime {
+  text-wrap: wrap;
+  width: 350px;
+}
+
+.reinfo-inLabel {
   display: inline-block;
-  padding: 10px 0px 10px 0px;
+  padding: 5px 0px 5px 0px;
   width: 140px;
 }
 
-.inText {
+.reinfo-inText {
   display: inline-block;
 }
 
-.line {
+/* .reinfo-line {
   width: 500px;
   border: 1px solid lightgray;
   margin: 0px 0px 10px 50px;
   padding-left: 10px;
-}
+} */
 
-#addText {
+#reinfo-addText {
   text-align: left;
   margin-top: 5px;
 }
 
-.addInLabel {
+.reinfo-addInLabel {
   padding: 10px;
 }
 
-#btn {
+#reinfo-btn {
   margin: 5px;
 }
 
-button {
+#reinfo-btn button {
   width: 300px;
 }

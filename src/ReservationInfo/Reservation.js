@@ -25,15 +25,15 @@ const Reservation = () => {
   }, [mt20id]);
 
   return (
-    <div id="mainContent">
-      <div id="content">
+    <div id="reserve-mainContent">
+      <div id="reserve-content">
         <ReTitle performanceData={performanceData} />
-        <div id="innerContent">
+        <div id="reserve-innerContent">
           <ReInfoContent performanceData={performanceData} />
           <ReCalendar performanceData={performanceData} />
         </div>
       </div>
-      <div id="downContent">
+      <div id="reserve-downContent">
         <DownContent performanceData={performanceData} />
       </div>
     </div>

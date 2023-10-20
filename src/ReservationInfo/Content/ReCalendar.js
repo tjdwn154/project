@@ -8,11 +8,11 @@ function ReCalendar(props) {
   const { performanceData } = props;
 
   return (
-    <div id="calendarBox">
-      <div className="text1">관람일</div>
+    <div id="re-calendarBox">
+      <div className="calendar-text1">관람일</div>
       <Calendar onChange={onChange} value={value} locale="en-EN" />
-      <div className="line"></div>
-      <div className="text2">회차</div>
+      <div className="calendar-line"></div>
+      <div className="calendar-text2">회차</div>
       <button class="btn btn-outline-primary">1회: 19:30</button>
     </div>
   );

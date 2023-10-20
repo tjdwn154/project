@@ -1,4 +1,4 @@
-.title {
+.reserve-title {
   width: 1500px;
   padding: 100px 0px 40px 100px;
   display: flex;
@@ -6,14 +6,14 @@
   align-items: flex-start;
 }
 
-.title h1 {
+.reserve-title h1 {
   font-size: 25px;
   text-align: left;
 }
 
-#text {
+#reserve-text {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  width: 350px;
+  width: 500px;
 }
