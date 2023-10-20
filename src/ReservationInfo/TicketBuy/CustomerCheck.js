@@ -1,7 +1,14 @@
 import "./CustomerCheck.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import CustomerInfoCheck from "./CustomerInfoCheck";
 
 const CustomerCheck = (props) => {
+  const navigate = useNavigate();
+  const reserveCheckHandler = () => {
+    navigate("/reserveInfo");
+  };
+
   const [enteredName, setName] = useState("");
   const [enteredBirth, setBirth] = useState("");
   const [enteredNum, setNum] = useState("");
@@ -31,6 +38,12 @@ const CustomerCheck = (props) => {
 
   return (
     <div id="customerContent">
+      <CustomerInfoCheck
+        name={enteredName}
+        birth={enteredBirth}
+        num={enteredNum}
+        email={enteredEmail}
+      />
       <h2>예매자 확인</h2>
       <form id="customerForm">
         <ul>
@@ -87,7 +100,9 @@ const CustomerCheck = (props) => {
             />
           </li>
         </ul>
-        <button id="customer-btn">다음</button>
+        <button id="customer-btn" onClick={reserveCheckHandler}>
+          다음
+        </button>
       </form>
     </div>
   );
