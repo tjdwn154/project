@@ -1,7 +1,14 @@
 import "./ReInfoContent.css";
+import { useNavigate } from "react-router-dom";
 
 const ReInfoContent = (props) => {
   const { performanceData } = props;
+  const navigate = useNavigate();
+
+  const handleReserveClick = () => {
+    // 페이지 이동 및 데이터 전달
+    navigate("/ticketBuy", { state: { performanceData } });
+  };
   return (
     <div id="reinfo-contentBox">
       <img src={performanceData?.poster} alt="포스터"></img>
@@ -43,7 +50,9 @@ const ReInfoContent = (props) => {
           </ul>
         </div>
         <div id="reinfo-btn">
-          <button class="btn btn-primary btn-lg">예약하기</button>
+          <button class="btn btn-primary btn-lg" onClick={handleReserveClick}>
+            예약하기
+          </button>
         </div>
       </div>
     </div>

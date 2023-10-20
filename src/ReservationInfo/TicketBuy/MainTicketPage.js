@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import TicketCheck from "./TicketCheck";
 import CustomerCheck from "./CustomerCheck";
 import "./MainTicketPage.css";
@@ -13,6 +14,9 @@ const MainTicketPage = (props) => {
     console.log("MainTicketPage내부정보", customerInfo);
   };
 
+  const location = useLocation();
+  const performanceData = location.state.performanceData;
+
   // const saveCustomerDataHandler = (enteredInfo) => {
   //   console.log(enteredInfo);
   // };
@@ -25,7 +29,7 @@ const MainTicketPage = (props) => {
           <TicketCheck />
           <CustomerCheck saveCustomerData={saveCustomerDataHandler} />
         </div>
-        <MyticketInfo />
+        <MyticketInfo performanceData={performanceData} />
       </div>
     </div>
   );
