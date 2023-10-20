@@ -1,10 +1,24 @@
 import "./MyticketInfo.css";
+import React, { useState } from "react";
 
 const MyticketInfo = (props) => {
-  const addDataHandler = (e) => {
-    e.preventDefault();
-    console.log(props.saveCustomerData);
-  };
+  // const addDataHandler = (enteredInfo) => {
+  //   const customerInfo = {
+  //     ...enteredInfo,
+  //   };
+  //   props.saveCustomerData(customerInfo);
+  // };
+
+  // const addDataHandler = (e) => {
+  //   e.preventDefault();
+  //   const info = {
+  //     ALL: props.customerInfo,
+  //     // birth: props.customerInfo[1],
+  //     // num: props.customerInfo[2],
+  //     // email: props.customerInfo[3],
+  //   };
+
+  // };
 
   return (
     <div id="myticketInfo-content">
@@ -36,7 +50,10 @@ const MyticketInfo = (props) => {
           <p className="price-info">원</p>
         </div>
 
-        <button id="reservation-ing-btn" onClick={addDataHandler}>
+        <button
+          id="reservation-ing-btn"
+          onClick={props.saveCustomerDataHandler}
+        >
           예매하기
         </button>
       </div>

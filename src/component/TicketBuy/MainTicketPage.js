@@ -9,8 +9,13 @@ const MainTicketPage = (props) => {
     const customerInfo = {
       ...enteredInfo,
     };
-    // console.log(customerInfo);
+
+    console.log("MainTicketPage내부정보", customerInfo);
   };
+
+  // const saveCustomerDataHandler = (enteredInfo) => {
+  //   console.log(enteredInfo);
+  // };
 
   return (
     <div id="mainticket-content">

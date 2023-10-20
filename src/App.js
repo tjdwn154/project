@@ -5,6 +5,7 @@ import Reservation from "./component/ReservationInfo/Reservation";
 function App() {
   return (
     <div className="App">
+      {/* <Reservation /> */}
       <MainTicketPage />
     </div>
   );

@@ -26,7 +26,7 @@ const CustomerCheck = (props) => {
     num: enteredNum,
     email: enteredEmail,
   };
-  console.log(customerInfo);
+  console.log("customerCheck 내부 정보", customerInfo);
   props.saveCustomerData(customerInfo);
 
   return (
