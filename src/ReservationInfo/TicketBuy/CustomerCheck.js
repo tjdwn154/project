@@ -61,10 +61,10 @@ const CustomerCheck = (props) => {
             </p>
           </li>
           <li className="customer-formList">
-            <label id="num">연락처</label>
+            <label id="cu-num">연락처</label>
             <input
-              className="num"
-              id="num"
+              className="cu-num"
+              id="cu-num"
               type="text"
               minLength="10"
               maxLength="11"
@@ -77,9 +77,9 @@ const CustomerCheck = (props) => {
             </p>
           </li>
           <li className="customer-formList">
-            <label id="email">이메일</label>
+            <label id="cu-email">이메일</label>
             <input
-              id="email"
+              id="cu-email"
               type="email"
               required
               value={enteredEmail}
@@ -87,6 +87,7 @@ const CustomerCheck = (props) => {
             />
           </li>
         </ul>
+        <button id="customer-btn">다음</button>
       </form>
     </div>
   );

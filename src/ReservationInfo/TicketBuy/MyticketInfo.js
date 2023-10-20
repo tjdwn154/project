@@ -2,24 +2,7 @@ import "./MyticketInfo.css";
 import React, { useState } from "react";
 
 const MyticketInfo = (props) => {
-  // const addDataHandler = (enteredInfo) => {
-  //   const customerInfo = {
-  //     ...enteredInfo,
-  //   };
-  //   props.saveCustomerData(customerInfo);
-  // };
-
-  // const addDataHandler = (e) => {
-  //   e.preventDefault();
-  //   const info = {
-  //     ALL: props.customerInfo,
-  //     // birth: props.customerInfo[1],
-  //     // num: props.customerInfo[2],
-  //     // email: props.customerInfo[3],
-  //   };
-
-  // };
-
+  const { performanceData } = props;
   return (
     <div id="myticketInfo-content">
       <div id="myticketInfo-inner">
@@ -39,7 +22,7 @@ const MyticketInfo = (props) => {
         <div id="choose-myinfo">
           <p className="choose-title">MY예매정보</p>
           <div id="choose-title-box">
-            <p className="choose-inner-info">선택좌석</p>
+            <p className="choose-inner-info">관람날짜</p>
             <p className="choose-inner-info">티켓금액</p>
           </div>
         </div>
