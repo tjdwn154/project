@@ -13,6 +13,7 @@ import Mypage from "./components/Mypage/Mypage";
 
 import Error404 from "./pages/Error404.js";
 import { Routes, Route } from "react-router-dom";
+import MainTicketPage from "./ReservationInfo/TicketBuy/MainTicketPage";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -45,6 +46,7 @@ export default function App() {
         <Route path="*" element={<Error404 />} />
 
         <Route path="/mypage" element={<Mypage />} />
+        <Route path="/ticketBuy" element={<MainTicketPage />} />
       </Routes>
     </div>
   );

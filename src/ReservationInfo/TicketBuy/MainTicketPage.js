@@ -3,6 +3,7 @@ import TicketCheck from "./TicketCheck";
 import CustomerCheck from "./CustomerCheck";
 import "./MainTicketPage.css";
 import MyticketInfo from "./MyticketInfo";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 const MainTicketPage = (props) => {
   const saveCustomerDataHandler = (enteredInfo) => {

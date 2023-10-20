@@ -1,4 +1,5 @@
 import "./ReInfoContent.css";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 const ReInfoContent = (props) => {
   const { performanceData } = props;
@@ -42,9 +43,9 @@ const ReInfoContent = (props) => {
             </li>
           </ul>
         </div>
-        <div id="reinfo-btn">
+        <Link to="/ticketBuy" id="reinfo-btn">
           <button class="btn btn-primary btn-lg">예약하기</button>
-        </div>
+        </Link>
       </div>
     </div>
   );
