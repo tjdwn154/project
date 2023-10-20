@@ -9,12 +9,19 @@ import { Button, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function GenresCarousel() {
-  const [currentTab, setCurrentTab] = useState(0);
-  const menuArr = [
-    { name: "Tab1", content: "Tab menu ONE" },
-    { name: "Tab2", content: "Tab menu TWO" },
-    { name: "Tab3", content: "Tab menu THREE" },
-  ];
+  // 추후 수정 예정:
+  const [increNum, setIncreNum] = useState([
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ]);
 
   const [selectedGenre, setSelectedGenre] = useState("AAAA");
   const [performances, setPerformances] = useState([]);
@@ -47,7 +54,7 @@ export default function GenresCarousel() {
 
   return (
     <div id="genresCarouselBox">
-      <div className="inner">
+      <div className="mainInner">
         <h1 className="title1">장르별 공연</h1>
         <Nav className="sliderTabs" variant="pills" defaultActiveKey="link-0">
           <Nav.Item>
@@ -101,14 +108,16 @@ export default function GenresCarousel() {
             delay: 4000,
             disableOnInteraction: false,
           }}
-          slidesPerView={3}
+          loop={true}
+          slidesPerView={5}
+          slidesPerGroup={5}
           spaceBetween={30}
           centeredSlides={false}
           pagination={{
-            dynamicBullets: true,
+            dynamicBullets: true
           }}
           navigation={true}
-          modules={[Navigation, Pagination]}
+          modules={[Navigation, Pagination,]}
           className="mySwiper"
         >
           {performances.length > 0 ? (
@@ -116,31 +125,27 @@ export default function GenresCarousel() {
               return (
                 <SwiperSlide key={performance.mt20id}>
                   <Link to={`/Reservation/${performance.mt20id}`}>
-                    <ul className="slideWrap">
-                      <li>
-                        <div className="movieBox">
-                          <div className="posterBox">
-                            <p>{performance.cate}</p> {/* 장르 정보 출력 */}
-                            <p>순위 : {performance.rnum}</p>
-                            <img
-                              src={"http://www.kopis.or.kr" + performance.poster}
-                              alt={performance.prfnm}
-                              className="poster-image"
-                              style={{ maxWidth: "100%", height: "auto" }}
-                            />
-                            <div className="hoverBox">
-                              <Button variant="light">상세보기</Button>
-                              <Button variant="danger">예매하기</Button>
-                            </div>
-                          </div>
-                          <div className="movieInfoBox">
-                            <strong className="movieName">{performance.prfnm}</strong>
-                            <span>공연장소 : {performance.prfplcnm}</span>
-                            <span className="movieDate">공연기간 : {performance.prfpd}</span>
-                          </div>
+                    <div className="movieBox">
+                      <div className="posterBox">
+                        {/* <p>{performance.cate}</p> 장르 정보 출력
+                        <p>순위 : {performance.rnum}</p> */}
+                        <img
+                          src={"http://www.kopis.or.kr" + performance.poster}
+                          alt={performance.prfnm}
+                          className="poster-image"
+                          style={{ maxWidth: "100%", height: "auto" }}
+                        />
+                        <div className="hoverBox">
+                          <Button variant="light">상세보기</Button>
+                          <Button variant="danger">예매하기</Button>
                         </div>
-                      </li>
-                    </ul>
+                      </div>
+                      <div className="movieInfoBox">
+                        <strong className="movieName">{performance.prfnm}</strong>
+                        <span>{performance.prfplcnm}</span>
+                        <span className="movieDate"> {performance.prfpd}</span>
+                      </div>
+                    </div>
                   </Link>
                 </SwiperSlide>
               );

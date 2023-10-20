@@ -39,12 +39,10 @@ export default function RanksCarousel() {
       <div className="inner">
         <h1 className="title1">공연차트</h1>
         <Swiper
-          slidesPerView={3}
+          slidesPerView={5}
+          slidesPerGroup={5}
           spaceBetween={30}
           centeredSlides={false}
-          pagination={{
-            dynamicBullets: true,
-          }}
           navigation={true}
           modules={[Navigation]}
           className="mySwiper"
@@ -53,8 +51,6 @@ export default function RanksCarousel() {
             return (
               <SwiperSlide key={performance.mt20id}>
                 <Link to={`/Reservation/${performance.mt20id}`}>
-                  <ul className="slideWrap">
-                    <li>
                       <div className="movieBox">
                         <div className="posterBox">
                           <p>{performance.cate}</p> {/* 장르 정보 출력 */}
@@ -72,11 +68,9 @@ export default function RanksCarousel() {
                         </div>
                         <div className="movieInfoBox">
                           <strong className="movieName">{performance.prfnm}</strong>
-                          <span>공연장소 : {performance.prfplcnm}</span>
+                          <span>{performance.prfplcnm}</span>
                         </div>
                       </div>
-                    </li>
-                  </ul>
                 </Link>
               </SwiperSlide>
             );

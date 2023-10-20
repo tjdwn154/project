@@ -57,8 +57,6 @@ export default function NewCarousel() {
             return (
               <SwiperSlide key={performance.mt20id}>
                 <Link to={`/Reservation/${performance.mt20id}`}>
-                  <ul className="slideWrap">
-                    <li>
                       <div className="movieBox">
                         <div className="posterBox">
                           <Badge bg="warning">NEW</Badge>
@@ -78,8 +76,6 @@ export default function NewCarousel() {
                           <span>공연장소 : {performance.fcltynm}</span>
                         </div>
                       </div>
-                    </li>
-                  </ul>
                 </Link>
               </SwiperSlide>
             );

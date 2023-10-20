@@ -37,13 +37,13 @@ export default function Footer() {
         </div>
         <div className="line__separete"></div>
         <div className="icons">
-          <a href="#" className="icon1 icon--instagram">
+          <a href="javascript:" className="icon1 icon--instagram">
             <FontAwesomeIcon icon="fa-brands fa-instagram" />
           </a>
-          <a href="#" className="icon1 icon--twitter">
+          <a href="javascript:" className="icon1 icon--twitter">
             <FontAwesomeIcon icon="fa-brands fa-twitter" />
           </a>
-          <a href="#" className="icon1 icon--linkedin">
+          <a href="javascript:" className="icon1 icon--linkedin">
             <FontAwesomeIcon icon="fa-brands fa-youtube" />
           </a>
         </div>

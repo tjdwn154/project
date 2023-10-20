@@ -8,7 +8,7 @@
 
 /* COMMON: */
 .title1{font-size: 28px; font-weight: bold; padding: 2%; text-align: center;}
-
+.mainInner{}
 /* 메인-랜딩슬라이드(Carousel0): */
 #ladingCarouselBox {
   position: relative;

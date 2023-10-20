@@ -68,6 +68,8 @@ body{font-family: 'Noto Sans', sans-serif;}
 }
 
 #header .inner .nav-link {
+  padding: 0;
+  margin: 0;
   height: 40px;
   line-height: 40px;
   color: floralwhite;
@@ -106,20 +108,18 @@ body{font-family: 'Noto Sans', sans-serif;}
   margin-left: 3%;
 }
 
-#header .inner #nav2 nav .container {
+#header .inner #nav2 nav .container-fluid {
   --bs-navbar-padding-y: 0;
   height: 60px;
   width: 100%;
 }
 
-#header .inner #nav2 nav .container .navbar-nav {
+#header .inner #nav2 nav .container-fluid .navbar-nav {
   display: flex;
   width: 100%;
 }
-
-#header .navbar>.container-fluid {
-  justify-content: end;
-}
+#header .inner #nav2 nav .container-fluid .offcanvasNavbar-expand-xl .offcanvas-body{}
+#header .inner #nav2 nav .container-fluid .offcanvasNavbar-expand-xl .offcanvas-body form+div a:not(:last-child){margin-right: 2%;}
 
 .offcanvas.show {}
 
@@ -157,6 +157,7 @@ body{font-family: 'Noto Sans', sans-serif;}
 }
 
 #header .inner #nav2 form .btn-outline-success {
+  max-width: 40px;
   position: absolute;
   right: 0;
   --bs-btn-hover-color: gold;
