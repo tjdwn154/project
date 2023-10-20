@@ -87,6 +87,7 @@ const CustomerCheck = (props) => {
             />
           </li>
         </ul>
+        <button id="customer-btn">다음</button>
       </form>
     </div>
   );
