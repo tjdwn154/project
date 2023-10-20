@@ -13,11 +13,11 @@ const Reservation = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/boxoffice/${mt20id}`)
+      .get(`http://localhost:3001/api/pblprfr/${mt20id}`)
       .then((response) => {
         const data = response.data.dbs.db[0]; // 데이터 추출
         setPerformanceData(data);
-        console.log("API Data:", data);
+        console.log("선택한 API Data:", data);
       })
       .catch((error) => {
         console.error("API 에러:", error);
@@ -30,7 +30,7 @@ const Reservation = () => {
         <ReTitle performanceData={performanceData} />
         <div id="innerContent">
           <ReInfoContent performanceData={performanceData} />
-          <ReCalendar />
+          <ReCalendar performanceData={performanceData} />
         </div>
       </div>
       <div id="downContent">

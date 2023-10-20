@@ -11,12 +11,7 @@ const ReInfoContent = (props) => {
             <strong className="inLabel">장소</strong>
             <div className="inText">{performanceData?.fcltynm}</div>
           </li>
-          <li>
-            <strong className="inLabel">공연기간</strong>
-            <div className="inText">
-              {performanceData?.prfpdfrom} ~ {performanceData?.prfpdto} ({performanceData?.prfstate})
-            </div>
-          </li>
+
           <li>
             <strong className="inLabel">공연시간</strong>
             <div className="inText">{performanceData?.prfruntime}</div>
@@ -24,6 +19,10 @@ const ReInfoContent = (props) => {
           <li>
             <strong className="inLabel">관람연령</strong>
             <div className="inText">{performanceData?.prfage}</div>
+          </li>
+          <li>
+            <strong className="inLabel">티켓가격</strong>
+            <div className="inText">{performanceData?.pcseguidance}</div>
           </li>
         </ul>
         <div className="line"></div>

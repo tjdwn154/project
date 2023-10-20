@@ -3,8 +3,9 @@ import Calendar from "react-calendar";
 import "./ReCalendar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function ReCalendar() {
+function ReCalendar(props) {
   const [value, onChange] = useState(new Date());
+  const { performanceData } = props;
 
   return (
     <div id="calendarBox">

@@ -44,6 +44,7 @@ export default function GenresCarousel() {
   const handleGenreChange = (genre) => {
     setSelectedGenre(genre);
   };
+
   return (
     <div id="genresCarouselBox">
       <div className="inner">
@@ -125,7 +126,7 @@ export default function GenresCarousel() {
                               src={"http://www.kopis.or.kr" + performance.poster}
                               alt={performance.prfnm}
                               className="poster-image"
-                              style={{ width: "300px", height: "400px" }}
+                              style={{ maxWidth: "100%", height: "auto" }}
                             />
                             <div className="hoverBox">
                               <Button variant="light">상세보기</Button>
@@ -134,6 +135,7 @@ export default function GenresCarousel() {
                           </div>
                           <div className="movieInfoBox">
                             <strong className="movieName">{performance.prfnm}</strong>
+                            <span>공연장소 : {performance.prfplcnm}</span>
                             <span className="movieDate">공연기간 : {performance.prfpd}</span>
                           </div>
                         </div>

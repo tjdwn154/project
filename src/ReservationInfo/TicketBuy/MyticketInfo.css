@@ -1,0 +1,109 @@
+#myticketInfo-content {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 630px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+#myticketInfo-inner {
+  display: flex;
+  flex-direction: row;
+}
+
+#myticketInfo-inner img {
+  width: 200px;
+  height: 250px;
+  padding-left: 15px;
+}
+
+#myticketInfo-inner h1 {
+  font-size: 19px;
+  padding: 20px 5px 10px 0px;
+}
+
+#myticketInfo-inner-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.myticketInfo {
+  margin: 0px;
+}
+
+.choose-info {
+  display: flex;
+}
+
+.choose-myinfo {
+  display: flex;
+}
+
+.choose-title {
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 35px;
+  padding-left: 25px;
+  text-align: left;
+}
+
+#choose-title-box {
+  border: 1px solid rgb(112, 112, 112);
+  border-radius: 5px;
+  width: 400px;
+  height: 90px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.choose-inner-info {
+  font-size: 17px;
+  font-weight: 550;
+  margin-bottom: 7px;
+  text-align: left;
+}
+
+#price-box {
+  border-top: 1px solid rgb(112, 112, 112);
+  border-bottom: 1px solid rgb(112, 112, 112);
+  background-color: darkgray;
+  width: 400px;
+  height: 70px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 10px 5px;
+}
+
+.price-info {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.price-info:nth-child(2) {
+  margin-left: 100px;
+  margin-right: 10px;
+  font-size: 25px;
+  color: rgb(231, 231, 0);
+}
+
+.price-info:nth-child(3) {
+  font-size: 18px;
+}
+
+#reservation-ing-btn {
+  margin-top: 20px;
+  width: 400px;
+  height: 60px;
+  border-radius: 10px;
+  border: 1px solid rgb(97, 97, 97);
+  background-color: #b72727;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 5px;
+}

@@ -25,11 +25,13 @@ function parseXML(xmlData) {
 }
 
 // KOPIS API(공연 정보) 요청 함수
-async function ParseAPI(shcate, prfstate) {
+async function ParseAPI() {
   const apiKey = "bd2222103ca442c492dbbeb301af94ab";
-  // 서버에서 받은 shcate, prfstate 값을 동적으로 API 주소에 추가
-  const apiUrl = `http://www.kopis.or.kr/openApi/restful/pblprfr?service=${apiKey}&stdate=20231012&eddate=20240301&cpage=1&rows=10&shcate=${shcate}&prfstate=${prfstate}`;
 
+  const today = new Date();
+  const formattedDate = today.toISOString().slice(0, 10).replace(/-/g, "");
+
+  const apiUrl = `http://www.kopis.or.kr/openApi/restful/pblprfr?service=${apiKey}&stdate=${formattedDate}&eddate=20240301&cpage=1&rows=10&prfstate=02`;
   const response = await axios.get(apiUrl);
   const result = await parseXML(response.data);
 
@@ -38,10 +40,8 @@ async function ParseAPI(shcate, prfstate) {
 
 // API 데이터 가져오는 엔드포인트
 app.get("/api/data", async (req, res) => {
-  const { shcate, prfstate } = req.query; // 클라이언트에서 shcate를 쿼리 파라미터로 전달
-
   try {
-    const apiData = await ParseAPI(shcate, prfstate);
+    const apiData = await ParseAPI();
     res.json(apiData);
   } catch (error) {
     res.status(500).json({ error: "API 연결 에러" });
@@ -82,6 +82,7 @@ app.get("/api/boxoffice", async (req, res) => {
 
 /////////////////////////////////////////////////////////////////////
 
+// 공연 상세 API
 const performanceData = async (mt20id) => {
   const apiKey = "bd2222103ca442c492dbbeb301af94ab";
   const apiUrl = `http://www.kopis.or.kr/openApi/restful/pblprfr/${mt20id}?service=${apiKey}`;
@@ -92,7 +93,7 @@ const performanceData = async (mt20id) => {
   return result;
 };
 
-app.get("/api/boxoffice/:mt20id", async (req, res) => {
+app.get("/api/pblprfr/:mt20id", async (req, res) => {
   const { mt20id } = req.params;
   try {
     const result = await performanceData(mt20id);

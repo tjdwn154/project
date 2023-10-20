@@ -1,0 +1,26 @@
+#ticketContent {
+  border-right: 1px solid rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  height: 600px;
+  text-align: left;
+  padding: 15px;
+}
+
+#ticketContent h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#ticketForm {
+  width: 100%;
+  padding: 15px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid #000000;
+  margin-top: 10px;
+}
+
+#ticketForm label {
+  padding-left: 15px;
+}

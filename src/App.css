@@ -4,8 +4,9 @@
   --primary-color1: #c13870;
   --primary-color2: #540d18;
   --light-color1: #f5e0c9;
+  --green-color1:rgb(58, 94, 96);
 }
-
+body{font-family: 'Noto Sans', sans-serif;}
 /* COMMON: */
 .fade-in {
   opacity: 1;
@@ -42,7 +43,7 @@
   transition: none !important;
 }
 
-#header:hover .inner #nav2 .navbar > .container-fluid form input {
+#header:hover .inner #nav2 .navbar>.container-fluid form input {
   border-bottom: 1px solid var(--primary-color1);
 }
 
@@ -60,8 +61,7 @@
   margin: 0 auto;
 }
 
-#header .inner .nav0 {
-}
+#header .inner .nav0 {}
 
 #header .inner .nav-item:not(:last-child) {
   margin-right: 1%;
@@ -76,7 +76,7 @@
   letter-spacing: 2.2px;
 }
 
-#header .inner .nav-item:hover .nav-link {
+#header .inner .nav0 .nav-item:hover .nav-link,#nav2 .nav-link:hover {
   color: var(--primary-color1);
   text-decoration: underline 1.3px solid var(--primary-color1);
 }
@@ -117,22 +117,19 @@
   width: 100%;
 }
 
-#header .navbar > .container-fluid {
+#header .navbar>.container-fluid {
   justify-content: end;
 }
 
-.offcanvas.show {
-}
+.offcanvas.show {}
 
-.offcanvas.show .offcanvas-header {
-}
+.offcanvas.show .offcanvas-header {}
 
 .offcanvas.show .offcanvas-header .offcanvas-title {
   margin: 0 auto;
 }
 
-.offcanvas.show .offcanvas-header .offcanvas-title a {
-}
+.offcanvas.show .offcanvas-header .offcanvas-title a {}
 
 .offcanvas.show .offcanvas-header a img {
   width: 130px;
@@ -144,7 +141,7 @@
   font-size: 24px;
 }
 
-#header .navbar > .container-fluid form {
+#header .navbar>.container-fluid form {
   position: relative;
   left: 30%;
 }
@@ -201,7 +198,7 @@
 #loadingWrap {
   background-color: rgba(0, 0, 0, 0.02);
   width: 100%;
-  height: 95vh;
+  height: 98vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -317,7 +314,7 @@
   height: 100%;
 }
 
-#error404Wrap .row > div {
+#error404Wrap .row>div {
   width: 50%;
 }
 
@@ -434,8 +431,7 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-@media screen and (max-width: px) {
-}
+@media screen and (max-width: px) {}
 
 #orderCononfirmationWrap .container .top {
   height: 60%;
@@ -486,7 +482,7 @@
   height: 20px;
 }
 
-#orderCononfirmationWrap .container .top > p {
+#orderCononfirmationWrap .container .top>p {
   font-size: 14px;
   margin: 0 auto 2%;
   padding: 0;
@@ -508,7 +504,7 @@
   justify-content: center;
 }
 
-#orderCononfirmationWrap .container .bottom > p {
+#orderCononfirmationWrap .container .bottom>p {
   margin: 0;
   padding-right: 5%;
   display: flex;
@@ -530,8 +526,7 @@
   text-align: right;
 }
 
-#orderCononfirmationWrap .container .bottom .orderReceipt .left img {
-}
+#orderCononfirmationWrap .container .bottom .orderReceipt .left img {}
 
 #orderCononfirmationWrap .container .bottom .orderReceipt .right {
   width: 65%;
@@ -550,8 +545,7 @@
   font-weight: bold;
 }
 
-#orderCononfirmationWrap .container .btnBox {
-}
+#orderCononfirmationWrap .container .btnBox {}
 
 #orderCononfirmationWrap .container .btnBox button:first-child.btn-primary {
   margin-right: 8%;
@@ -674,11 +668,13 @@
 }
 
 #successAnimation.animated #successAnimationCircle {
-  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle, 0.3s linear 0.9s 1 both fadeOut;
+  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle,
+    0.3s linear 0.9s 1 both fadeOut;
 }
 
 #successAnimation.animated #successAnimationCheck {
-  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck, 0.3s linear 0.9s 1 both fadeOut;
+  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck,
+    0.3s linear 0.9s 1 both fadeOut;
 }
 
 #successAnimation.animated #successAnimationResult {
@@ -751,7 +747,7 @@
   font-weight: bold;
 }
 
-#emailModalWrap .container > p {
+#emailModalWrap .container>p {
   font-size: 13px;
   font-weight: bold;
 }
@@ -922,7 +918,12 @@ a:hover {
 }
 
 #footer .icon--instagram:hover {
-  background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  background-image: radial-gradient(circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%);
   outline-color: #a02d76;
 }
 
