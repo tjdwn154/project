@@ -30,7 +30,7 @@ export default function RanksCarousel() {
   ]);
   return (
     <div id="ranksCarouselBox">
-      <div className="inner1">
+      <div className="mainInner">
         <h1 className="title1">공연차트</h1>
         <Swiper
           slidesPerView={5}
@@ -59,8 +59,10 @@ export default function RanksCarousel() {
                   </div>
                   <div className="movieInfoBox">
                     <strong className="movieName">공연제목 바인딩</strong>
-
                     <span>공연 장소 바인딩</span>
+                    <span className="movieDate">
+                          공연일자 바인딩 0000.0.0~00.00
+                        </span>
                   </div>
                 </div>
               </SwiperSlide>

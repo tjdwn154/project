@@ -14,9 +14,63 @@
   text-align: center;
 }
 
-.inner1 {
+.mainInner {
   max-width: 1360px;
   margin: 0 auto;
+}
+
+
+.movieBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movieBox .posterBox {
+  position: relative;
+  height: 60%;
+  margin-top: 20px;
+}
+
+.movieBox .posterBox img {
+  width: 100%;
+  max-height: 280px;
+  border-radius: 4px;
+}
+
+.movieBox .posterBox img::after {
+  content: 'counter';
+  position: absolute;
+  left: 9px;
+  bottom: -4px;
+  font-weight: 400;
+  font-size: 50px;
+  font-style: italic;
+  color: #fff;
+  line-height: 1em;
+  z-index: 3;
+  text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.45);
+}
+
+.movieBox .posterBox .hoverBox {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 100%;
+}
+
+.movieBox .posterBox .hoverBox button {
+  width: 120px;
+  height: 34px;
+  display: block;
+  margin: 3% auto;
+  transform: translate(0, 100%);
+  font-size: .6rem;
 }
 
 
@@ -299,8 +353,6 @@
 .swiper-button-prev:hover {
   background-color: white;
 }
-
-/* .swiper-button-disabled{display: none !important;} */
 .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: 0 !important;
@@ -317,7 +369,7 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  color: var(--swiper-theme-color);
+  color: var(--primary-color1);
 }
 
 .autoplay-progress svg {
@@ -347,60 +399,6 @@
   cursor: pointer;
   height: 100%;
 }
-
-.movieBox {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.movieBox .posterBox {
-  position: relative;
-  height: 60%;
-  margin-top: 20px;
-}
-
-.movieBox .posterBox img {
-  width: 100%;
-  max-height: 280px;
-  border-radius: 4px;
-}
-
-.movieBox .posterBox img::after {
-  content: 'counter';
-  position: absolute;
-  left: 9px;
-  bottom: -4px;
-  font-weight: 400;
-  font-size: 50px;
-  font-style: italic;
-  color: #fff;
-  line-height: 1em;
-  z-index: 3;
-  text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.45);
-}
-
-.movieBox .posterBox .hoverBox {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0.4);
-  height: 100%;
-}
-
-.movieBox .posterBox .hoverBox button {
-  width: 120px;
-  height: 34px;
-  display: block;
-  margin: 3% auto;
-  transform: translate(0, 100%);
-  font-size: .6rem;
-}
-
 .swiper-button-prev:after,
 .swiper-button-next:after {
   font-size: 1.1rem !important;

@@ -13,7 +13,6 @@ export default function LandingCarousel() {
         slidesPerView={1}
         spaceBetween={10}
         centeredSlides={false}
-        navigation={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,

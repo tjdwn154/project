@@ -7,15 +7,27 @@ import "swiper/css/navigation";
 import { Button,Nav } from "react-bootstrap";
 
 export default function GenresCarousel() {
+  const [increNum, setIncreNum] = useState([
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ]);
   const [currentTab, setCurrentTab] = useState(0);
   const menuArr = [
-    { name: "Tab1", content: "Tab menu ONE" },
-    { name: "Tab2", content: "Tab menu TWO" },
+    { name: "Tab1", content: "왜안되니" },
+    { name: "Tab2", content: "제발좀되렴" },
     { name: "Tab3", content: "Tab menu THREE" }
   ];
   return (
     <div id="genresCarouselBox" >
-      <div className="inner">
+      <div className="mainInner">
         <h1 className="title1">장르별 공연</h1>
         <Nav className="sliderTabs" variant="pills" defaultActiveKey="link-0">
           <Nav.Item>
@@ -49,7 +61,9 @@ export default function GenresCarousel() {
             delay: 4000,
             disableOnInteraction: false
           }}
-          slidesPerView={1}
+          loop={true}
+          slidesPerView={5}
+          slidesPerGroup={5}
           spaceBetween={30}
           centeredSlides={false}
           pagination={{
@@ -59,126 +73,29 @@ export default function GenresCarousel() {
           modules={[Navigation,Pagination,]}
           className="mySwiper"
         >
-          {[0, 1, 2, 3].map(function (a, i) {
+          {increNum.map(function (a, i) {
             return (
               <SwiperSlide>
-                <ul className="slideWrap">
-                  <li>
-                    <div className="movieBox">
-                      <div className="posterBox">
-                        <img
-                          src="https://picsum.photos/400/500?random=1"
-                          alt="공연제목 바인딩"
-                          onError
-                        />
-                        <div className=""></div>
-                        <div className="hoverBox">
-                          <Button variant="light">상세보기</Button>
-                          <Button variant="danger">예매하기</Button>
-                        </div>
-                      </div>
-                      <div className="movieInfoBox">
-                        <strong className="movieName">공연제목 바인딩</strong>
-                        <span>여기에 공연 장소 바인딩</span>
-                        <span className="movieDate">
+                <div className="movieBox">
+                  <div className="posterBox">
+                    <img
+                      src="https://picsum.photos/400/500?random=1"
+                      alt="공연제목 바인딩"
+                      onError
+                    />
+                    <div className="hoverBox">
+                      <Button variant="light">상세보기</Button>
+                      <Button variant="danger">예매하기</Button>
+                    </div>
+                  </div>
+                  <div className="movieInfoBox">
+                    <strong className="movieName">공연제목 바인딩</strong>
+                    <span>공연 장소 바인딩</span>
+                    <span className="movieDate">
                           공연일자 바인딩 0000.0.0~00.00
                         </span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="movieBox">
-                      <div className="posterBox">
-                        <img
-                          src="https://picsum.photos/400/500?random=1"
-                          alt="공연제목 바인딩"
-                          onError
-                        />
-                        <div className=""></div>
-                        <div className="hoverBox">
-                          <Button variant="light">상세보기</Button>
-                          <Button variant="danger">예매하기</Button>
-                        </div>
-                      </div>
-                      <div className="movieInfoBox">
-                        <strong className="movieName">공연제목 바인딩</strong>
-                        <span>여기에 공연 장소 바인딩</span>
-                        <span className="movieDate">
-                          공연일자 바인딩 0000.0.0~00.00
-                        </span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="movieBox">
-                      <div className="posterBox">
-                        <img
-                          src="https://picsum.photos/400/500?random=1"
-                          alt="공연제목 바인딩"
-                          onError
-                        />
-                        <div className=""></div>
-                        <div className="hoverBox">
-                          <Button variant="light">상세보기</Button>
-                          <Button variant="danger">예매하기</Button>
-                        </div>
-                      </div>
-                      <div className="movieInfoBox">
-                        <strong className="movieName">공연제목 바인딩</strong>
-                        <span>여기에 공연 장소 바인딩</span>
-                        <span className="movieDate">
-                          공연일자 바인딩 0000.0.0~00.00
-                        </span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="movieBox">
-                      <div className="posterBox">
-                        <img
-                          src="https://picsum.photos/400/500?random=1"
-                          alt="공연제목 바인딩"
-                          onError
-                        />
-                        <div className=""></div>
-                        <div className="hoverBox">
-                          <Button variant="light">상세보기</Button>
-                          <Button variant="danger">예매하기</Button>
-                        </div>
-                      </div>
-                      <div className="movieInfoBox">
-                        <strong className="movieName">공연제목 바인딩</strong>
-                        <span>여기에 공연 장소 바인딩</span>
-                        <span className="movieDate">
-                          공연일자 바인딩 0000.0.0~00.00
-                        </span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="movieBox">
-                      <div className="posterBox">
-                        <img
-                          src="https://picsum.photos/400/500?random=1"
-                          alt="공연제목 바인딩"
-                          onError
-                        />
-                        <div className=""></div>
-                        <div className="hoverBox">
-                          <Button variant="light">상세보기</Button>
-                          <Button variant="danger">예매하기</Button>
-                        </div>
-                      </div>
-                      <div className="movieInfoBox">
-                        <strong className="movieName">공연제목 바인딩</strong>
-                        <span>여기에 공연 장소 바인딩</span>
-                        <span className="movieDate">
-                          공연일자 바인딩 0000.0.0~00.00
-                        </span>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+                  </div>
+                </div>
               </SwiperSlide>
             );
           })}
