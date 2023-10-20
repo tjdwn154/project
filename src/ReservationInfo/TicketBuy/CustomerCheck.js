@@ -27,14 +27,11 @@ const CustomerCheck = (props) => {
     setEmail(e.currentTarget.value);
   };
 
-  const customerInfo = {
-    name: enteredName,
-    birth: enteredBirth,
-    num: enteredNum,
-    email: enteredEmail,
-  };
-  console.log("customerCheck 내부 정보", customerInfo);
-  props.saveCustomerData(customerInfo);
+  // const saveCustomerDataHandler = (enteredInfo) => {
+  //   const customerInfo = {
+  //     ...enteredInfo,
+  //   };
+  // };
 
   return (
     <div id="customerContent">
