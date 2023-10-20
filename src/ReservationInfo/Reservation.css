@@ -1,22 +1,22 @@
-#mainContent {
+#reserve-mainContent {
   width: 1500px;
   margin: 0 auto;
   height: 1200px;
 }
 
-#content {
+#reserve-content {
   width: 1500px;
-  height: 750px;
+  height: 850px;
   background-color: rgb(236, 236, 236);
 }
 
-#innerContent {
+#reserve-innerContent {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 1500px;
 }
 
-#downContent {
+#reserve-downContent {
   text-align: left;
 }

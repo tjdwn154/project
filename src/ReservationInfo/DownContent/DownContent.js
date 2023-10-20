@@ -12,17 +12,21 @@ const DownContent = (props) => {
   const [currentId, setCurrentId] = useState(1);
 
   return (
-    <div className="wrapper">
-      <ul className="tabs">
+    <div className="downCotnent-wrapper">
+      <ul className="downCotnent-tabs">
         {infoArr.map((category, index) => {
           return (
-            <li key={category + index} className={category} onClick={() => setCurrentId(index + 1)}>
+            <li
+              key={category + index}
+              className={category}
+              onClick={() => setCurrentId(index + 1)}
+            >
               {category}
             </li>
           );
         })}
       </ul>
-      <div className="contents">
+      <div className="downCotnent-contents">
         {currentId === 1 && <PerformInfo performanceData={performanceData} />}
         {currentId === 2 && <CastingInfo performanceData={performanceData} />}
         {currentId === 3 && <SalesInfo performanceData={performanceData} />}
