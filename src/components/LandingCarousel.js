@@ -10,9 +10,10 @@ export default function LandingCarousel() {
   return (
     <div id="ladingCarouselBox">
       <Swiper
-        style={{}}
-        spaceBetween={20}
-        centeredSlides={true}
+        slidesPerView={1}
+        spaceBetween={10}
+        centeredSlides={false}
+        navigation={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -24,37 +25,31 @@ export default function LandingCarousel() {
         className="mySwiper2"
       >
         <SwiperSlide>
-          {/* <div className="titleBox">
-            <h1 className="title1">공연 제목</h1>
-            <p className="title2">공연 소제목</p>
-            <p className="sub1">공연 장소</p>
-            <p className="sub2">공연 일자</p>
-          </div> */}
-          <img src="https://picsum.photos/1600/800?random=1" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=1" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=2" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=2" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=3" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=3" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=4" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=4" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=5" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=5" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=6" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=6" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=7" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=7" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=8" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=8" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=9" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=9" />
         </SwiperSlide>
       </Swiper>
       <Swiper
@@ -67,31 +62,31 @@ export default function LandingCarousel() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=1" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=1" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=2" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=2" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=3" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=3" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=4" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=4" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=5" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=5" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=6" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=6" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=7" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=7" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=8" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=8" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/800?random=9" alt="공연제목 바인딩" />
+          <img src="https://picsum.photos/1600/800?random=9" />
         </SwiperSlide>
       </Swiper>
     </div>
