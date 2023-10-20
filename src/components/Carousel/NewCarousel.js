@@ -33,11 +33,12 @@ export default function NewCarousel() {
 
   return (
     <div id="newCarouselBox">
-      <div className="inner">
+      <div className="mainInner2">
         <h1 className="title1">새로 오픈한 공연</h1>
         <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
+          slidesPerView={3}
+          slidesPerGroup={3}
+          spaceBetween={20}
           centeredSlides={false}
           autoplay={{
             delay: 4000,
@@ -57,25 +58,27 @@ export default function NewCarousel() {
             return (
               <SwiperSlide key={performance.mt20id}>
                 <Link to={`/Reservation/${performance.mt20id}`}>
-                      <div className="movieBox">
-                        <div className="posterBox">
-                          <Badge bg="warning">NEW</Badge>
-                          <img
-                            src={performance.poster}
-                            alt={performance.prfnm}
-                            className="poster-image"
-                            style={{ maxWidth: "100%", height: "auto" }}
-                          />
-                          <div className="hoverBox">
-                            <Button variant="light">상세보기</Button>
-                            <Button variant="danger">예매하기</Button>
-                          </div>
-                        </div>
-                        <div className="movieInfoBox">
-                          <strong className="movieName">{performance.prfnm}</strong>
-                          <span>공연장소 : {performance.fcltynm}</span>
-                        </div>
-                      </div>
+                <div className="movieBox">
+                  <div className="posterBox">
+                    <div className="ranknum">{performance.rnum}</div>
+                    <img
+                      src="https://picsum.photos/400/500?random=1"
+                      alt="공연제목 바인딩"
+                      onError
+                    />
+                    <div className="hoverBox">
+                      <Button variant="light">상세보기</Button>
+                      <Button variant="danger">예매하기</Button>
+                    </div>
+                  </div>
+                  <div className="movieInfoBox">
+                    <strong className="movieName">{performance.prfnm}</strong>
+                    <span>{performance.fcltynm}</span>
+                    <span className="movieDate">
+                          공연일자 바인딩 0000.0.0~00.00
+                        </span>
+                  </div>
+                </div>
                 </Link>
               </SwiperSlide>
             );

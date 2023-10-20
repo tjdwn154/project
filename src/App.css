@@ -112,6 +112,7 @@ body{font-family: 'Noto Sans', sans-serif;}
   --bs-navbar-padding-y: 0;
   height: 60px;
   width: 100%;
+  justify-content: end;
 }
 
 #header .inner #nav2 nav .container-fluid .navbar-nav {
@@ -119,7 +120,7 @@ body{font-family: 'Noto Sans', sans-serif;}
   width: 100%;
 }
 #header .inner #nav2 nav .container-fluid .offcanvasNavbar-expand-xl .offcanvas-body{}
-#header .inner #nav2 nav .container-fluid .offcanvasNavbar-expand-xl .offcanvas-body form+div a:not(:last-child){margin-right: 2%;}
+#header .inner #nav2 nav .container-fluid #offcanvasNavbar-expand-xl .offcanvas-body .nav-link:not(:last-child){margin-right: 2%;}
 
 .offcanvas.show {}
 

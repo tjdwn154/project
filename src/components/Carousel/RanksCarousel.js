@@ -36,7 +36,7 @@ export default function RanksCarousel() {
 
   return (
     <div id="ranksCarouselBox">
-      <div className="inner">
+      <div className="mainInner">
         <h1 className="title1">공연차트</h1>
         <Swiper
           slidesPerView={5}
@@ -53,8 +53,7 @@ export default function RanksCarousel() {
                 <Link to={`/Reservation/${performance.mt20id}`}>
                       <div className="movieBox">
                         <div className="posterBox">
-                          <p>{performance.cate}</p> {/* 장르 정보 출력 */}
-                          <p>순위 : {performance.rnum}</p>
+                          <p className="ranknum">{performance.rnum}</p>
                           <img
                             src={"http://www.kopis.or.kr" + performance.poster}
                             alt={performance.prfnm}
@@ -68,6 +67,7 @@ export default function RanksCarousel() {
                         </div>
                         <div className="movieInfoBox">
                           <strong className="movieName">{performance.prfnm}</strong>
+                          <p>{performance.cate}</p> {/* 장르 정보 출력 */}
                           <span>{performance.prfplcnm}</span>
                         </div>
                       </div>
