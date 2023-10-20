@@ -1,15 +1,13 @@
 import React from "react";
-import "./Menu.css";
 
-function Reference() {  
-  return(
+function Reference() {
+  return (
     <>
       <p className="name2">1:1 문의하기</p>
       <div>
         <table>
           {/* <caption>1:1.문의 등록 정보입력</caption>   */}
-          <colgroup>            
-          </colgroup>
+          <colgroup></colgroup>
           <tbody>
             <tr>
               <th className="row">상담분류</th>
@@ -36,7 +34,7 @@ function Reference() {
                       소분류선택
                     </ins>
                   </div> */}
-                </div>                  
+                </div>
               </td>
             </tr>
             <tr>
@@ -68,7 +66,7 @@ function Reference() {
                       <label className="label01">
                         <input type="checkbox"></input>
                         <span className="emailCheck">이메일로 알림 받기</span>
-                      </label>                      
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -101,7 +99,9 @@ function Reference() {
                     <button className="imgBtn">찾아보기</button>
                   </a>
                 </div>
-                <p className="imgImf">10MB 이하의 파일 3개까지 첨부하실 수 있으며 jpg, png, gif, pdf 파일형식만 첨부하실 수 있습니다.</p>
+                <p className="imgImf">
+                  10MB 이하의 파일 3개까지 첨부하실 수 있으며 jpg, png, gif, pdf 파일형식만 첨부하실 수 있습니다.
+                </p>
               </td>
             </tr>
           </tbody>
@@ -110,14 +110,14 @@ function Reference() {
       <div className="btnArea">
         <div>
           <a className="submitBtn">
-            <button onClick={() => ("완료되었습니다.")}>문의하기</button>            
+            <button onClick={() => "완료되었습니다."}>문의하기</button>
           </a>
         </div>
       </div>
       {/* footer */}
       <footer></footer>
-    </>  
-    )
-  }
+    </>
+  );
+}
 
 export default Reference;

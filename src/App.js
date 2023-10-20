@@ -9,7 +9,16 @@ import Login from "./components/member/Login";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Reservation from "./ReservationInfo/Reservation.js";
-import Mypage from "./components/Mypage/Mypage";
+import Mypage from "./components/mypage/Mypage";
+import Check from "./components/mypage/components/Check";
+import Cancel from "./components/mypage/components/Cancel";
+import Epilogue from "./components/mypage/components/Epilogue";
+import Point from "./components/mypage/components/Point";
+import Coupon from "./components/mypage/components/Coupon";
+import Change from "./components/mypage/components/Change";
+import Notice from "./components/mypage/components/Notice";
+import Qs from "./components/mypage/components/Qs";
+import Reference from "./components/mypage/components/Reference";
 
 import Error404 from "./pages/Error404.js";
 import { Routes, Route } from "react-router-dom";
@@ -45,7 +54,18 @@ export default function App() {
         <Route path="/orderComplete" element={<OrderConfirmation />} />
         <Route path="*" element={<Error404 />} />
 
-        <Route path="/mypage" element={<Mypage />} />
+        <Route path="/mypage" element={<Mypage />}>
+          <Route path="" element={<Home />} />
+          <Route path="check" element={<Check />} />
+          <Route path="cancel" element={<Cancel />} />
+          <Route path="epilogue" element={<Epilogue />} />
+          <Route path="point" element={<Point />} />
+          <Route path="coupon" element={<Coupon />} />
+          <Route path="change" element={<Change />} />
+          <Route path="notice" element={<Notice />} />
+          <Route path="qs" element={<Qs />} />
+          <Route path="reference" element={<Reference />} />
+        </Route>
         <Route path="/ticketBuy" element={<MainTicketPage />} />
       </Routes>
     </div>

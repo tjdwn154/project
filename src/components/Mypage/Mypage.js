@@ -22,7 +22,6 @@ function Mypage() {
       </div>
       <div className="box2">
         <Routes>
-          <Route path="" element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/check" element={<Check />} />
           <Route path="/cancel" element={<Cancel />} />
