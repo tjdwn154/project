@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Menu.css";
 import Nav from "react-bootstrap/Nav";
 import TodoBoard from "./List/TodoBoard";
 
