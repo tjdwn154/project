@@ -61,10 +61,11 @@ export default function NewCarousel() {
                 <div className="movieBox">
                   <div className="posterBox">
                     <div className="ranknum">{performance.rnum}</div>
+                    <Badge bg="warning">NEW</Badge>
                     <img
+                      // src={"http://www.kopis.or.kr" + performance.poster}
                       src="https://picsum.photos/400/500?random=1"
-                      alt="공연제목 바인딩"
-                      onError
+                      alt="공연 포스터"
                     />
                     <div className="hoverBox">
                       <Button variant="light">상세보기</Button>
@@ -74,9 +75,7 @@ export default function NewCarousel() {
                   <div className="movieInfoBox">
                     <strong className="movieName">{performance.prfnm}</strong>
                     <span>{performance.fcltynm}</span>
-                    <span className="movieDate">
-                          공연일자 바인딩 0000.0.0~00.00
-                        </span>
+                    <span className="movieDate">{performance.prfpd}</span>
                   </div>
                 </div>
                 </Link>
