@@ -1,3 +1,18 @@
+/* Header.css */
+.HomeHeader {
+  display: flex;
+  position: relative;   
+  float: left;
+  width: 80%;
+  height: 20%;
+  margin: 20px auto;
+  padding: 0 auto;
+  font-weight: bold;
+  font-size: large;
+  background-color: red;
+}
+
+/* main.css */
 .box {
   position: relative;
   margin: 0 auto;
@@ -45,37 +60,37 @@
   padding-bottom: 100%;
 }
 
-.name {
-  font-size: x-large;
+.MypageName {
+  font-size: xx-large;
   font-weight: bold;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
+  /* border-bottom: 1px solid rgb(228, 226, 226); */
+}
+
+.MypageSub1 {
+  padding: 40px 0;
   border-bottom: 1px solid rgb(228, 226, 226);
 }
 
-.sub1 {
+.MypageSub2 {
+  padding: 40px 0;
+  border-bottom: 1px solid rgb(228, 226, 226);
+}
+
+.MypageSub3 {
   padding: 20px 0;
   border-bottom: 1px solid rgb(228, 226, 226);
 }
 
-.sub2 {
-  padding: 20px 0;
-  border-bottom: 1px solid rgb(228, 226, 226);
-}
-
-.sub3 {
-  padding: 20px 0;
-  border-bottom: 1px solid rgb(228, 226, 226);
-}
-
-ul {
+.MypageMenu > div > ul {
   list-style: none;
 }
 
-li {
+.MypageMenu > div > ul > li {
   padding: 8px 0;
 }
 
-.subBtn {
+.MyPageSubBtn {
   text-align: center;
   margin: 50px 0px;
   background-color: rgb(231, 184, 162);
@@ -84,7 +99,7 @@ li {
   border-radius: 5px;
 }
 
-.subBtn > p {
+.MyPageSubBtn > p {
   margin-top: 10px;
 }
 
@@ -104,28 +119,35 @@ a:hover {
 }
 
 .todo-item {
+  margin: 10px;
   float: left;
-  width: 100%;
+  width: 90%;
   height: 50px;
   border: 1px solid lightblue;
 }
 
+/* Check.css */
+.NavList {
+  text-align: center;
+  margin: 10px;
+  padding: 0 35px;
+  /* background-color: red; */
+}
+
 /* Reference.css */
 
-tr {
+.MypageRf > table > tbody> tr {
   font-size: medium;
   border-bottom: 1px solid rgb(228, 226, 226);
-  border-top: 1px solid rgb(228, 226, 226);
-  /* background-color: blue; */
+  border-top: 1px solid rgb(228, 226, 226);   
 }
 
-td {
+.MypageRf > table > tbody> tr > td {
   padding: 10px;
-  margin: 0px auto;
-  /* background-color: green; */
+  margin: 0px auto; 
 }
 
-.row1 {
+.MypageRow {
   position: relative;
   padding: 30px 10px;
   margin: 0px auto;
@@ -143,13 +165,12 @@ td {
   width: 30%;
 }
 
-.about {
+.RfAbout {
   margin: -5px 30px;
   padding: 5px;
   position: absolute;
   border-radius: 5px;
-  border-color: rgb(228, 226, 226);
-  background-color: white;
+  border-color: rgb(228, 226, 226);  
 }
 
 .textInp01 {
@@ -193,16 +214,17 @@ td {
   color: rgb(71, 90, 197);
 }
 
-.imgBtn {
+.RfBtn {
+  padding: 5px;
   margin: 10px;
   border-radius: 5px;
-  border-color: rgb(228, 226, 226);
+  border-color: rgb(228, 226, 226);  
 }
 
-.submitBtn {
+.RfSubmitBtn {
   float: right;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 5px;  
 }
 
 /* Notice.css */

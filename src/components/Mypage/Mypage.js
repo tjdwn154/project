@@ -1,8 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Mypage.css";
+import "./Mypage1.css";
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
 import Menu from "./components/Menu";
 import Check from "./components/Check";
 import Cancel from "./components/Cancel";
@@ -13,16 +12,17 @@ import Change from "./components/Change";
 import Notice from "./components/Notice";
 import Qs from "./components/Qs";
 import Reference from "./components/Reference";
+import Footer from "../Footer";
 
 function Mypage() {
   return (
+    <>
     <div className="box">
       <div className="box1">
         <Menu />
       </div>
       <div className="box2">
         <Routes>
-          <Route path="/" element={<Home />} />
           <Route path="/check" element={<Check />} />
           <Route path="/cancel" element={<Cancel />} />
           <Route path="/epilogue" element={<Epilogue />} />
@@ -35,6 +35,8 @@ function Mypage() {
         </Routes>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
 

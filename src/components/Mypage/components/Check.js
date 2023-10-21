@@ -34,9 +34,9 @@ function Check() {
           <Nav.Item>
             <p className="NavList">예매상태</p>
           </Nav.Item>
-          <Nav.Item>
+          {/* <Nav.Item>
             <Nav.Link eventKey="disabled" disabled></Nav.Link>
-          </Nav.Item>
+          </Nav.Item> */}
         </Nav>
         <main>
           {/* <input value={inputValue} type="text" onChange=

@@ -1,16 +1,17 @@
 import React from "react";
 
 function Reference() {
+  function clickHandler() {
+    alert('제출되었습니다.')
+  }
   return (
     <>
       <p className="name2">1:1 문의하기</p>
-      <div>
-        <table>
-          {/* <caption>1:1.문의 등록 정보입력</caption>   */}
-          <colgroup></colgroup>
+      <div className="MypageRf">
+        <table>       
           <tbody>
             <tr>
-              <th className="row1">상담분류</th>
+              <th className="MypageRow">상담분류</th>
               <td>
                 <div className="fArea">
                   <div className="formWrap">
@@ -38,22 +39,22 @@ function Reference() {
               </td>
             </tr>
             <tr>
-              <th className="row1">주문정보</th>
+              <th className="MypageRow">주문정보</th>
               <td>
                 <input type="text" className="textInp" id="ORDER_REFERENCE" readOnly></input>
                 <a>
-                  <button className="about">주문상품조회</button>
+                  <button className="RfAbout">주문상품조회</button>
                 </a>
               </td>
             </tr>
             <tr>
-              <th className="row1">제목</th>
+              <th className="MypageRow">제목</th>
               <td>
                 <input type="text" className="textInp01"></input>
               </td>
             </tr>
             <tr>
-              <th className="row1">답변알림요청</th>
+              <th className="MypageRow">답변알림요청</th>
               <td>
                 <div>
                   <div className="email">
@@ -73,30 +74,30 @@ function Reference() {
               </td>
             </tr>
             <tr>
-              <th className="row1">문의 내용</th>
+              <th className="MypageRow">문의 내용</th>
               <td>
                 <textarea title="문의내용 입력" className="textarea01" placeholder=""></textarea>
               </td>
             </tr>
             <tr>
-              <th className="row1">파일첨부</th>
+              <th className="MypageRow">파일첨부</th>
               <td>
                 <div className="fileBlock">
                   <input type="text" id="imageAdd1" readOnly className="img01"></input>
                   <a href="#">
-                    <button className="imgBtn">찾아보기</button>
+                    <button className="RfBtn">찾아보기</button>
                   </a>
                 </div>
                 <div className="fileBlock">
                   <input type="text" id="imageAdd2" readOnly className="img01"></input>
                   <a href="#">
-                    <button className="imgBtn">찾아보기</button>
+                    <button className="RfBtn">찾아보기</button>
                   </a>
                 </div>
                 <div className="fileBlock">
                   <input type="text" id="imageAdd3" readOnly className="img01"></input>
                   <a href="#">
-                    <button className="imgBtn">찾아보기</button>
+                    <button className="RfBtn">찾아보기</button>
                   </a>
                 </div>
                 <p className="imgImf">
@@ -109,8 +110,8 @@ function Reference() {
       </div>
       <div className="btnArea">
         <div>
-          <a className="submitBtn">
-            <button onClick={() => "완료되었습니다."}>문의하기</button>
+          <a className="RfSubmitBtn">
+            <button onClick={clickHandler} className="RfSubmitBtn">문의하기</button>
           </a>
         </div>
       </div>
