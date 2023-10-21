@@ -3,18 +3,19 @@ import React, { useState } from "react";
 
 const MyticketInfo = (props) => {
   const { performanceData } = props;
+
   return (
     <div id="myticketInfo-content">
       <div id="myticketInfo-inner">
-        <img src="https://ticketimage.interpark.com/Play/image/large/23/23006740_p.gif" />
+        <img src={performanceData.poster} />
         <div id="myticketInfo-inner-content">
           <h1>
             뮤지컬 {"<"}오페라의 유령{">"} - 서울
           </h1>
-          <p className="myticketInfo">2023.10.10 -</p>
-          <p className="myticketInfo">2023.11.19</p>
-          <p className="myticketInfo">샤롯데씨어터</p>
-          <p className="myticketInfo">관람시간: 150분</p>
+          <p className="myticketInfo">{performanceData.prfpdfrom}</p>
+          <p className="myticketInfo">{performanceData.prfpdto}</p>
+          <p className="myticketInfo">{performanceData.fcltynm}</p>
+          <p className="myticketInfo">관람 시간 : {performanceData.prfruntime}</p>
         </div>
       </div>
 
@@ -22,7 +23,7 @@ const MyticketInfo = (props) => {
         <div id="choose-myinfo">
           <p className="choose-title">MY예매정보</p>
           <div id="choose-title-box">
-            <p className="choose-inner-info">관람날짜</p>
+            <p className="choose-inner-info">선택좌석</p>
             <p className="choose-inner-info">티켓금액</p>
           </div>
         </div>
@@ -33,10 +34,7 @@ const MyticketInfo = (props) => {
           <p className="price-info">원</p>
         </div>
 
-        <button
-          id="reservation-ing-btn"
-          onClick={props.saveCustomerDataHandler}
-        >
+        <button id="reservation-ing-btn" onClick={props.saveCustomerDataHandler}>
           예매하기
         </button>
       </div>

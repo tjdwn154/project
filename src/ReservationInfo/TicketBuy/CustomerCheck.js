@@ -1,7 +1,14 @@
 import "./CustomerCheck.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import CustomerInfoCheck from "./CustomerInfoCheck";
 
 const CustomerCheck = (props) => {
+  const navigate = useNavigate();
+  const reserveCheckHandler = () => {
+    navigate("/reserveInfo");
+  };
+
   const [enteredName, setName] = useState("");
   const [enteredBirth, setBirth] = useState("");
   const [enteredNum, setNum] = useState("");
@@ -20,30 +27,21 @@ const CustomerCheck = (props) => {
     setEmail(e.currentTarget.value);
   };
 
-  const customerInfo = {
-    name: enteredName,
-    birth: enteredBirth,
-    num: enteredNum,
-    email: enteredEmail,
-  };
-  console.log("customerCheck 내부 정보", customerInfo);
-  props.saveCustomerData(customerInfo);
+  // const saveCustomerDataHandler = (enteredInfo) => {
+  //   const customerInfo = {
+  //     ...enteredInfo,
+  //   };
+  // };
 
   return (
     <div id="customerContent">
+      <CustomerInfoCheck name={enteredName} birth={enteredBirth} num={enteredNum} email={enteredEmail} />
       <h2>예매자 확인</h2>
       <form id="customerForm">
         <ul>
           <li className="customer-formList">
             <label id="name">이름</label>
-            <input
-              id="name"
-              type="text"
-              maxLength="4"
-              required
-              value={enteredName}
-              onChange={onNameHandler}
-            />
+            <input id="name" type="text" maxLength="4" required value={enteredName} onChange={onNameHandler} />
           </li>
           <li className="customer-formList">
             <label id="birth">생년월일</label>
@@ -61,10 +59,10 @@ const CustomerCheck = (props) => {
             </p>
           </li>
           <li className="customer-formList">
-            <label id="cu-num">연락처</label>
+            <label id="num">연락처</label>
             <input
-              className="cu-num"
-              id="cu-num"
+              className="num"
+              id="num"
               type="text"
               minLength="10"
               maxLength="11"
@@ -77,17 +75,13 @@ const CustomerCheck = (props) => {
             </p>
           </li>
           <li className="customer-formList">
-            <label id="cu-email">이메일</label>
-            <input
-              id="cu-email"
-              type="email"
-              required
-              value={enteredEmail}
-              onChange={onEmailHandler}
-            />
+            <label id="email">이메일</label>
+            <input id="email" type="email" required value={enteredEmail} onChange={onEmailHandler} />
           </li>
         </ul>
-        <button id="customer-btn">다음</button>
+        <button id="customer-btn" onClick={reserveCheckHandler}>
+          다음
+        </button>
       </form>
     </div>
   );

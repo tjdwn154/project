@@ -19,6 +19,7 @@ import Change from "./components/Mypage/components/Change";
 import Notice from "./components/Mypage/components/Notice";
 import Qs from "./components/Mypage/components/Qs";
 import Reference from "./components/Mypage/components/Reference";
+import CustomerInfoCheck from "./ReservationInfo/TicketBuy/CustomerInfoCheck";
 
 import Error404 from "./pages/Error404.js";
 import { Routes, Route } from "react-router-dom";
@@ -52,6 +53,8 @@ export default function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/orderComplete" element={<OrderConfirmation />} />
+        <Route path="/ticketBuy" element={<MainTicketPage />} />
+        <Route path="/reserveInfo" element={<CustomerInfoCheck />} />
         <Route path="*" element={<Error404 />} />
 
         <Route path="/mypage" element={<Mypage />}>
@@ -66,7 +69,6 @@ export default function App() {
           <Route path="qs" element={<Qs />} />
           <Route path="reference" element={<Reference />} />
         </Route>
-        <Route path="/ticketBuy" element={<MainTicketPage />} />
       </Routes>
     </div>
   );

@@ -51,26 +51,26 @@ export default function RanksCarousel() {
             return (
               <SwiperSlide key={performance.mt20id}>
                 <Link to={`/Reservation/${performance.mt20id}`}>
-                      <div className="movieBox">
-                        <div className="posterBox">
-                          <p className="ranknum">{performance.rnum}</p>
-                          <img
-                            src={"http://www.kopis.or.kr" + performance.poster}
-                            alt={performance.prfnm}
-                            className="poster-image"
-                            style={{ maxWidth: "100%", height: "auto" }}
-                          />
-                          <div className="hoverBox">
-                            <Button variant="light">상세보기</Button>
-                            <Button variant="danger">예매하기</Button>
-                          </div>
-                        </div>
-                        <div className="movieInfoBox">
-                          <strong className="movieName">{performance.prfnm}</strong>
-                          <p>{performance.cate}</p> {/* 장르 정보 출력 */}
-                          <span>{performance.prfplcnm}</span>
-                        </div>
+                  <div className="movieBox">
+                    <div className="posterBox">
+                      <p className="ranknum">{performance.rnum}</p>
+                      <img
+                        src={"http://www.kopis.or.kr" + performance.poster}
+                        alt={performance.prfnm}
+                        className="poster-image"
+                        style={{ maxWidth: "100%", height: "auto" }}
+                      />
+                      <div className="hoverBox">
+                        <Button variant="light">상세보기</Button>
+                        <Button variant="danger">예매하기</Button>
                       </div>
+                    </div>
+                    <div className="movieInfoBox">
+                      <strong className="movieName">{performance.prfnm}</strong>
+                      <p>{performance.cate}</p> {/* 장르 정보 출력 */}
+                      <span>{performance.prfplcnm}</span>
+                    </div>
+                  </div>
                 </Link>
               </SwiperSlide>
             );

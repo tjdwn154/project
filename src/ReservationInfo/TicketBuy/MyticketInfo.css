@@ -5,6 +5,7 @@
   height: 630px;
   border: 1px solid black;
   border-radius: 20px;
+  padding: 18px;
 }
 
 #myticketInfo-inner {
@@ -34,6 +35,7 @@
   margin: 0px;
 }
 
+/* my 예매정보 */
 .choose-info {
   display: flex;
 }
@@ -45,8 +47,8 @@
 .choose-title {
   font-size: 20px;
   font-weight: 600;
-  padding-top: 35px;
-  padding-left: 25px;
+  padding-top: 25px;
+  padding-left: 15px;
   text-align: left;
 }
 
@@ -54,9 +56,10 @@
   border: 1px solid rgb(112, 112, 112);
   border-radius: 5px;
   width: 400px;
-  height: 90px;
+  height: 80px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 10px;
+  padding-left: 20px;
 }
 
 .choose-inner-info {
@@ -73,7 +76,7 @@
   width: 400px;
   height: 70px;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 10px 5px;
 }
 

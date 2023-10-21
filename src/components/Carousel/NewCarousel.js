@@ -58,26 +58,26 @@ export default function NewCarousel() {
             return (
               <SwiperSlide key={performance.mt20id}>
                 <Link to={`/Reservation/${performance.mt20id}`}>
-                <div className="movieBox">
-                  <div className="posterBox">
-                    <div className="ranknum">{performance.rnum}</div>
-                    <Badge bg="warning">NEW</Badge>
-                    <img
-                      // src={"http://www.kopis.or.kr" + performance.poster}
-                      src="https://picsum.photos/400/500?random=1"
-                      alt="공연 포스터"
-                    />
-                    <div className="hoverBox">
-                      <Button variant="light">상세보기</Button>
-                      <Button variant="danger">예매하기</Button>
+                  <div className="movieBox">
+                    <div className="posterBox">
+                      <div className="ranknum">{performance.rnum}</div>
+                      <Badge bg="warning">NEW</Badge>
+                      <img
+                        src={performance.poster}
+                        // src="https://picsum.photos/400/500?random=1"
+                        alt="공연 포스터"
+                      />
+                      <div className="hoverBox">
+                        <Button variant="light">상세보기</Button>
+                        <Button variant="danger">예매하기</Button>
+                      </div>
+                    </div>
+                    <div className="movieInfoBox">
+                      <strong className="movieName">{performance.prfnm}</strong>
+                      <span>{performance.fcltynm}</span>
+                      <span className="movieDate">{performance.prfpd}</span>
                     </div>
                   </div>
-                  <div className="movieInfoBox">
-                    <strong className="movieName">{performance.prfnm}</strong>
-                    <span>{performance.fcltynm}</span>
-                    <span className="movieDate">{performance.prfpd}</span>
-                  </div>
-                </div>
                 </Link>
               </SwiperSlide>
             );
