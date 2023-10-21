@@ -54,16 +54,18 @@ export default function App() {
             )
           }
         ></Route>
+        {/* 예매페이지: */}
         <Route path="/Reservation/:mt20id" element={<Reservation />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/orderComplete" element={<OrderConfirmation />} />
-        {/* 고객센터: */}
+        {/* 고객센터페이지: */}
         <Route path="/cs" element={<CS />}>
           <Route path="notice" element={<CSNotice />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="contact" element={<ContactUs />} />
-        </Route>  
+        </Route>
+        {/* 마이페이지: */}
         <Route path="/mypage" element={<Mypage />}>
           <Route path="" element={<Home />} />
           <Route path="check" element={<Check />} />

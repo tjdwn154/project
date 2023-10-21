@@ -36,7 +36,9 @@ export default function CS() {
           </li>
         </ul>
       </nav>
+      <p>메뉴를 선택해 주세요</p>
       <div className="container">
+        
         <Outlet></Outlet>
       </div>
       <Footer />
