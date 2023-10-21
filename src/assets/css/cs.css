@@ -1,0 +1,166 @@
+#csWrap {
+  height: 100%;
+}
+#csWrap > .container {
+  min-height: 60vh;
+  padding: 120px 0 5%;
+}
+#csWrap nav ul {
+  display: flex;
+  margin-bottom: 0;
+}
+#csWrap a {
+  text-decoration: none;
+}
+#subheader .on {
+  color: var(--primary-color1);
+}
+#subHeader {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #252421;
+  transition: all 0.4s;
+  background: linear-gradient(-45deg, rgba(220, 218, 215, 0.6), transparent);
+}
+#subHeader .inner {
+  margin: 0 auto;
+  padding: 0 1% 0 2%;
+}
+#subHeader .inner nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+#subHeader .inner nav h1 {
+  margin-left: 10px;
+}
+#subHeader .inner nav h1 a {
+}
+#subHeader .inner nav h1 a img {
+  display: block;
+  height: 40px;
+  padding: 5px;
+}
+#subHeader .inner nav ul {
+  height: 60px;
+}
+
+#subHeader .inner nav ul li {
+  padding: 5px 10px;
+}
+#subHeader .inner nav ul li:not(:last-child) {
+  margin-right: 33px;
+}
+#subHeader .inner nav ul li:hover {
+  border-bottom: 3px solid var(--primary-color1);
+}
+#subHeader .inner nav ul li:hover a {
+  color: var(--primary-color1);
+}
+#subHeader .inner nav ul li a {
+  font-weight: 500;
+  font-size: 14px;
+  color: #d1c3a6;
+}
+#csNav {
+  width: 100%;
+  height: 78px;
+  line-height: 78px;
+  position: fixed;
+  top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid #e6e3df;
+}
+#csNav h2 {
+  font-size: 18px;
+  height: 64px;
+  margin: 0 48px 0 32px;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 64px;
+}
+#csNav h2 ul {
+  overflow: hidden;
+  padding: 30px 0;
+  align-items: center;
+}
+#csNav ul li {
+  transition: all 0.4s;
+  padding: 5px 10px;
+  height: 60px;
+  line-height: 60px;
+}
+#csNav ul li:not(:last-child) {
+  margin-right: 33px;
+}
+#csNav ul li:hover {
+  border-bottom: 3px solid var(--primary-color1);
+}
+#csNav ul li a {
+  text-align: center;
+  color: #252421;
+}
+#csNav ul li:hover a {
+  color: var(--primary-color1);
+}
+#noticeWrap {
+}
+#csWrap h3 {
+  padding-bottom: 13px;
+  font-size: 24px;
+  color: var(--primary-color1);
+  font-weight: bold;
+}
+#noticeWrap p {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 40px;
+}
+#noticeWrap table {
+  --bs-table-striped-bg: transparent !important;
+}
+#noticeWrap table .table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-bg-type: transparent;
+}
+#noticeWrap table th {
+  height: 60px px;
+  font-weight: 500;
+  border-top: 1px solid var(--primary-color2);
+  color: var(--primary-color1);
+}
+#noticeWrap .pagination {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  --bs-pagination-color: rgba(0, 0, 0, 0.6);
+  --bs-pagination-hover-color: var(--primary-color1);
+  --bs-pagination-active-color: var(--primary-color1);
+  /* 보더용: */
+  --bs-pagination-border-color: none;
+  --bs-pagination-active-border-color: none;
+  --bs-pagination-hover-border-color: none;
+  /* 배경용: */
+  --bs-pagination-hover-bg: none;
+  --bs-pagination-active-bg: none;
+}
+#noticeWrap li.page-item a span {
+  color: var(--primary-color1);
+}
+#noticeWrap .page-item.active span {
+  font-weight: bold;
+}
+
+#contactWrap {
+}
+#contactWrap input.textArea {
+  height: 7.25em !important;
+  border-radius: 4px;
+  color: #393939;
+}

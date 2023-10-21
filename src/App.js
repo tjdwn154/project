@@ -1,14 +1,16 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./App.css";
+// 메인:
 import Home from "./pages/Home.js";
-import OrderConfirmation from "./pages/OrderConfirmation.js";
 import Loading from "./components/Loading";
 import SignUp from "./components/member/Signup";
 import Login from "./components/member/Login";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+// 예매:
 import Reservation from "./ReservationInfo/Reservation.js";
+import OrderConfirmation from "./pages/OrderConfirmation.js";
 import Mypage from "./components/Mypage/Mypage";
 import Check from "./components/Mypage/components/Check";
 import Cancel from "./components/Mypage/components/Cancel";
@@ -19,8 +21,11 @@ import Change from "./components/Mypage/components/Change";
 import Notice from "./components/Mypage/components/Notice";
 import Qs from "./components/Mypage/components/Qs";
 import Reference from "./components/Mypage/components/Reference";
-import CustomerInfoCheck from "./ReservationInfo/TicketBuy/CustomerInfoCheck";
-
+// 고객센터:
+import CS from "./pages/CS";
+import ContactUs from "./pages/ContactUs";
+import FAQ from "./pages/FAQ";
+import CSNotice from "./pages/CSNotice";
 import Error404 from "./pages/Error404.js";
 import { Routes, Route } from "react-router-dom";
 import MainTicketPage from "./ReservationInfo/TicketBuy/MainTicketPage";
@@ -53,10 +58,12 @@ export default function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/orderComplete" element={<OrderConfirmation />} />
-        <Route path="/ticketBuy" element={<MainTicketPage />} />
-        <Route path="/reserveInfo" element={<CustomerInfoCheck />} />
-        <Route path="*" element={<Error404 />} />
-
+        {/* 고객센터: */}
+        <Route path="/cs" element={<CS />}>
+          <Route path="notice" element={<CSNotice />} />
+          <Route path="faq" element={<FAQ />} />
+          <Route path="contact" element={<ContactUs />} />
+        </Route>  
         <Route path="/mypage" element={<Mypage />}>
           <Route path="" element={<Home />} />
           <Route path="check" element={<Check />} />
@@ -69,6 +76,10 @@ export default function App() {
           <Route path="qs" element={<Qs />} />
           <Route path="reference" element={<Reference />} />
         </Route>
+        <Route path="/ticketBuy" element={<MainTicketPage />} />
+
+
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </div>
   );

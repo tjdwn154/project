@@ -1,20 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useNavigate, Link, Outlet } from "react-router-dom";
 import { EmailModal } from "../components/EmailModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
 import ConfirmationLoading from "../components/ConfirmationLoading";
 import { gsap } from "gsap";
-
 export default function OrderConfirmation() {
   const [isClicked, setIsClicked] = useState(false);
   useEffect(() => {
     gsap.fromTo("#confirmationLoadingWrap", { opacity: 1 }, { opacity: 0.8, display: "none", duration: 1.5 });
   });
-
-  const location = useLocation();
-  const performanceData = location.state.performanceData;
-
   return (
     <div id="orderCononfirmationWrap">
       <ConfirmationLoading />
@@ -59,7 +54,7 @@ export default function OrderConfirmation() {
         <div className="bottom">
           <div className="orderReceipt">
             <div className="left">
-              <img src={performanceData.poster} alt="구매한 영화 포스터" />
+              <img src="https://picsum.photos/70/100?random=1" alt="구매한 영화 포스터" />
             </div>
             <div className="right">
               <p>
