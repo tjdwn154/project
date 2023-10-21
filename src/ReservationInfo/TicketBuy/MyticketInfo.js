@@ -1,8 +1,14 @@
 import "./MyticketInfo.css";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const MyticketInfo = (props) => {
   const { performanceData } = props;
+  const navigate = useNavigate();
+
+  const handleOrderClick = () => {
+    navigate("/orderComplete", { state: { performanceData } });
+  };
 
   return (
     <div id="myticketInfo-content">
@@ -10,7 +16,8 @@ const MyticketInfo = (props) => {
         <img src={performanceData.poster} />
         <div id="myticketInfo-inner-content">
           <h1>
-            뮤지컬 {"<"}오페라의 유령{">"} - 서울
+            {performanceData.genrenm} {"<"} {performanceData.prfnm}
+            {">"}
           </h1>
           <p className="myticketInfo">{performanceData.prfpdfrom}</p>
           <p className="myticketInfo">{performanceData.prfpdto}</p>
@@ -34,7 +41,7 @@ const MyticketInfo = (props) => {
           <p className="price-info">원</p>
         </div>
 
-        <button id="reservation-ing-btn" onClick={props.saveCustomerDataHandler}>
+        <button id="reservation-ing-btn" onClick={handleOrderClick}>
           예매하기
         </button>
       </div>
