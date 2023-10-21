@@ -27,13 +27,14 @@ router.post("/api/signup", async (req, res) => {
   }
 });
 
+// 유효성 검사 API
 router.get("/api/check-id", (req, res) => {
   const memberId = req.query.memberId;
 
   const checkId = "SELECT COUNT(*) as count FROM member WHERE memberId = ?";
   db.query(checkId, [memberId], (err, checkResult) => {
     if (err) {
-      return res.status(500).json({ error: "아이디 중복 검사 중 오류가 발생했습니다." });
+      return res.status(500).json({ error: "아이디 중복 검사 오류" });
     }
 
     const exists = checkResult[0].count > 0;

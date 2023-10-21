@@ -10,7 +10,7 @@ function Reference() {
           <colgroup></colgroup>
           <tbody>
             <tr>
-              <th className="row">상담분류</th>
+              <th className="row1">상담분류</th>
               <td>
                 <div className="fArea">
                   <div className="formWrap">
@@ -38,7 +38,7 @@ function Reference() {
               </td>
             </tr>
             <tr>
-              <th className="row">주문정보</th>
+              <th className="row1">주문정보</th>
               <td>
                 <input type="text" className="textInp" id="ORDER_REFERENCE" readOnly></input>
                 <a>
@@ -47,13 +47,13 @@ function Reference() {
               </td>
             </tr>
             <tr>
-              <th className="row">제목</th>
+              <th className="row1">제목</th>
               <td>
                 <input type="text" className="textInp01"></input>
               </td>
             </tr>
             <tr>
-              <th className="row">답변알림요청</th>
+              <th className="row1">답변알림요청</th>
               <td>
                 <div>
                   <div className="email">
@@ -73,13 +73,13 @@ function Reference() {
               </td>
             </tr>
             <tr>
-              <th className="row">문의 내용</th>
+              <th className="row1">문의 내용</th>
               <td>
                 <textarea title="문의내용 입력" className="textarea01" placeholder=""></textarea>
               </td>
             </tr>
             <tr>
-              <th className="row">파일첨부</th>
+              <th className="row1">파일첨부</th>
               <td>
                 <div className="fileBlock">
                   <input type="text" id="imageAdd1" readOnly className="img01"></input>
