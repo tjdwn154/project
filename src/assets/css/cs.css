@@ -2,19 +2,25 @@
   height: 100%;
 }
 #csWrap > .container {
-  min-height: 60vh;
+  min-height: 70vh;
   padding: 120px 0 5%;
+}
+#csWrap > .container h3 + p {
+  margin-bottom: 45px;
 }
 #csWrap nav ul {
   display: flex;
+  align-items: center;
   margin-bottom: 0;
 }
 #csWrap a {
   text-decoration: none;
 }
-#subheader .on {
+
+#csWrap.on {
   color: var(--primary-color1);
 }
+
 #subHeader {
   position: relative;
   width: 100%;
@@ -92,7 +98,6 @@
   align-items: center;
 }
 #csNav ul li {
-  transition: all 0.4s;
   padding: 5px 10px;
   height: 60px;
   line-height: 60px;
@@ -122,13 +127,14 @@
   color: rgba(0, 0, 0, 0.8);
   margin-bottom: 40px;
 }
-#noticeWrap table {
+#noticeWrap .table {
   --bs-table-striped-bg: transparent !important;
+  --bs-table-hover-bg: var(--primary-color1);
 }
-#noticeWrap table .table-striped > tbody > tr:nth-of-type(odd) > * {
+#noticeWrap .table .table-striped > tbody > tr:nth-of-type(odd) > * {
   --bs-table-bg-type: transparent;
 }
-#noticeWrap table th {
+#noticeWrap .table th {
   height: 60px px;
   font-weight: 500;
   border-top: 1px solid var(--primary-color2);
@@ -156,11 +162,50 @@
 #noticeWrap .page-item.active span {
   font-weight: bold;
 }
-
-#contactWrap {
+#faqWrap .accordian {
+  --bs-accordion-active-bg: var(--primary-color1) !important;
 }
-#contactWrap input.textArea {
-  height: 7.25em !important;
+#contactWrap .inline2in1 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1.25rem;
+}
+#contactWrap .inline2in1 .mb-3 {
+  width: 50%;
+}
+#contactWrap form {
+  padding-top: 48px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+#contactWrap form input.textArea {
+  height: 20vh;
+  max-height: 400px;
   border-radius: 4px;
   color: #393939;
+}
+#contactWrap form label.form-label {
+  color: #393939;
+  cursor: default;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.125rem;
+  /* 드래그 방지: */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#contactWrap button {
+  width: 100%;
+  --bs-btn-color: #393939;
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--primary-color1);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--primary-color1);
+  --bs-btn-hover-border-color: var(--primary-color1);
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--primary-color1);
 }

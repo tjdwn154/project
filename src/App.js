@@ -61,7 +61,7 @@ export default function App() {
         <Route path="/orderComplete" element={<OrderConfirmation />} />
         {/* 고객센터페이지: */}
         <Route path="/cs" element={<CS />}>
-          <Route path="notice" element={<CSNotice />} />
+          <Route index element={<CSNotice />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="contact" element={<ContactUs />} />
         </Route>

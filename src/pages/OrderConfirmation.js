@@ -70,8 +70,8 @@ export default function OrderConfirmation() {
           </div>
         </div>
         <div className="btnBox">
-          <Button variant="primary">예매내역 확인</Button>
-          <Button variant="primary">더 둘러보기</Button>
+          <Link to="/mypage"><Button variant="primary">예매내역 확인</Button></Link>
+          <Link to="/"><Button variant="primary">더 둘러보기</Button></Link>
         </div>
       </div>
       {isClicked ? <EmailModal setIsClicked={setIsClicked} /> : null}

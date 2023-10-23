@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useLocation } from "react-router-dom";
+
 export const EmailModal = (props) => {
   const form = useRef();
-
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -22,7 +23,7 @@ export const EmailModal = (props) => {
         }
       );
   };
-
+  const [isSend, setIsSend] = useState(false);
   return (
     <div id="emailModalWrap">
       <div className="container">
@@ -46,8 +47,11 @@ export const EmailModal = (props) => {
             />
             <input
               type="submit"
-              value="발송"
+              value={isSend ? "완료" : "발송"}
               className="submitBtn btn btn--primary btn--inside uppercase"
+              onClick={() => {
+                setIsSend(!isSend);
+              }}
             />
           </form>
         </div>

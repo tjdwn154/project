@@ -26,7 +26,7 @@ export default function CS() {
         <h2>CUSTOMER SERVICE</h2>
         <ul>
           <li>
-            <Link to="/cs/notice">공지사항</Link>
+            <Link to="/cs">공지사항</Link>
           </li>
           <li>
             <Link to="/cs/faq">FAQ</Link>
@@ -36,7 +36,6 @@ export default function CS() {
           </li>
         </ul>
       </nav>
-      <p>메뉴를 선택해 주세요</p>
       <div className="container">
         
         <Outlet></Outlet>

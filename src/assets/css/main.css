@@ -44,7 +44,7 @@
 
 .movieBox .posterBox img {
   width: 100%;
-  max-height: 280px;
+  height: 280px !important;
   border-radius: 4px;
 }
 
