@@ -9,8 +9,6 @@ import Epilogue from "./components/Epilogue";
 import Point from "./components/Point";
 import Coupon from "./components/Coupon";
 import Change from "./components/Change";
-import Notice from "./components/Notice";
-import Qs from "./components/Qs";
 import Reference from "./components/Reference";
 import Footer from "../Footer";
 
@@ -28,9 +26,7 @@ function Mypage() {
           <Route path="/epilogue" element={<Epilogue />} />
           <Route path="/point" element={<Point />} />
           <Route path="/coupon" element={<Coupon />} />
-          <Route path="/change" element={<Change />} />
-          <Route path="/notice" element={<Notice />} />
-          <Route path="/qs" element={<Qs />} />
+          <Route path="/change" element={<Change />} />          
           <Route path="/reference" element={<Reference />} />
         </Routes>
       </div>

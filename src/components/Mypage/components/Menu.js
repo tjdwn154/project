@@ -33,20 +33,20 @@ const Menu = () => {
             <li>
               <Link to="/mypage/change">회원정보 수정</Link>
             </li>
+            <li>
+              <Link to="/mypage/reference">1:1문의</Link>
+            </li>
           </ul>
         </div>
         <div>
-          <ul className="MypageSub3">
+          {/* <ul className="MypageSub3">
             <li>
               <Link to="/mypage/notice">공지사항</Link>
             </li>
             <li>
               <Link to="/mypage/qs">자주묻는질문</Link>
-            </li>
-            <li>
-              <Link to="/mypage/reference">1:1문의</Link>
-            </li>
-          </ul>
+            </li>            
+          </ul> */}
           <div>
             <button type="button" className="MyPageSubBtn">
               {/* 쿠폰입력 */}

@@ -68,19 +68,19 @@
 }
 
 .MypageSub1 {
-  padding: 40px 0;
+  padding: 60px 0;
   border-bottom: 1px solid rgb(228, 226, 226);
 }
 
 .MypageSub2 {
-  padding: 40px 0;
+  padding: 60px 0;
   border-bottom: 1px solid rgb(228, 226, 226);
 }
 
-.MypageSub3 {
+/* .MypageSub3 {
   padding: 20px 0;
   border-bottom: 1px solid rgb(228, 226, 226);
-}
+} */
 
 .MypageMenu > div > ul {
   list-style: none;
