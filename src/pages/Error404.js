@@ -1,6 +1,12 @@
 import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 export default function Error404() {
+  const navigate = useNavigate();
+
+  const toHome = () => {
+    navigate("/");
+  };
   useEffect(() => {
     gsap.set("svg", { visibility: "visible" });
     gsap.to("headStripeRef", {
@@ -9,7 +15,7 @@ export default function Error404() {
       yoyo: true,
       repeat: -1,
       ease: "sine.inOut",
-      duration: 1
+      duration: 1,
     });
     gsap.to("#spaceman", {
       y: 0.5,
@@ -17,21 +23,21 @@ export default function Error404() {
       yoyo: true,
       repeat: -1,
       ease: "sine.inOut",
-      duration: 1
+      duration: 1,
     });
     gsap.to("#craterSmall", {
       x: -3,
       yoyo: true,
       repeat: -1,
       duration: 1,
-      ease: "sine.inOut"
+      ease: "sine.inOut",
     });
     gsap.to("#craterBig", {
       x: 3,
       yoyo: true,
       repeat: -1,
       duration: 1,
-      ease: "sine.inOut"
+      ease: "sine.inOut",
     });
     gsap.to("#planet", {
       rotation: -2,
@@ -39,14 +45,14 @@ export default function Error404() {
       repeat: -1,
       duration: 1,
       ease: "sine.inOut",
-      transformOrigin: "50% 50%"
+      transformOrigin: "50% 50%",
     });
     gsap.to("#starsBig g", {
       rotation: "random(-30,30)",
       transformOrigin: "50% 50%",
       yoyo: true,
       repeat: -1,
-      ease: "sine.inOut"
+      ease: "sine.inOut",
     });
     gsap.fromTo(
       "#starsSmall g",
@@ -56,7 +62,7 @@ export default function Error404() {
         transformOrigin: "50% 50%",
         yoyo: true,
         repeat: -1,
-        stagger: 0.1
+        stagger: 0.1,
       }
     );
     gsap.to("#circlesSmall circle", {
@@ -64,14 +70,14 @@ export default function Error404() {
       yoyo: true,
       duration: 1,
       ease: "sine.inOut",
-      repeat: -1
+      repeat: -1,
     });
     gsap.to("#circlesBig circle", {
       y: -2,
       yoyo: true,
       duration: 1,
       ease: "sine.inOut",
-      repeat: -1
+      repeat: -1,
     });
     gsap.set("#glassShine", { x: -68 });
     gsap.to("#glassShine", {
@@ -82,7 +88,7 @@ export default function Error404() {
       transformOrigin: "50% 50%",
       repeat: -1,
       repeatDelay: 8,
-      delay: 2
+      delay: 2,
     });
   }, []);
   return (
@@ -511,43 +517,13 @@ export default function Error404() {
                     />
                   </g>
                   <g id="circlesSmall">
-                    <circle
-                      fill="#0E0620"
-                      cx="549.879"
-                      cy="296.402"
-                      r="2.651"
-                    />
+                    <circle fill="#0E0620" cx="549.879" cy="296.402" r="2.651" />
                     <circle fill="#0E0620" cx="253.29" cy="229.24" r="2.651" />
-                    <circle
-                      fill="#0E0620"
-                      cx="434.824"
-                      cy="263.931"
-                      r="2.651"
-                    />
-                    <circle
-                      fill="#0E0620"
-                      cx="183.708"
-                      cy="544.176"
-                      r="2.651"
-                    />
-                    <circle
-                      fill="#0E0620"
-                      cx="382.515"
-                      cy="530.923"
-                      r="2.651"
-                    />
-                    <circle
-                      fill="#0E0620"
-                      cx="130.693"
-                      cy="305.608"
-                      r="2.651"
-                    />
-                    <circle
-                      fill="#0E0620"
-                      cx="480.296"
-                      cy="477.014"
-                      r="2.651"
-                    />
+                    <circle fill="#0E0620" cx="434.824" cy="263.931" r="2.651" />
+                    <circle fill="#0E0620" cx="183.708" cy="544.176" r="2.651" />
+                    <circle fill="#0E0620" cx="382.515" cy="530.923" r="2.651" />
+                    <circle fill="#0E0620" cx="130.693" cy="305.608" r="2.651" />
+                    <circle fill="#0E0620" cx="480.296" cy="477.014" r="2.651" />
                   </g>
                 </g>
                 <g id="spaceman" clip-path="url(cordClip)">
@@ -789,14 +765,11 @@ export default function Error404() {
           <div className="col-md-6 align-self-center">
             <h1>404 Error!</h1>
             <h2>페이지를 찾을 수 없습니다.</h2>
-            <p>
-              페이지의 주소가 잘못 되었거나, 주소가 변경 혹은 삭제되어 요청하신
-              페이지를 찾을 수 없습니다.
-            </p>
+            <p>페이지의 주소가 잘못 되었거나, 주소가 변경 혹은 삭제되어 요청하신 페이지를 찾을 수 없습니다.</p>
             <button
               className="btn green"
               // className={`${styles.btn.green} btn green`}
-              href="/"
+              onClick={toHome}
             >
               홈으로
             </button>
