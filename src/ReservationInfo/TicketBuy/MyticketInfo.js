@@ -6,6 +6,7 @@ const MyticketInfo = (props) => {
   const { performanceData } = props;
   const navigate = useNavigate();
 
+  // 받아온 예매 정보
   const location = useLocation();
   const selectedTime = location.state.selectedTime;
   const selectedPrice = location.state.selectedPrice.split("원");
