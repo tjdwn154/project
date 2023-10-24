@@ -1,4 +1,4 @@
-import "./CustomerCheck.css";
+import "./InfoPanel.css";
 import { useState } from "react";
 
 const CustomerInfoCheck = (props) => {
@@ -22,7 +22,7 @@ const CustomerInfoCheck = (props) => {
 
   if (props.infoCheck) {
     return (
-      <div>
+      <div id="checkInfoBox">
         <h1>정보를 확인하세요</h1>
         <ul>
           <li>티켓수령방법: 현장수령</li>
@@ -31,12 +31,11 @@ const CustomerInfoCheck = (props) => {
           <li>연락처: {enteredNum}</li>
           <li>이메일: {enteredEmail}</li>
         </ul>
-        <button>확인</button>
       </div>
     );
   }
   return (
-    <div>
+    <div id="panelContent">
       <div id="ticketContent">
         <h2>티켓수령방법</h2>
         <form id="ticketForm">
@@ -56,6 +55,7 @@ const CustomerInfoCheck = (props) => {
           </div>
         </form>
       </div>
+      <div id="customerContent">
       <h2>예매자 확인</h2>
       <form id="customerForm">
         <ul>
@@ -113,12 +113,13 @@ const CustomerInfoCheck = (props) => {
           </li>
         </ul>
       </form>
+      </div>
     </div>
   );
 };
 
-const Button = ({ name, onClick }) => {
-  return <button onClick={onClick}>{name}</button>;
+const Button = ({ name, onClick,className}) => {
+  return <button className={className} onClick={onClick}>{name}</button>;
 };
 
 const InfoPanel = () => {
@@ -132,16 +133,20 @@ const InfoPanel = () => {
     setState(false);
   };
 
+
   let button;
   if (infoCheck) {
-    button = <Button name="이전" onClick={handleLogoutClick} />;
+    button = <Button className="customer-Btn1" name="이전" onClick={handleLogoutClick} />;
   } else {
-    button = <Button name="다음" onClick={handleLoginClick} />;
+    button = <Button className="customer-Btn2" name="다음"  onClick={handleLoginClick} />;
   }
   return (
     <>
+    <div id="customerInfoCheck-box">
+    <CustomerInfoCheck infoCheck={infoCheck} />
       {button}
-      <CustomerInfoCheck infoCheck={infoCheck} />
+      </div>
+      
     </>
   );
 };

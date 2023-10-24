@@ -1,0 +1,134 @@
+#panelContent{
+  display: flex;
+}
+
+#customerContent {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 300px;
+  padding: 15px 15px 15px 30px;
+}
+
+#customerContent h2 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.customer-formList label {
+  margin-right: 20px;
+}
+
+#customerForm {
+  width: 100%;
+  border-top: 1px solid black;
+  margin-top: 10px;
+  text-align: left;
+}
+
+#customerForm ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.customer-formList {
+  padding: 7px 0px 15px 0px;
+  margin: 10px 5px;
+  text-align: left;
+  border-bottom: 1px solid lightgray;
+}
+
+.cu-num {
+  display: inline;
+  width: 175px;
+}
+
+.birth-ex {
+  color: red;
+  font-size: 12px;
+  margin: 0px;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+#ticketContent {
+  border-right: 1px solid rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  height: 600px;
+  text-align: left;
+  padding: 15px;
+}
+
+#ticketContent h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#ticketForm {
+  width: 100%;
+  padding: 15px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid #000000;
+  margin-top: 10px;
+}
+
+#ticketForm label {
+  padding-left: 15px;
+}
+
+.customer-Btn1{
+  width: 85px;
+  height: 50px;
+  font-size: 20px;
+  border: 1px solid rgb(70, 70, 70);
+  border-radius: 10px;
+  padding: 5px 8px;
+  background-color: #7e7e7e;
+  color: white;
+  text-align: center;
+  margin-left: 30px;
+}
+
+.customer-Btn2{
+  width: 70px;
+  height: 45px;
+  font-size: 20px;
+  border: 1px solid rgb(70, 70, 70);
+  border-radius: 10px;
+  padding: 5px 8px;
+  background-color: #7e7e7e;
+  color: white;
+  text-align: center;
+  margin-left: 850px;
+  margin-top: -235px;
+}
+
+#customerInfoCheck-box{
+  display: flex;
+  flex-direction: column;
+}
+
+
+#checkInfoBox{
+  width: 930px;
+  text-align: left;
+  padding: 20px 10px;
+}
+
+#checkInfoBox > h1{
+  font-size: 23px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 15px;
+}
+
+
+
+#checkInfoBox >ul >li{
+  padding: 15px 5px;
+  font-size: 17px;
+}

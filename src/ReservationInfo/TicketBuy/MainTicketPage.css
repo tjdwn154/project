@@ -15,7 +15,8 @@
 }
 
 #ticket-innerContent {
-  border: 1px solid rgb(22, 22, 22);
+  border: 1px solid rgb(192, 192, 192);
+  box-shadow: 0px 0px 3px rgb(105, 105, 105);
   background-color: rgb(245, 245, 245);
   border-radius: 20px;
   width: 980px;

@@ -50,9 +50,9 @@ const ReInfoContent = (props) => {
           </ul>
         </div>
         <div id="reinfo-btn">
-          <button class="btn btn-primary btn-lg" onClick={handleReserveClick}>
+          {/* <button class="btn btn-primary btn-lg" onClick={handleReserveClick}>
             예약하기
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
