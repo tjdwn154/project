@@ -104,7 +104,10 @@ function Login() {
         </Form>
 
         <div style={{ marginTop: "10px", textAlign: "center" }}>
-          <Link to="/forgot-password">비밀번호 찾기</Link> | <Link to="/signup">회원가입</Link>
+          <Link to="/SearchId">아이디 찾기</Link> | <Link to="/SearchPw">비밀번호 찾기</Link>         
+        </div>
+        <div style={{ marginRight: "15px", textAlign: "center" }}>
+          <Link to="/signup">회원가입</Link>
         </div>
       </Container>
     </div>

@@ -6,6 +6,8 @@ import Home from "./pages/Home.js";
 import Loading from "./components/Loading";
 import SignUp from "./components/member/Signup";
 import Login from "./components/member/Login";
+import SearchId from "./components/member/SearchId";
+import SearchPw from "./components/member/SearchPw";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 // 예매:
@@ -58,6 +60,8 @@ export default function App() {
         <Route path="/Reservation/:mt20id" element={<Reservation />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/searchID" element={<SearchId />} />
+        <Route path="/searchPW" element={<SearchPw />} />
         <Route path="/orderComplete" element={<OrderConfirmation />} />
         {/* 고객센터페이지: */}
         <Route path="/cs" element={<CS />}>
@@ -79,7 +83,6 @@ export default function App() {
           <Route path="reference" element={<Reference />} />
         </Route>
         <Route path="/ticketBuy" element={<MainTicketPage />} />
-
 
         <Route path="*" element={<Error404 />} />
       </Routes>
