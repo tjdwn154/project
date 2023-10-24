@@ -20,12 +20,20 @@ const CustomerInfoCheck = (props) => {
     setEmail(e.currentTarget.value);
   };
 
+  const [ticketWay, setTicketWay] = useState("")
+  const ticketWayChange=(e)=>{
+    e.preventDefault();
+    setTicketWay(
+      e.target.value
+    )
+}
+
   if (props.infoCheck) {
     return (
       <div id="checkInfoBox">
         <h1>정보를 확인하세요</h1>
         <ul>
-          <li>티켓수령방법: 현장수령</li>
+          <li>티켓수령방법: {ticketWay}</li>
           <li>이름: {enteredName}</li>
           <li>생년월일: {enteredBirth}</li>
           <li>연락처: {enteredNum}</li>
@@ -45,12 +53,12 @@ const CustomerInfoCheck = (props) => {
               id="opt1"
               name="tickway"
               value="현장수령"
-              checked
+              onChange={ticketWayChange}
             />
             <label for="opt1">현장수령</label>
           </div>
           <div>
-            <input type="radio" id="opt2" name="tickway" value="배송" />
+            <input type="radio" id="opt2" name="tickway" value="배송" onChange={ticketWayChange}/>
             <label for="opt2">배송</label>
           </div>
         </form>
