@@ -96,18 +96,18 @@ function ReCalendar(props) {
   }
 
   const handleReserveClick = () => {
-    const memberIdCookie = CookieValue("memberId");
+    // const memberIdCookie = CookieValue("memberId");
 
-    if (memberIdCookie) {
-      // 사용자가 로그인한 경우
-      // 페이지 이동 및 데이터 전달
-      navigate("/ticketBuy", { state: { performanceData, selectedTime, selectedPrice, selectedDay, selectedSeat } });
-    } else {
-      // 사용자가 로그인하지 않은 경우
-      // 로그인 페이지로 이동하도록 할 수 있습니다.
-      alert("로그인 상태가 아닙니다. 로그인 페이지로 이동합니다.");
-      navigate("/login"); // 로그인 페이지로 이동
-    }
+    // if (memberIdCookie) {
+    //   // 사용자가 로그인한 경우
+    //   // 페이지 이동 및 데이터 전달
+    navigate("/ticketBuy", { state: { performanceData, selectedTime, selectedPrice, selectedDay, selectedSeat } });
+    //   } else {
+    //     // 사용자가 로그인하지 않은 경우
+    //     // 로그인 페이지로 이동하도록 할 수 있습니다.
+    //     alert("로그인 상태가 아닙니다. 로그인 페이지로 이동합니다.");
+    //     navigate("/login"); // 로그인 페이지로 이동
+    //   }
   };
 
   return (
