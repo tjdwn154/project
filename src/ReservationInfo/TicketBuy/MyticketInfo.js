@@ -1,10 +1,16 @@
 import "./MyticketInfo.css";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const MyticketInfo = (props) => {
   const { performanceData } = props;
   const navigate = useNavigate();
+
+  const location = useLocation();
+  const selectedTime = location.state.selectedTime;
+  const selectedPrice = location.state.selectedPrice.split("원");
+  const selectedDay = location.state.selectedDay;
+  const selectedSeat = location.state.selectedSeat;
 
   const handleOrderClick = () => {
     navigate("/orderComplete", { state: { performanceData } });
@@ -30,14 +36,17 @@ const MyticketInfo = (props) => {
         <div id="choose-myinfo">
           <p className="choose-title">MY예매정보</p>
           <div id="choose-title-box">
-            <p className="choose-inner-info">선택좌석</p>
-            <p className="choose-inner-info">티켓금액</p>
+            <p className="choose-inner-info">예매날짜 : {selectedDay}</p>
+            <p className="choose-inner-info">
+              공연 시간 : {selectedTime} 좌석 : {selectedSeat}
+            </p>
+            <p className="choose-inner-info"></p>
           </div>
         </div>
 
         <div id="price-box">
           <p className="price-info">총 결제금액</p>
-          <p className="price-info">30,000</p>
+          <p className="price-info">{selectedPrice}</p>
           <p className="price-info">원</p>
         </div>
 
