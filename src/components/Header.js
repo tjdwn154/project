@@ -138,6 +138,21 @@ export default function Header() {
                   <Nav className="justify-content-end flex-grow-1">
                     <Nav.Link href="/">예매확인</Nav.Link>
                     <Nav.Link href="/mypage">마이페이지</Nav.Link>
+                    {/* {CookieValue("memberId") ? (
+                      <Nav.Link href="/mypage">마이페이지</Nav.Link>
+                    ) : (
+                      <>
+                        <Nav.Link
+                          href="/mypage"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            alert("로그인이 필요합니다. 로그인 후 다시 시도해주세요.");
+                          }}
+                        >
+                          마이페이지
+                        </Nav.Link>
+                      </>
+                    )} */}
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>

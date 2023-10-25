@@ -17,36 +17,40 @@ CREATE TABLE member (
 
 -- reservation 테이블
 CREATE TABLE reservation (
-    reservationId INT NOT NULL,
+    reservationNumber VARCHAR(50) NOT NULL,
+    performanceId VARCHAR(50) NOT NULL,
     memberId varchar(15) NOT NULL,
-    performanceId INT NOT NULL,
-    Field VARCHAR(255) NULL,
-    PRIMARY KEY (reservationId, memberId, performanceId),
-    FOREIGN KEY (memberId) REFERENCES member (memberId),
-    FOREIGN KEY (performanceId) REFERENCES performance (performanceId)
-);
-
--- performance 테이블
-CREATE TABLE performance (
-    performanceId INT NOT NULL,
     performanceName VARCHAR(50) NOT NULL,
-    date DATE NOT NULL,
-    time TIME NOT NULL,
     runtime TIME NOT NULL,
     venue VARCHAR(50) NOT NULL,
-    PRIMARY KEY (performanceId)
+    selectedTime TIME NOT NULL,
+    selectedDay DATE NOT NULL,
+    selectedPrice VARCHAR(20) NOT NULL,
+    PRIMARY KEY (reservationNumber),
+    FOREIGN KEY (memberId) REFERENCES member (memberId)
 );
 
--- review 테이블
-CREATE TABLE review (
-    reviewId INT NOT NULL,
-    reservationId INT NOT NULL,
-    memberId varchar(15) NOT NULL,
-    performanceId INT NOT NULL,
-    comment TEXT NULL,
-    reviewDate DATE NOT NULL,
-    PRIMARY KEY (reviewId, reservationId, memberId, performanceId),
-    FOREIGN KEY (reservationId) REFERENCES reservation (reservationId),
-    FOREIGN KEY (memberId) REFERENCES reservation (memberId),
-    FOREIGN KEY (performanceId) REFERENCES reservation (performanceId)
+-- -- reservation 테이블
+-- CREATE TABLE reservation (
+--     reservationId INT NOT NULL,
+--     memberId varchar(15) NOT NULL,
+--     performanceId INT NOT NULL,
+--     Field VARCHAR(255) NULL,
+--     PRIMARY KEY (reservationId, memberId, performanceId),
+--     FOREIGN KEY (memberId) REFERENCES member (memberId),
+--     FOREIGN KEY (performanceId) REFERENCES performance (performanceId)
+-- );
+
+-- -- review 테이블
+-- CREATE TABLE review (
+--     reviewId INT NOT NULL,
+--     reservationId INT NOT NULL,
+--     memberId varchar(15) NOT NULL,
+--     performanceId INT NOT NULL,
+--     comment TEXT NULL,
+--     reviewDate DATE NOT NULL,
+--     PRIMARY KEY (reviewId, reservationId, memberId, performanceId),
+--     FOREIGN KEY (reservationId) REFERENCES reservation (reservationId),
+--     FOREIGN KEY (memberId) REFERENCES reservation (memberId),
+--     FOREIGN KEY (performanceId) REFERENCES reservation (performanceId)
 );
