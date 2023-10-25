@@ -24,7 +24,7 @@ export default function NewCarousel() {
       .then((response) => {
         const newData = response.data.dbs.db;
         setPerformances(newData);
-        console.log("api data: ", newData);
+        console.log("새로 오픈한 공연: ", newData);
       })
       .catch((error) => {
         console.log("api error: " + error);

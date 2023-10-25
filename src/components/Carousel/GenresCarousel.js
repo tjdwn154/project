@@ -10,18 +10,7 @@ import { Link } from "react-router-dom";
 
 export default function GenresCarousel() {
   // 추후 수정 예정:
-  const [increNum, setIncreNum] = useState([
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10
-  ]);
+  const [increNum, setIncreNum] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
   const [selectedGenre, setSelectedGenre] = useState("AAAA");
   const [performances, setPerformances] = useState([]);
@@ -114,10 +103,10 @@ export default function GenresCarousel() {
           spaceBetween={30}
           centeredSlides={false}
           pagination={{
-            dynamicBullets: true
+            dynamicBullets: true,
           }}
           navigation={true}
-          modules={[Navigation, Pagination,]}
+          modules={[Navigation, Pagination]}
           className="mySwiper"
         >
           {performances.length > 0 ? (
