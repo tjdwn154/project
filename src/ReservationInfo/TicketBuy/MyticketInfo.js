@@ -1,6 +1,8 @@
 import "./MyticketInfo.css";
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
+import { generateUniqueNumber } from "./module/ReservationNum"; // 예매번호 생성
 
 const MyticketInfo = (props) => {
   const { performanceData } = props;
@@ -13,8 +15,47 @@ const MyticketInfo = (props) => {
   const selectedDay = location.state.selectedDay;
   const selectedSeat = location.state.selectedSeat;
 
+  console.log(selectedDay);
+
+  // 현재 쿠키에서 멤버 아이디를 가져옵니다.
+
+  const memberId = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("memberId="))
+    .split("=")[1];
+
+  // 예매 번호 생성
+  const reservationNumber = generateUniqueNumber();
+  console.log("예매 번호 :", reservationNumber);
+
   const handleOrderClick = () => {
-    navigate("/orderComplete", { state: { performanceData } });
+    axios
+      .post(
+        "http://localhost:3001/api/reservation",
+        {
+          performanceData: { ...performanceData },
+          reservationNumber: reservationNumber,
+          selectedTime: selectedTime,
+          selectedDay: selectedDay,
+          selectedPrice: selectedPrice,
+          memberId: memberId,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        // 성공적으로 예약이 완료되면 이에 대한 처리를 수행
+        // 예: 예약 완료 페이지로 이동
+        navigate("/orderComplete", { state: { performanceData } });
+        console.log("예약 성공: ", response);
+      })
+      .catch((error) => {
+        // 예약 실패 시 처리 (예: 오류 메시지 표시)
+        console.error("예약 실패:", error);
+      });
   };
 
   return (

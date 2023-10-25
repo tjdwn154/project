@@ -43,7 +43,9 @@ function Login() {
           // 로그인 성공 시 처리
           console.log("로그인 성공", response.data);
           // 쿠키 정의 및 유효기간
-          document.cookie = `memberId=${formData.memberId}; expires=${new Date(Date.now() + 3600000).toUTCString()}`;
+          document.cookie = `memberId=${formData.memberId}; expires=${new Date(
+            Date.now() + 3600000 * 24
+          ).toUTCString()}`;
           navigate("/");
           // 로그인 성공 후의 동작을 정의
         })
@@ -104,7 +106,7 @@ function Login() {
         </Form>
 
         <div style={{ marginTop: "10px", textAlign: "center" }}>
-          <Link to="/SearchId">아이디 찾기</Link> | <Link to="/SearchPw">비밀번호 찾기</Link>         
+          <Link to="/SearchId">아이디 찾기</Link> | <Link to="/SearchPw">비밀번호 찾기</Link>
         </div>
         <div style={{ marginRight: "15px", textAlign: "center" }}>
           <Link to="/signup">회원가입</Link>
