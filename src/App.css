@@ -371,6 +371,34 @@ body{font-family: 'Noto Sans', sans-serif;}
   width: 100%;
 }
 
+/* ToTopBtn: */
+.toTopBtn {
+  position: fixed;
+  right: 2%;
+  bottom: 4%;
+  z-index: 2;
+  background-color: rgb(187, 36, 98);
+  color: white;
+  border-radius: 100%;
+  filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.4));
+  height: 40px;
+  width: 40px;
+  border: none;
+  display: none;
+}
+.toTopBtn svg {
+  position: absolute;
+  left: 30%;
+  top: 25%;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.toTopBtn.show {
+  display: block;
+}
+
+
 @media screen and (max-width: 768px) {
   body {
     display: block;
@@ -433,9 +461,6 @@ body{font-family: 'Noto Sans', sans-serif;}
   padding: 2% 3%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
-@media screen and (max-width: px) {}
-
 #orderCononfirmationWrap .container .top {
   height: 60%;
   display: flex;

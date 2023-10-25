@@ -4,7 +4,7 @@ import LandingCarousel from "../components/Carousel/LandingCarousel";
 import RanksCarousel from "../components/Carousel/RanksCarousel.js";
 import NewCarousel from "../components/Carousel/NewCarousel";
 import GenresCarousel from "../components/Carousel/GenresCarousel.js";
-
+import ToTopBtn from '../components/ToTopBtn';
 export default function Home() {
   return (
     <div id="container">
@@ -15,6 +15,7 @@ export default function Home() {
           <span></span>
         </a>
       </div>
+      <ToTopBtn />
       <RanksCarousel />
       <GenresCarousel />
       <NewCarousel />
