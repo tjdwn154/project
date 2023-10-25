@@ -24,6 +24,7 @@ export default function RanksCarousel() {
           // 데이터가 있는 경우
           const filterData = boxOfData.filter((performance) => performance.rnum <= maxRank);
           setPerformances(filterData);
+          console.log("공연차트: ", filterData);
         } else {
           // 데이터가 없는 경우
           setPerformances([]); // 데이터를 빈 배열로 설정

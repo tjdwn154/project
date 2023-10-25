@@ -23,6 +23,7 @@ import Change from "./components/Mypage/components/Change";
 import Notice from "./components/Mypage/components/Notice";
 import Qs from "./components/Mypage/components/Qs";
 import Reference from "./components/Mypage/components/Reference";
+import SearchPage from "./components/Carousel/SearchPage";
 // 고객센터:
 import CS from "./pages/CS";
 import ContactUs from "./pages/ContactUs";
@@ -63,6 +64,7 @@ export default function App() {
         <Route path="/searchID" element={<SearchId />} />
         <Route path="/searchPW" element={<SearchPw />} />
         <Route path="/orderComplete" element={<OrderConfirmation />} />
+        <Route path="/search/:searchTerm" element={<SearchPage />} />
         {/* 고객센터페이지: */}
         <Route path="/cs" element={<CS />}>
           <Route index element={<CSNotice />} />

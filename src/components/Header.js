@@ -7,6 +7,8 @@ import axios from "axios";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(true);
   const [logoSrc, setLogoSrc] = useState("/white_logo.png");
+  const [searchTerm, setSearchTerm] = useState(""); // 검색어
+  const navigate = useNavigate();
   const handleImageHover = () => {
     setLogoSrc("/color_logo.png");
   };
@@ -42,7 +44,6 @@ export default function Header() {
     return null; // 해당 쿠키 이름을 찾지 못한 경우
   }
 
-  const navigate = useNavigate();
   const handleLogout = () => {
     axios
       .post("http://localhost:3001/api/logout")
@@ -56,6 +57,10 @@ export default function Header() {
       .catch((error) => {
         console.error("로그아웃 실패", error);
       });
+  };
+
+  const handleSeacrh = () => {
+    navigate(`/search/${searchTerm}`);
   };
 
   return (
@@ -117,8 +122,16 @@ export default function Header() {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Form className="d-flex">
-                    <Form.Control type="search" placeholder="" aria-label="Search" />
-                    <Button variant="outline-success">
+                    <Form.Control
+                      type="search"
+                      placeholder=""
+                      aria-label="Search"
+                      value={searchTerm}
+                      onChange={(e) => {
+                        setSearchTerm(e.target.value);
+                      }}
+                    />
+                    <Button variant="outline-success" onClick={handleSeacrh}>
                       <FontAwesomeIcon icon="fa-solid fa-hat-wizard" />
                     </Button>
                   </Form>

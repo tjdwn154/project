@@ -29,9 +29,9 @@ async function ParseAPI() {
   const apiKey = "bd2222103ca442c492dbbeb301af94ab";
 
   const today = new Date();
-  const formattedDate = today.toISOString().slice(0, 10).replace(/-/g, "");
+  const formatstdate = today.toISOString().slice(0, 10).replace(/-/g, "");
 
-  const apiUrl = `http://www.kopis.or.kr/openApi/restful/pblprfr?service=${apiKey}&stdate=${formattedDate}&eddate=20240301&cpage=1&rows=10&prfstate=02`;
+  const apiUrl = `http://www.kopis.or.kr/openApi/restful/pblprfr?service=${apiKey}&stdate=${formatstdate}&eddate=20240301&cpage=1&rows=10&prfstate=02&`;
   const response = await axios.get(apiUrl);
   const result = await parseXML(response.data);
 
@@ -42,6 +42,29 @@ async function ParseAPI() {
 app.get("/api/data", async (req, res) => {
   try {
     const apiData = await ParseAPI();
+    res.json(apiData);
+  } catch (error) {
+    res.status(500).json({ error: "API 연결 에러" });
+  }
+});
+
+async function SeacrhAPI(searchTerm) {
+  const apiKey = "bd2222103ca442c492dbbeb301af94ab";
+
+  const today = new Date();
+  const formatstdate = today.toISOString().slice(0, 10).replace(/-/g, "");
+
+  const apiUrl = `http://www.kopis.or.kr/openApi/restful/pblprfr?service=${apiKey}&stdate=${formatstdate}&eddate=20240301&cpage=1&rows=10&prfstate=02&shprfnm=${searchTerm}`;
+  const response = await axios.get(apiUrl);
+  const result = await parseXML(response.data);
+
+  return result;
+}
+
+app.get("/api/data/:searchTerm", async (req, res) => {
+  const searchTerm = req.params.searchTerm; // URL 경로에서 searchTerm 매개변수를 가져옵니다.
+  try {
+    const apiData = await SeacrhAPI(searchTerm);
     res.json(apiData);
   } catch (error) {
     res.status(500).json({ error: "API 연결 에러" });
