@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, Link, Outlet } from "react-router-dom";
+import { useNavigate, Link, Outlet, useLocation } from "react-router-dom";
 import { EmailModal } from "../components/EmailModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
@@ -10,6 +10,12 @@ export default function OrderConfirmation() {
   useEffect(() => {
     gsap.fromTo("#confirmationLoadingWrap", { opacity: 1 }, { opacity: 0.8, display: "none", duration: 1.5 });
   });
+  const location = useLocation();
+  const performanceData = location.state.performanceData;
+  const reservationNumber = location.state.reservationNumber;
+  const selectedPrice = location.state.selectedPrice;
+  const selectedSeat = location.state.selectedSeat;
+
   return (
     <div id="orderCononfirmationWrap">
       <ConfirmationLoading />
@@ -54,24 +60,31 @@ export default function OrderConfirmation() {
         <div className="bottom">
           <div className="orderReceipt">
             <div className="left">
-              <img src="https://picsum.photos/70/100?random=1" alt="구매한 영화 포스터" />
+              <img style={{ width: "70px", height: "100px" }} src={performanceData.poster} alt="구매한 영화 포스터" />
             </div>
             <div className="right">
               <p>
-                <span>예매번호: </span>000166954
+                <span>예매번호: </span>
+                {reservationNumber}
               </p>
               <p>
-                <span>예매번호: </span>000166954
+                <span>공연제목: </span>
+                {performanceData.prfnm}
               </p>
               <p>
-                <span>예매번호: </span>000166954
+                <span>결제금액: </span>
+                {selectedPrice}원({selectedSeat})
               </p>
             </div>
           </div>
         </div>
         <div className="btnBox">
-          <Link to="/mypage"><Button variant="primary">예매내역 확인</Button></Link>
-          <Link to="/"><Button variant="primary">더 둘러보기</Button></Link>
+          <Link to="/mypage">
+            <Button variant="primary">예매내역 확인</Button>
+          </Link>
+          <Link to="/">
+            <Button variant="primary">더 둘러보기</Button>
+          </Link>
         </div>
       </div>
       {isClicked ? <EmailModal setIsClicked={setIsClicked} /> : null}
