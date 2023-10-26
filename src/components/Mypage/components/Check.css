@@ -1,0 +1,22 @@
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* 가로 스크롤바 표시 */
+}
+
+.table-style {
+  border-collapse: collapse;
+  width: 100%; /* 테이블 가로 크기를 100%로 유지 */
+}
+
+.th-style {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 5px;
+  background-color: #f2f2f2;
+}
+
+.td-style {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
