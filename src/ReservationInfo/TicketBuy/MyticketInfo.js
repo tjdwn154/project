@@ -2,7 +2,7 @@ import "./MyticketInfo.css";
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-import { generateUniqueNumber } from "./module/ReservationNum"; // 예매번호 생성
+import { generateUniqueNumber } from "../../util/ReservationNum"; // 예매번호
 
 const MyticketInfo = (props) => {
   const { performanceData } = props;
@@ -14,8 +14,6 @@ const MyticketInfo = (props) => {
   const selectedPrice = location.state.selectedPrice.split("원");
   const selectedDay = location.state.selectedDay;
   const selectedSeat = location.state.selectedSeat;
-
-  console.log(selectedDay);
 
   // 현재 쿠키에서 멤버 아이디를 가져옵니다. 주석처리////////////////////////////////////////////////////
   // const memberId = document.cookie
@@ -48,14 +46,16 @@ const MyticketInfo = (props) => {
     //   .then((response) => {
     //     // 성공적으로 예약이 완료되면 이에 대한 처리를 수행
     //     // 예: 예약 완료 페이지로 이동
-    //     navigate("/orderComplete", { state: { performanceData } });
+    //     navigate("/orderComplete", { state: { performanceData, reservationNumber, selectedPrice, selectedSeat } });
     //     console.log("예약 성공: ", response);
     //   })
     //   .catch((error) => {
     //     // 예약 실패 시 처리 (예: 오류 메시지 표시)
     //     console.error("예약 실패:", error);
     //   });
-    navigate("/orderComplete", { state: { performanceData } });
+    navigate("/orderComplete", {
+      state: { performanceData, reservationNumber, selectedPrice, selectedSeat },
+    });
   };
 
   return (

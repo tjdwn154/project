@@ -1,6 +1,7 @@
 import "./InfoPanel.css";
 import { useState } from "react";
 
+//버튼 명시
 const Button = ({ name, onClick, className, type, form }) => {
   return (
     <button className={className} onClick={onClick} type={type} form={form}>
@@ -10,26 +11,87 @@ const Button = ({ name, onClick, className, type, form }) => {
 };
 
 const InfoPanel = (props) => {
-  //버튼 관련 함수
+  //고객 정보 관련 데이터
+  const [enteredName, setName] = useState("");
+  const [enteredBirth, setBirth] = useState("");
+  const [enteredNum, setNum] = useState("");
+  const [enteredEmail, setEmail] = useState("");
 
+  const [ticketWay, setTicketWay] = useState("");
+  const ticketWayChange = (e) => {
+    e.preventDefault();
+    setTicketWay(e.target.value);
+  };
+
+  //오류메시지 상태저장
+  const [nameMessage, setNameMessage] = useState("");
+  const [birthMessage, setBirthMessage] = useState("");
+  const [numMessage, setNumMessage] = useState("");
+  const [emailMessage, setEmailMessage] = useState("");
+
+  //유효성 검사
+  const [isName, setIsName] = useState(false);
+  const [isBirth, setIsBirth] = useState(false);
+  const [isNum, setIsNum] = useState(false);
+  const [isEmail, setIsEmail] = useState(false);
+
+  //이름
+  const onNameHandler = (e) => {
+    setName(e.target.value);
+    if (e.target.value.length < 2) {
+      setNameMessage("2글자 이상 입력해주세요.");
+      setIsName(false);
+    } else {
+      setNameMessage("");
+      setIsName(true);
+    }
+  };
+
+  //생년월일
+  const onBirthHandler = (e) => {
+    setBirth(e.target.value);
+    if (e.target.value.length < 6) {
+      setBirthMessage("6자리로 입력해주세요.");
+      setIsBirth(false);
+    } else {
+      setBirthMessage("");
+      setIsBirth(true);
+    }
+  };
+
+  //전화번호: 010으로 시작하게끔 하려고(아직 안함)
+  const onNumHandler = (e) => {
+    setNum(e.target.value);
+    if (e.target.value.length < 11) {
+      setNumMessage("전화번호를 입력해주세요.");
+      setIsNum(false);
+    } else {
+      setNumMessage("");
+      setIsNum(true);
+    }
+  };
+
+  //이메일: @들어가고 앞뒤로 영어 있어야 함(아직 안함)
+  const onEmailHandler = (e) => {
+    setEmail(e.target.value);
+    if (e.target.value.length < 9) {
+      setEmailMessage("이메일을 제대로 입력해주세요.");
+      setIsEmail(false);
+    } else {
+      setEmailMessage("");
+      setIsEmail(true);
+    }
+  };
+
+  //버튼 관련 함수
   const [infoCheck, setState] = useState(false);
 
-  // const handleLoginClick = () => {
-  //   setState(true);
-  // };
+  const handleLoginClick = () => {
+    setState(true);
+  };
 
   const handleLogoutClick = () => {
     setState(false);
-  };
-
-  //틀린 정보 입력시 경고창띄우는 함수
-  const errorInfo = () => {
-    if (enteredBirth.length != 6) {
-      alert("생년월일을 6자리로 입력하세요.");
-      console.log(enteredBirth.length);
-    } else {
-      setState(true);
-    }
   };
 
   let button;
@@ -46,37 +108,12 @@ const InfoPanel = (props) => {
       <Button
         className="customer-Btn2"
         name="다음"
-        onClick={errorInfo}
+        onClick={handleLoginClick}
         type="submit"
         form="ticketForm, customerForm"
       />
     );
   }
-
-  //고객 정보 관련 데이터
-  const [enteredName, setName] = useState("");
-  const [enteredBirth, setBirth] = useState("");
-  const [enteredNum, setNum] = useState("");
-  const [enteredEmail, setEmail] = useState("");
-
-  const onNameHandler = (e) => {
-    setName(e.currentTarget.value);
-  };
-  const onBirthHandler = (e) => {
-    setBirth(e.currentTarget.value);
-  };
-  const onNumHandler = (e) => {
-    setNum(e.currentTarget.value);
-  };
-  const onEmailHandler = (e) => {
-    setEmail(e.currentTarget.value);
-  };
-
-  const [ticketWay, setTicketWay] = useState("");
-  const ticketWayChange = (e) => {
-    e.preventDefault();
-    setTicketWay(e.target.value);
-  };
 
   //infoCheck에 따른 페이지 반환
   if (infoCheck) {
@@ -121,7 +158,7 @@ const InfoPanel = (props) => {
           </div>
         </form>
       </div>
-      <div id="customerContent" onSubmit={errorInfo}>
+      <div id="customerContent">
         <h2>예매자 확인</h2>
         <form id="customerForm">
           <ul>
@@ -135,6 +172,7 @@ const InfoPanel = (props) => {
                 value={enteredName}
                 onChange={onNameHandler}
               />
+              {enteredName.length > 0 && <span>{nameMessage}</span>}
             </li>
             <li className="customer-formList">
               <label id="birth">생년월일</label>
@@ -147,6 +185,7 @@ const InfoPanel = (props) => {
                 value={enteredBirth}
                 onChange={onBirthHandler}
               />
+              {enteredBirth.length > 0 && <span>{birthMessage}</span>}
               <p className="birth-ex">
                 예{")"} 980110 {"("}YYMMDD{")"}
               </p>
@@ -163,6 +202,7 @@ const InfoPanel = (props) => {
                 value={enteredNum}
                 onChange={onNumHandler}
               />
+              {enteredNum.length > 0 && <span>{numMessage}</span>}
               <p className="birth-ex">
                 예{")"} 01012345678 {'(" - "'}표시 없이 입력{")"}
               </p>
@@ -176,6 +216,7 @@ const InfoPanel = (props) => {
                 value={enteredEmail}
                 onChange={onEmailHandler}
               />
+              {enteredEmail.length > 0 && <span>{emailMessage}</span>}
             </li>
           </ul>
           {button}
