@@ -59,12 +59,14 @@ export default function App() {
         ></Route>
         {/* 예매페이지: */}
         <Route path="/Reservation/:mt20id" element={<Reservation />} />
+        <Route path="/ticketBuy" element={<MainTicketPage />} />
+        <Route path="/orderComplete" element={<OrderConfirmation />} />
+        <Route path="/search/:searchTerm" element={<SearchPage />} />
+        {/* 회원관리: */}
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/searchID" element={<SearchId />} />
         <Route path="/searchPW" element={<SearchPw />} />
-        <Route path="/orderComplete" element={<OrderConfirmation />} />
-        <Route path="/search/:searchTerm" element={<SearchPage />} />
         {/* 고객센터페이지: */}
         <Route path="/cs" element={<CS />}>
           <Route index element={<CSNotice />} />
@@ -84,7 +86,6 @@ export default function App() {
           <Route path="qs" element={<Qs />} />
           <Route path="reference" element={<Reference />} />
         </Route>
-        <Route path="/ticketBuy" element={<MainTicketPage />} />
 
         <Route path="*" element={<Error404 />} />
       </Routes>
