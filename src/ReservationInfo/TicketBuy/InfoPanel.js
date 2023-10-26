@@ -1,9 +1,9 @@
 import "./InfoPanel.css";
 import { useState } from "react";
 
-const Button = ({ name, onClick, className }) => {
+const Button = ({ name, onClick, className, type, form }) => {
   return (
-    <button className={className} onClick={onClick}>
+    <button className={className} onClick={onClick} type={type} form={form}>
       {name}
     </button>
   );
@@ -14,12 +14,22 @@ const InfoPanel = (props) => {
 
   const [infoCheck, setState] = useState(false);
 
-  const handleLoginClick = () => {
-    setState(true);
-  };
+  // const handleLoginClick = () => {
+  //   setState(true);
+  // };
 
   const handleLogoutClick = () => {
     setState(false);
+  };
+
+  //틀린 정보 입력시 경고창띄우는 함수
+  const errorInfo = () => {
+    if (enteredBirth.length != 6) {
+      alert("생년월일을 6자리로 입력하세요.");
+      console.log(enteredBirth.length);
+    } else {
+      setState(true);
+    }
   };
 
   let button;
@@ -36,7 +46,9 @@ const InfoPanel = (props) => {
       <Button
         className="customer-Btn2"
         name="다음"
-        onClick={handleLoginClick}
+        onClick={errorInfo}
+        type="submit"
+        form="ticketForm, customerForm"
       />
     );
   }
@@ -109,7 +121,7 @@ const InfoPanel = (props) => {
           </div>
         </form>
       </div>
-      <div id="customerContent">
+      <div id="customerContent" onSubmit={errorInfo}>
         <h2>예매자 확인</h2>
         <form id="customerForm">
           <ul>
