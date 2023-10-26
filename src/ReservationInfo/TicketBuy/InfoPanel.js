@@ -1,6 +1,7 @@
 import "./InfoPanel.css";
 import { useState } from "react";
 
+//버튼 명시
 const Button = ({ name, onClick, className, type, form }) => {
   return (
     <button className={className} onClick={onClick} type={type} form={form}>
@@ -10,49 +11,6 @@ const Button = ({ name, onClick, className, type, form }) => {
 };
 
 const InfoPanel = (props) => {
-  //버튼 관련 함수
-
-  const [infoCheck, setState] = useState(false);
-
-  // const handleLoginClick = () => {
-  //   setState(true);
-  // };
-
-  const handleLogoutClick = () => {
-    setState(false);
-  };
-
-  //틀린 정보 입력시 경고창띄우는 함수
-  const errorInfo = () => {
-    if (enteredBirth.length != 6) {
-      alert("생년월일을 6자리로 입력하세요.");
-      console.log(enteredBirth.length);
-    } else {
-      setState(true);
-    }
-  };
-
-  let button;
-  if (infoCheck) {
-    button = (
-      <Button
-        className="customer-Btn1"
-        name="이전"
-        onClick={handleLogoutClick}
-      />
-    );
-  } else {
-    button = (
-      <Button
-        className="customer-Btn2"
-        name="다음"
-        onClick={errorInfo}
-        type="submit"
-        form="ticketForm, customerForm"
-      />
-    );
-  }
-
   //고객 정보 관련 데이터
   const [enteredName, setName] = useState("");
   const [enteredBirth, setBirth] = useState("");
@@ -77,6 +35,50 @@ const InfoPanel = (props) => {
     e.preventDefault();
     setTicketWay(e.target.value);
   };
+
+  //오류메시지 상태저장
+  const [nameMessage, setNameMessage] = useState("");
+  const [emailMessage, setEmailMessage] = useState("");
+  const [passwordMessage, setPasswordMessage] = useState("");
+  const [passwordConfirmMessage, setPasswordConfirmMessage] = useState("");
+
+  //유효성 검사
+  const [isName, setIsName] = useState(false);
+  const [isEmail, setIsEmail] = useState(false);
+  const [isPassword, setIsPassword] = useState(false);
+  const [isPasswordConfirm, setIsPasswordConfirm] = useState(false);
+
+  //버튼 관련 함수
+  const [infoCheck, setState] = useState(false);
+
+  const handleLoginClick = () => {
+    setState(true);
+  };
+
+  const handleLogoutClick = () => {
+    setState(false);
+  };
+
+  let button;
+  if (infoCheck) {
+    button = (
+      <Button
+        className="customer-Btn1"
+        name="이전"
+        onClick={handleLogoutClick}
+      />
+    );
+  } else {
+    button = (
+      <Button
+        className="customer-Btn2"
+        name="다음"
+        onClick={handleLoginClick}
+        type="submit"
+        form="ticketForm, customerForm"
+      />
+    );
+  }
 
   //infoCheck에 따른 페이지 반환
   if (infoCheck) {
@@ -121,7 +123,7 @@ const InfoPanel = (props) => {
           </div>
         </form>
       </div>
-      <div id="customerContent" onSubmit={errorInfo}>
+      <div id="customerContent">
         <h2>예매자 확인</h2>
         <form id="customerForm">
           <ul>
