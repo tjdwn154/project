@@ -1,9 +1,9 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import "./App.css";
+import { useEffect, useState } from "react";
+import { Routes, Route, useParams } from "react-router-dom";
 // 메인:
 import Home from "./pages/Home.js";
-import Loading from "./components/Loading";
 import SignUp from "./components/member/Signup";
 import Login from "./components/member/Login";
 import SearchId from "./components/member/SearchId";
@@ -12,6 +12,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 // 예매:
 import Reservation from "./ReservationInfo/Reservation.js";
+import MainTicketPage from "./ReservationInfo/TicketBuy/MainTicketPage";
 import OrderConfirmation from "./pages/OrderConfirmation.js";
 import Mypage from "./components/Mypage/Mypage";
 import Check from "./components/Mypage/components/Check";
@@ -26,14 +27,16 @@ import Reference from "./components/Mypage/components/Reference";
 import SearchPage from "./components/Carousel/SearchPage";
 // 고객센터:
 import CS from "./pages/CS";
+import CSBoard from "./pages/CSBoard";
 import ContactUs from "./pages/ContactUs";
 import FAQ from "./pages/FAQ";
 import CSNotice from "./pages/CSNotice";
+// 기타 페이지:
 import Error404 from "./pages/Error404.js";
-import { Routes, Route } from "react-router-dom";
-import MainTicketPage from "./ReservationInfo/TicketBuy/MainTicketPage";
+import Loading from "./components/Loading";
 
 export default function App() {
+  let { id } = useParams();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -67,7 +70,8 @@ export default function App() {
         <Route path="/search/:searchTerm" element={<SearchPage />} />
         {/* 고객센터페이지: */}
         <Route path="/cs" element={<CS />}>
-          <Route index element={<CSNotice />} />
+          <Route index element={<CSNotice />} id={id} />
+          <Route path="notice/:id" element={<CSBoard />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="contact" element={<ContactUs />} />
         </Route>

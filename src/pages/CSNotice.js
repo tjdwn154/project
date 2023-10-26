@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Table, Pagination } from "react-bootstrap";
-export default function CSNotice() {
+import { useNavigate } from "react-router-dom";
+export default function Notice() {
+  const navi = useNavigate();
+  const [noticeTitle] = useState([
+    "티켓1번가에 오신 것을 환영합니다.",
+    "티켓1번가 고객센터 운영시간"
+  ]);
   return (
     <div id="noticeWrap">
       <h3>공지사항</h3>
@@ -14,18 +20,21 @@ export default function CSNotice() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td colSpan={2}>Larry the Bird</td>
-            </tr>
+            {noticeTitle.map((a, i) => {
+              return (
+                <tr
+                  onClick={() => {
+                    navi(`/cs/notice/${i}`, {
+                      state: noticeTitle[i]
+                    });
+                  }}
+                  i={i}
+                >
+                  <td>{i}</td>
+                  <td>{noticeTitle[i]}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </Table>
       </div>
@@ -33,9 +42,6 @@ export default function CSNotice() {
         <Pagination.First />
         <Pagination.Prev />
         <Pagination.Item active>{1}</Pagination.Item>
-        <Pagination.Item>{2}</Pagination.Item>
-        <Pagination.Item>{3}</Pagination.Item>
-        <Pagination.Ellipsis />
         <Pagination.Next />
         <Pagination.Last />
       </Pagination>
