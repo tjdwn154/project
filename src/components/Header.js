@@ -7,7 +7,8 @@ import axios from "axios";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(true);
   const [logoSrc, setLogoSrc] = useState("/white_logo.png");
-  const [searchTerm, setSearchTerm] = useState(""); // 검색어
+   // 검색어 제작중
+  const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const handleImageHover = () => {
     setLogoSrc("/color_logo.png");
@@ -136,7 +137,7 @@ export default function Header() {
                     </Button>
                   </Form>
                   <Nav className="justify-content-end flex-grow-1">
-                    <Nav.Link href="/">예매확인</Nav.Link>
+                    <Nav.Link href="/mypage/check">예매확인</Nav.Link>
                     <Nav.Link href="/mypage">마이페이지</Nav.Link>
                     {/* {CookieValue("memberId") ? (
                       <Nav.Link href="/mypage">마이페이지</Nav.Link>
