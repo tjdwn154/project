@@ -8,8 +8,6 @@ import SignUp from "./components/member/Signup";
 import Login from "./components/member/Login";
 import SearchId from "./components/member/SearchId";
 import SearchPw from "./components/member/SearchPw";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 // 예매:
 import Reservation from "./ReservationInfo/Reservation.js";
 import MainTicketPage from "./ReservationInfo/TicketBuy/MainTicketPage";
@@ -52,11 +50,9 @@ export default function App() {
             loading ? (
               <Loading />
             ) : (
-              <div id="wrap">
-                <Header />
+              <>
                 <Home />
-                <Footer />
-              </div>
+              </>
             )
           }
         ></Route>
