@@ -3,6 +3,7 @@ import { Nav, Container, Navbar, Form, Button, Offcanvas } from "react-bootstrap
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { CookieValue } from "../util/cookieutil";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(true);
@@ -31,18 +32,6 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  function CookieValue(cookieName) {
-    const cookies = document.cookie.split("; "); // 모든 쿠키를 불러옴
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i].split("="); // "="를 기준으로 cookie[i]를 가져옴
-      if (cookie[0] === cookieName) {
-        // 현재 쿠키이름과 일치 할 경우
-        return cookie[1]; // 쿠키의 값을 반환
-      }
-    }
-    return null; // 해당 쿠키 이름을 찾지 못한 경우
-  }
 
   const handleLogout = () => {
     axios
@@ -138,7 +127,7 @@ export default function Header() {
                   <Nav className="justify-content-end flex-grow-1">
                     <Nav.Link href="/">예매확인</Nav.Link>
                     <Nav.Link href="/mypage">마이페이지</Nav.Link>
-                    {/* {CookieValue("memberId") ? (
+                    {/* {CookieValue("memberId") ? ( ///////////////////////////////////////////////////////////////////////
                       <Nav.Link href="/mypage">마이페이지</Nav.Link>
                     ) : (
                       <>

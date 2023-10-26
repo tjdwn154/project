@@ -53,10 +53,12 @@ router.post("/api/reservation", (req, res) => {
   });
 });
 
+// 예매 확인 페이지
 router.get("/api/reservation-check", (req, res) => {
-  const sql = "SELECT * FROM reservation"; // 적절한 SQL 쿼리를 사용하여 데이터 검색
+  const memberId = req.query.memberId;
+  const sql = "SELECT * FROM reservation WHERE memberId = ?";
 
-  db.query(sql, (err, results) => {
+  db.query(sql, [memberId], (err, results) => {
     if (err) {
       console.error("데이터베이스 오류:", err);
       res.status(500).json({ error: "데이터베이스 오류" });
