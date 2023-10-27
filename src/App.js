@@ -6,8 +6,7 @@ import { Routes, Route, useParams } from "react-router-dom";
 import Home from "./pages/Home.js";
 import SignUp from "./components/member/Signup";
 import Login from "./components/member/Login";
-import SearchId from "./components/member/SearchId";
-import SearchPw from "./components/member/SearchPw";
+import SeacrhMember from "./components/member/SeacrhMember";
 // 예매:
 import Reservation from "./ReservationInfo/Reservation.js";
 import MainTicketPage from "./ReservationInfo/TicketBuy/MainTicketPage";
@@ -64,8 +63,8 @@ export default function App() {
         {/* 회원관리: */}
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/searchID" element={<SearchId />} />
-        <Route path="/searchPW" element={<SearchPw />} />
+        <Route path="/seacrhmember" element={<SeacrhMember />} />
+
         {/* 고객센터페이지: */}
         <Route path="/cs" element={<CS />}>
           <Route index element={<CSNotice />} id={id} />
