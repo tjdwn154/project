@@ -26,7 +26,6 @@
   line-height: 60px;
   background-color: #252421;
   transition: all 0.4s;
-  /* background: linear-gradient(-45deg, rgba(220, 218, 215, 0.6), transparent); */
 }
 #subHeader .inner {
   margin: 0 auto;
@@ -72,7 +71,7 @@
   width: 100%;
   height: 78px;
   line-height: 78px;
-  position: fixed;
+  position: sticky;
   top: 60px;
   display: flex;
   justify-content: center;

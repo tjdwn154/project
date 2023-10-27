@@ -5,25 +5,30 @@ import Footer from "../components/Footer";
 import { Link, Outlet } from "react-router-dom";
 import '../assets/css/cs.css';
 export default function CS() {
-  const [isScrolled, setIsScrolled] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 120) {
-        setIsScrolled(false);
-      } else {
+      if (window.scrollY > 140) {
         setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
       }
     };
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   return (
     <div id="csWrap">
-      {isScrolled && <SubHeader />}
-      <nav id="csNav" style={isScrolled === false ? { top: 0 + "px" } : null}>
+      <SubHeader />
+      <nav
+        id="csNav"
+        style={{
+          top: isScrolled ? 0 : "60px"
+        }}
+      >
         <h2>CUSTOMER SERVICE</h2>
         <ul>
           <li>

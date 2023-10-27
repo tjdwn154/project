@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 export default function FAQ() {
   return (
     <div id="faqWrap">
-      <h3>FAQ</h3>
-      <p>자주 문의하는 질문에 대한 답변을 찾아보세요.</p>
+      <div className="titleBox">
+        <h3>FAQ</h3>
+        <p>자주 문의하는 질문에 대한 답변을 찾아보세요.</p>
+      </div>
       <Accordion>
         <Accordion.Item eventKey="0">
           <Accordion.Header>회원가입의 조건이 있나요?</Accordion.Header>
@@ -33,11 +35,10 @@ export default function FAQ() {
               등)에 의거, 주문정보는 5년간 데이터로만 보관하며(다른 용도로 절대
               사용불가) 이후 파기됩니다.
             </p>
-
-            <strong>[회원탈퇴 방법] </strong>
+            {/* <strong>[회원탈퇴 방법] </strong>
             <p>
               ① 회원 직접 탈퇴 방법 - 고객님께서 직접 인터넷으로 통해 회원탈퇴를
-              하실려면 티켓1번가 홈페이지 로그인을 하신 후 [마이페이지 >
+              하실려면 티켓1번가 홈페이지 로그인을 하신 후 [마이페이지 `&gt`
               회원탈퇴] 메뉴를 클릭해주세요. 또한 모바일 페이지 [마이페이지 >
               회원탈퇴] 를 통해서도 탈퇴 요청이 가능합니다. 이동한 회원탈퇴
               페이지에서 탈퇴안내 확인 후 탈퇴사유를 선택하시고, 탈퇴 신청을
@@ -47,7 +48,7 @@ export default function FAQ() {
               ② 고객센터를 통한 탈퇴 방법 - 성함, ID, 생년월일, 휴대폰번호 확인
               하여 고객센터(1111 - 1111)로 전화 주시면 담당자가
               처리해드리겠습니다.
-            </p>
+            </p> */}
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="2">

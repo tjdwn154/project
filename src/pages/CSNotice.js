@@ -9,8 +9,10 @@ export default function Notice() {
   ]);
   return (
     <div id="noticeWrap">
-      <h3>공지사항</h3>
-      <p>티켓1번가의 공지사항을 확인하세요.</p>
+      <div className="titleBox">
+        <h3>공지사항</h3>
+        <p>티켓1번가의 공지사항을 확인하세요.</p>
+      </div>
       <div className="boardBox">
         <Table striped bordered hover>
           <thead>

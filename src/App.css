@@ -20,7 +20,7 @@ body{font-family: 'Noto Sans', sans-serif;}
 
 /* HEADER: */
 #header {
-  width: 100%;
+  width: 100dvw;
   top: 0;
   z-index: 9;
   position: fixed;
@@ -57,13 +57,9 @@ body{font-family: 'Noto Sans', sans-serif;}
 }
 
 #header .inner {
-  width: 1280px;
+  width: 90dvw;
   margin: 0 auto;
-  padding: 0 2%;
 }
-
-#header .inner .nav0 {}
-
 #header .inner .nav-item:not(:last-child) {
   margin-right: 1%;
 }
@@ -114,25 +110,18 @@ body{font-family: 'Noto Sans', sans-serif;}
   height: 60px;
   width: 100%;
   justify-content: end;
+  position: relative;
+  padding: 0;
 }
 
 #header .inner #nav2 nav .container-fluid .navbar-nav {
   display: flex;
   width: 100%;
 }
-#header .inner #nav2 nav .container-fluid .offcanvasNavbar-expand-xl .offcanvas-body{}
 #header .inner #nav2 nav .container-fluid #offcanvasNavbar-expand-xl .offcanvas-body .nav-link:not(:last-child){margin-right: 2%;}
-
-.offcanvas.show {}
-
-.offcanvas.show .offcanvas-header {}
-
 .offcanvas.show .offcanvas-header .offcanvas-title {
   margin: 0 auto;
 }
-
-.offcanvas.show .offcanvas-header .offcanvas-title a {}
-
 .offcanvas.show .offcanvas-header a img {
   width: 130px;
 }
@@ -144,7 +133,7 @@ body{font-family: 'Noto Sans', sans-serif;}
 }
 
 #header .navbar>.container-fluid form {
-  position: relative;
+  position: absolute;
   left: 30%;
 }
 
@@ -168,7 +157,8 @@ body{font-family: 'Noto Sans', sans-serif;}
   --bs-btn-hover-bg: transparent;
   --bs-btn-hover-border-color: none;
 }
-
+@media screen and (min-width: 1600px){
+}
 @media screen and (max-width: 1200px) {
   #header .inner {
     max-width: 980px;
@@ -177,11 +167,12 @@ body{font-family: 'Noto Sans', sans-serif;}
   #header .inner #nav2 h1.logo a img {
     transform: none;
   }
+  
 }
 
 @media screen and (max-width: 768px) {
   #header .inner {
-    max-width: 600px;
+    max-width: 500px;
   }
 
   #header .inner .nav0 {
@@ -553,9 +544,6 @@ body{font-family: 'Noto Sans', sans-serif;}
   width: 35%;
   text-align: right;
 }
-
-#orderCononfirmationWrap .container .bottom .orderReceipt .left img {}
-
 #orderCononfirmationWrap .container .bottom .orderReceipt .right {
   width: 65%;
   height: 100%;
@@ -572,9 +560,6 @@ body{font-family: 'Noto Sans', sans-serif;}
 #orderCononfirmationWrap .container .bottom .orderReceipt .right p span {
   font-weight: bold;
 }
-
-#orderCononfirmationWrap .container .btnBox {}
-
 #orderCononfirmationWrap .container .btnBox button:first-child.btn-primary {
   margin-right: 8%;
   font-size: 12px;
