@@ -1,5 +1,6 @@
 import React from "react";
 import "../assets/css/main.css";
+import Button from 'react-bootstrap/Button';
 import LandingCarousel from "../components/Carousel/LandingCarousel";
 import RanksCarousel from "../components/Carousel/RanksCarousel.js";
 import NewCarousel from "../components/Carousel/NewCarousel";
@@ -21,8 +22,30 @@ export default function Home() {
         </div>
         <ToTopBtn />
         <RanksCarousel />
+        <div className="landingBox1">
+        <div className="landingInner">
+          <div className="content">
+            {/* <p>asdasdasdasdasdasd</p>
+            <h2 className="">티켓1번가</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+              ratione, eum voluptas quidem magni quam repudiandae explicabo
+              vero. Architecto, tenetur temporibus placeat reiciendis magni ut
+              tempore voluptates eveniet facere dicta!
+            </p> */}
+          </div>
+        </div>
+      </div>
         <GenresCarousel />
         <NewCarousel />
+        <div className="landingBox2">
+        <div className="landingInner">
+          <div className="right">
+            <p className="titleThin1"><strong>시간</strong>과 <strong>예술</strong>의 조화로운 여행</p>
+            <h2 className="titleBold1">티켓1번가</h2>
+          </div>
+        </div>
+      </div>
       </div>
       <Footer />
     </div>

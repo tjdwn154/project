@@ -8,7 +8,7 @@ import "swiper/css/thumbs";
 export default function LandingCarousel() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
-    <div id="ladingCarouselBox">
+    <div id="landingCarouselBox">
       <Swiper
         style={{}}
         spaceBetween={20}
@@ -16,39 +16,60 @@ export default function LandingCarousel() {
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
-          pauseOnMouseEnter:true,
+          pauseOnMouseEnter: true,
 
         }}
         thumbs={{ swiper: thumbsSwiper }}
-        modules={[Autoplay, FreeMode, Thumbs ]}
+        modules={[Autoplay, FreeMode, Thumbs]}
         className="mySwiper2"
       >
-        <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=1" alt="공연제목 바인딩" />
+        <SwiperSlide><div class="txtBox">
+          <strong><span>티켓1번가</span></strong>
+          <p><span>음악과 쇼의 황홀한 조화에 빠져보세요</span></p>
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2016/11/23/00/43/audio-1851517_1280.jpg" alt="랜딩" />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=2" alt="공연제목 바인딩" />
+        <SwiperSlide><div class="txtBox">
+          <strong><span>티켓1번가</span></strong>
+          <p><span>음악과 쇼의 황홀한 조화에 빠져보세요</span></p>
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2016/11/19/09/57/violins-1838390_1280.jpg" alt="랜딩" />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=3" alt="공연제목 바인딩" />
+        <SwiperSlide><div class="txtBox">
+          <strong><span>티켓1번가</span></strong>
+          <p><span>음악과 쇼의 황홀한 조화에 빠져보세요</span></p>
+        </div>
+          <img src="https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_1280.jpg" alt="랜딩" />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=4" alt="공연제목 바인딩" />
+        <SwiperSlide><div class="txtBox">
+          <strong><span>티켓1번가</span></strong>
+          <p><span>음악과 쇼의 황홀한 조화에 빠져보세요</span></p>
+        </div>
+          <img src="https://cdn.pixabay.com/photo/2020/09/16/10/17/dancer-5576002_1280.jpg" alt="랜딩" />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=5" alt="공연제목 바인딩" />
+        <SwiperSlide><div class="txtBox">
+          <strong><span>티켓1번가</span></strong>
+          <p><span>음악과 쇼의 황홀한 조화에 빠져보세요</span></p>
+        </div>
+          <img src="https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg" alt="랜딩" />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=6" alt="공연제목 바인딩" />
+        <SwiperSlide><div class="txtBox">
+          <strong><span>티켓1번가</span></strong>
+          <p><span>음악과 쇼의 황홀한 조화에 빠져보세요</span></p>
+        </div>
+          <img src="https://cdn.pixabay.com/photo/2016/11/18/15/44/audience-1835431_1280.jpg" alt="랜딩" />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=7" alt="공연제목 바인딩" />
+        <SwiperSlide><div class="txtBox">
+          <strong><span>티켓1번가</span></strong>
+          <p><span>음악과 쇼의 황홀한 조화에 빠져보세요</span></p>
+        </div>
+          <img src="https://picsum.photos/1600/400?random=7" alt="랜딩" />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=8" alt="공연제목 바인딩" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=9" alt="공연제목 바인딩" />
+        <SwiperSlide><div class="txtBox">
+          <strong><span>티켓1번가</span></strong>
+          <p><span>음악과 쇼의 황홀한 조화에 빠져보세요</span></p>
+        </div>
+          <img src="https://cdn.pixabay.com/photo/2018/04/13/08/06/father-and-son-3315817_1280.jpg" alt="랜딩" />
         </SwiperSlide>
       </Swiper>
       <Swiper
@@ -61,31 +82,29 @@ export default function LandingCarousel() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=1" alt="공연제목 바인딩" />
+        <img src="https://cdn.pixabay.com/photo/2016/11/23/00/43/audio-1851517_1280.jpg" alt="랜딩" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=2" alt="공연제목 바인딩" />
+          
+          <img src="https://cdn.pixabay.com/photo/2016/11/19/09/57/violins-1838390_1280.jpg" alt="랜딩1" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=3" alt="공연제목 바인딩" />
+          <img src="https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_1280.jpg" alt="랜딩" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=4" alt="공연제목 바인딩" />
+          <img src="https://cdn.pixabay.com/photo/2020/09/16/10/17/dancer-5576002_1280.jpg" alt="랜딩" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=5" alt="공연제목 바인딩" />
+          <img src="https://cdn.pixabay.com/photo/2015/01/09/17/34/opera-594592_1280.jpg" alt="랜딩" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=6" alt="공연제목 바인딩" />
+          <img src="https://cdn.pixabay.com/photo/2016/11/18/15/44/audience-1835431_1280.jpg" alt="랜딩" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=7" alt="공연제목 바인딩" />
+          <img src="https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg" alt="랜딩" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=8" alt="공연제목 바인딩" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://picsum.photos/1600/400?random=9" alt="공연제목 바인딩" />
+          <img src="https://cdn.pixabay.com/photo/2018/04/13/08/06/father-and-son-3315817_1280.jpg" alt="랜딩" />
         </SwiperSlide>
       </Swiper>
     </div>

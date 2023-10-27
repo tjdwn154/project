@@ -84,41 +84,51 @@
 
 
 /* 메인-랜딩슬라이드(Carousel0): */
-#ladingCarouselBox {
+#landingCarouselBox {
   position: relative;
 }
-
-#ladingCarouselBox .swiper.swiper-initialized.swiper-horizontal.mySwiper2.swiper-backface-hidden .swiper-wrapper img {
+#landingCarouselBox .txtBox{position: absolute; left: 10%; color: white; text-align: left;}
+#landingCarouselBox .txtBox strong{display: block;
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.25px;
+  color: var(--primary-color1);
+  margin-bottom: 25px;}
+  #landingCarouselBox .txtBox p{font-size: 24px;
+    letter-spacing: -0.5px;
+    line-height: 1.7;
+    color: #fff;}
+#landingCarouselBox .swiper.swiper-initialized.swiper-horizontal.mySwiper2.swiper-backface-hidden .swiper-wrapper img {
   cursor: pointer;
   width: 100%;
   height: 80vh;
-
 }
 
-#ladingCarouselBox .swiper-horizontal.swiper-free-mode.mySwiper.swiper-thumbs {
+#landingCarouselBox .swiper-horizontal.swiper-free-mode.mySwiper.swiper-thumbs {
   width: 100%;
   position: absolute;
   top: 80%;
   height: 52px;
 }
 
-#ladingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper {
+#landingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper {
   display: flex;
   justify-content: center;
 }
 
-#ladingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper>div {
+#landingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper>div {
   cursor: pointer;
   width: 52px !important;
   height: 52px !important;
-
 }
-
-#ladingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper .swiper-slide-thumb-active img {
+#landingCarouselBox .swiper-thumbs>div:not(:last-child){
+  margin-right: 15px !important;}
+#landingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper .swiper-slide-thumb-active img {
   border: 2px solid hsla(0, 0%, 100%, .7);
 }
 
-#ladingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper div:hover::before {
+#landingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper div:hover::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -129,7 +139,7 @@
   box-sizing: border-box
 }
 
-#ladingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper div img {
+#landingCarouselBox .swiper.mySwiper.swiper-thumbs .swiper-wrapper div img {
   height: 52px;
   border-radius: 6px;
 }
@@ -254,6 +264,94 @@
   font-size: 38px;
   left: 10%;
   bottom: 0;
+}
+/* 랜딩후크용1: */
+.landingBox1 {
+  position: relative;
+  background: url(https://cdn.pixabay.com/photo/2018/06/17/10/38/artist-3480274_1280.jpg)
+    #45434c no-repeat center center fixed;
+  background-size: 100%;
+  max-height: 45dvh;
+  height: 350px;
+  background-position: bottom;
+}
+.landingBox1::before {
+  display: block;
+  position: absolute;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 5%, #333333 90%);
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .6;
+}
+.landingBox1 .landingInner{
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+  height: 100%;
+  width: 1080px;
+  margin: 0 auto;
+  padding: 2% 10dvw;
+}
+
+.landingBox1 .landingInner .left {
+  width: 50%;
+}
+
+.landingBox1 .landingInner .left .titleBold1 {
+  font-weight: bold;
+  font-size: 38px;
+}
+
+.landingBox1 .landingInner .left .titleThin1 {
+  font-size: 24px;
+}
+.landingBox1 .landingInner button{background-color: var(--primary-color1); color: white; border: none; font-weight: bold; cursor: pointer;}
+/* 랜딩후크용2: */
+.landingBox2 {
+  position: relative;
+  background: url(https://cdn.pixabay.com/photo/2019/07/25/10/43/ballerina-4362282_1280.jpg)
+    #45434c no-repeat center 85%;
+  background-size: cover;
+  height: 400px;
+}
+.landingBox2::after {
+  display: block;
+  position: absolute;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 55%, #5e5842 85%);
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .6;
+}
+.landingBox2 .landingInner {
+  display: flex;
+  justify-content: end;
+  color: white;
+  align-items: center;
+  height: 100%;
+  width: 1080px;
+  margin: 0 auto;
+  padding: 2% 5%;
+}
+
+.landingBox2 .landingInner .titleThin1 {
+  font-size: 24px;
+}
+.landingBox2 .landingInner .titleBold1 {
+  font-weight: bold;
+    color: var(--primary-color1);
+    margin-bottom: 10px;
+    text-align: right;
+    font-size: 55px;
+    line-height: 1.1;
+    letter-spacing: -0.25px;
+    margin-bottom: 25px;
 }
 
 /* 메인-장르별공연(Carousel1): */

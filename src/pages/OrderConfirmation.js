@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, Link, Outlet, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { EmailModal } from "../components/EmailModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "react-bootstrap";
@@ -79,7 +79,7 @@ export default function OrderConfirmation() {
           </div>
         </div>
         <div className="btnBox">
-          <Link to="/mypage">
+          <Link to="/mypage/check">
             <Button variant="primary">예매내역 확인</Button>
           </Link>
           <Link to="/">
