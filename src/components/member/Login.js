@@ -67,13 +67,16 @@ function Login() {
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
+        margin: "10px",
       }}
     >
       <Container
         style={{ width: "350px", padding: "20px", borderRadius: "10px", boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)" }}
       >
         <div style={{ display: "flex", justifyContent: "center", marginBottom: "20px" }}>
-          <img src="/logo.png" alt="" style={{ width: "150px" }} />
+          <Link to="/">
+            <img src="/logo.png" alt="" style={{ width: "150px" }} />
+          </Link>
         </div>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formBasicEmail" className="mb-2">
@@ -103,13 +106,23 @@ function Login() {
           <Button variant="primary" type="submit" style={{ width: "100%", borderRadius: "10px" }}>
             로그인
           </Button>
+          <Form.Text id="passwordHelpBlock" muted>
+            <p className="mb-0 text-end">
+              <Link to="/seacrhmember" className="text-primary fw-bold">
+                ID | PW 찾기
+              </Link>
+            </p>
+          </Form.Text>
         </Form>
 
-        <div style={{ marginTop: "10px", textAlign: "center" }}>
-          <Link to="/SearchId">아이디 찾기</Link> | <Link to="/SearchPw">비밀번호 찾기</Link>
-        </div>
-        <div style={{ marginRight: "15px", textAlign: "center" }}>
-          <Link to="/signup">회원가입</Link>
+        <div className="mt-3">
+          <p className="mb-0 text-center">
+            티켓1번가 처음이신가요?
+            <br />
+            <Link to="/signup" className="text-primary fw-bold">
+              회원가입
+            </Link>
+          </p>
         </div>
       </Container>
     </div>
