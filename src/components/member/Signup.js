@@ -115,17 +115,19 @@ function Signup() {
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
+        margin: "10px",
       }}
     >
       <Container>
         <Row className="vh-100 d-flex justify-content-center align-items-center">
           <Col md={8} lg={6} xs={12}>
-            <div className="border border-2 border-primary"></div>
             <Card className="shadow px-4">
               <Card.Body>
                 <div className="mb-3 mt-md-4">
                   <h2 className="fw-bold mb-2 text-center text-uppercase ">
-                    <img src="/logo.png" alt="" />
+                    <Link to="/">
+                      <img src="/logo.png" alt="" />
+                    </Link>
                   </h2>
                   <div className="mb-3">
                     <Form onSubmit={handleSubmit}>
