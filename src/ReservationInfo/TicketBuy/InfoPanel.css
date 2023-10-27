@@ -87,11 +87,6 @@
 }
 
 /* 번호, 생년월일 아래 참조 */
-.cu-num {
-  display: inline;
-  width: 175px;
-}
-
 .birth-ex {
   color: rgb(83, 83, 83);
   font-size: 12px;
@@ -101,31 +96,37 @@
 }
 
 /* 이전, 다음 버튼 */
-.customer-Btn1 {
-  width: 85px;
+.customer-btnPrev {
+  width: 75px;
   height: 50px;
   font-size: 20px;
   border: 1px solid rgb(70, 70, 70);
   border-radius: 10px;
-  padding: 5px 8px;
-  background-color: #7e7e7e;
+  padding: 3px 5px;
+  background-color: #696969;
   color: white;
   text-align: center;
-  margin-left: 30px;
+  margin-left: 35px;
 }
 
-.customer-Btn2 {
+.customer-btnNext {
   width: 70px;
   height: 45px;
   font-size: 20px;
   border: 1px solid rgb(70, 70, 70);
   border-radius: 10px;
   padding: 5px 8px;
-  background-color: #7e7e7e;
+  background-color: #696969;
   color: white;
   text-align: center;
   margin-left: 460px;
   margin-top: 20px;
+  &.true {
+    background-color: #1a7dbe;
+  }
+  &.false {
+    background-color: gray;
+  }
 }
 
 /* ************************ */

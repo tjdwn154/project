@@ -2,9 +2,16 @@ import "./InfoPanel.css";
 import { useState } from "react";
 
 //버튼 명시
-const Button = ({ name, onClick, className, type, form }) => {
+const Button = ({ name, onClick, className, type, form, disabled, style }) => {
   return (
-    <button className={className} onClick={onClick} type={type} form={form}>
+    <button
+      className={className}
+      onClick={onClick}
+      type={type}
+      form={form}
+      disabled={disabled}
+      style={style}
+    >
       {name}
     </button>
   );
@@ -17,6 +24,7 @@ const InfoPanel = (props) => {
   const [enteredNum, setNum] = useState("");
   const [enteredEmail, setEmail] = useState("");
 
+  //티켓수령방법
   const [ticketWay, setTicketWay] = useState("");
   const ticketWayChange = (e) => {
     e.preventDefault();
@@ -97,16 +105,16 @@ const InfoPanel = (props) => {
   const handleLoginClick = () => {
     setState(true);
   };
-
   const handleLogoutClick = () => {
     setState(false);
   };
 
+  const infoTFCheck = !(isName && isEmail && isBirth && isNum);
   let button;
   if (infoCheck) {
     button = (
       <Button
-        className="customer-Btn1"
+        className="customer-btnPrev"
         name="이전"
         onClick={handleLogoutClick}
       />
@@ -114,11 +122,13 @@ const InfoPanel = (props) => {
   } else {
     button = (
       <Button
-        className="customer-Btn2"
+        className="customer-btnNext"
         name="다음"
         onClick={handleLoginClick}
         type="submit"
         form="ticketForm, customerForm"
+        disabled={infoTFCheck}
+        style={{ backgroundColor: infoTFCheck ? "gray" : "#1a7dbe" }}
       />
     );
   }
@@ -151,6 +161,7 @@ const InfoPanel = (props) => {
               name="tickway"
               value="현장수령"
               onChange={ticketWayChange}
+              checked
             />
             <label for="opt1">현장수령</label>
           </div>
@@ -161,6 +172,7 @@ const InfoPanel = (props) => {
               name="tickway"
               value="배송"
               onChange={ticketWayChange}
+              disabled
             />
             <label for="opt2">배송</label>
           </div>
