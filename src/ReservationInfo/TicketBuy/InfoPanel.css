@@ -1,58 +1,9 @@
+/* 티켓수령방법 + 예매자 확인 */
 #panelContent {
   display: flex;
 }
 
-#customerContent {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  height: 300px;
-  padding: 15px 15px 15px 30px;
-}
-
-#customerContent h2 {
-  font-size: 20px;
-  font-weight: 600;
-  text-align: left;
-}
-
-.customer-formList label {
-  margin-right: 20px;
-}
-
-#customerForm {
-  width: 100%;
-  border-top: 1px solid black;
-  margin-top: 10px;
-  text-align: left;
-}
-
-#customerForm ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.customer-formList {
-  padding: 7px 0px 15px 0px;
-  margin: 10px 5px;
-  text-align: left;
-  border-bottom: 1px solid lightgray;
-}
-
-.cu-num {
-  display: inline;
-  width: 175px;
-}
-
-.birth-ex {
-  color: rgb(83, 83, 83);
-  font-size: 12px;
-  margin: 0px;
-  padding-left: 5px;
-  padding-top: 5px;
-}
-
+/* 티켓수령방법 */
 #ticketContent {
   border-right: 1px solid rgb(0, 0, 0);
   display: flex;
@@ -80,6 +31,76 @@
   padding-left: 15px;
 }
 
+/* ******************************* */
+/* 예매자 확인 */
+#customerContent {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 300px;
+  padding: 15px 15px 15px 30px;
+}
+
+#customerContent h2 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* 예매자 확인 폼 */
+#customerForm {
+  width: 100%;
+  border-top: 1px solid black;
+  margin-top: 10px;
+  text-align: left;
+}
+
+#customerForm ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.customer-formList {
+  display: flex;
+  flex-direction: column;
+  padding: 7px 0px 15px 0px;
+  margin: 10px 5px;
+  text-align: left;
+  border-bottom: 1px solid lightgray;
+}
+
+.customer-formList label {
+  margin-right: 20px;
+}
+
+.customer-formList span {
+  display: inline;
+  color: red;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.customer-form-boxlist {
+  padding-top: 8px;
+  margin-bottom: -2px;
+}
+
+/* 번호, 생년월일 아래 참조 */
+.cu-num {
+  display: inline;
+  width: 175px;
+}
+
+.birth-ex {
+  color: rgb(83, 83, 83);
+  font-size: 12px;
+  margin: 0px;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+/* 이전, 다음 버튼 */
 .customer-Btn1 {
   width: 85px;
   height: 50px;
@@ -107,11 +128,8 @@
   margin-top: 20px;
 }
 
-#customerInfoCheck-box {
-  display: flex;
-  flex-direction: column;
-}
-
+/* ************************ */
+/* 정보를 확인하세요 페이지 */
 #checkInfoBox {
   width: 930px;
   text-align: left;

@@ -171,59 +171,67 @@ const InfoPanel = (props) => {
         <form id="customerForm">
           <ul>
             <li className="customer-formList">
-              <label id="name">이름</label>
-              <input
-                id="name"
-                type="text"
-                maxLength="4"
-                required
-                value={enteredName}
-                onChange={onNameHandler}
-              />
+              <div className="customer-form-boxlist">
+                <label id="name">이름</label>
+                <input
+                  id="name"
+                  type="text"
+                  maxLength="4"
+                  required
+                  value={enteredName}
+                  onChange={onNameHandler}
+                />
+              </div>
               {enteredName.length > 0 && <span>{nameMessage}</span>}
             </li>
             <li className="customer-formList">
-              <label id="birth">생년월일</label>
-              <input
-                id="birth"
-                type="text"
-                required
-                minLength="6"
-                maxLength="6"
-                value={enteredBirth}
-                onChange={onBirthHandler}
-              />
+              <div className="customer-form-boxlist">
+                <label id="birth">생년월일</label>
+                <input
+                  id="birth"
+                  type="text"
+                  required
+                  minLength="6"
+                  maxLength="6"
+                  value={enteredBirth}
+                  onChange={onBirthHandler}
+                />
+              </div>
               {enteredBirth.length > 0 && <span>{birthMessage}</span>}
               <p className="birth-ex">
                 예{")"} 980110 {"("}YYMMDD{")"}
               </p>
             </li>
             <li className="customer-formList">
-              <label id="num">연락처</label>
-              <input
-                className="num"
-                id="num"
-                type="text"
-                minLength="10"
-                maxLength="11"
-                required
-                value={enteredNum}
-                onChange={onNumHandler}
-              />
+              <div className="customer-form-boxlist">
+                <label id="num">연락처</label>
+                <input
+                  className="num"
+                  id="num"
+                  type="text"
+                  minLength="10"
+                  maxLength="11"
+                  required
+                  value={enteredNum}
+                  onChange={onNumHandler}
+                />
+              </div>
               {enteredNum.length > 0 && <span>{numMessage}</span>}
               <p className="birth-ex">
                 예{")"} 01012345678 {'(" - "'}표시 없이 입력{")"}
               </p>
             </li>
             <li className="customer-formList">
-              <label id="email">이메일</label>
-              <input
-                id="email"
-                type="email"
-                required
-                value={enteredEmail}
-                onChange={onEmailHandler}
-              />
+              <div className="customer-form-boxlist">
+                <label id="email">이메일</label>
+                <input
+                  id="email"
+                  type="email"
+                  required
+                  value={enteredEmail}
+                  onChange={onEmailHandler}
+                />
+              </div>
               {enteredEmail.length > 0 && <span>{emailMessage}</span>}
             </li>
           </ul>
