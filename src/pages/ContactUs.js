@@ -55,7 +55,7 @@ export default function ContactUs() {
         </div>
         <Form.Group className="mb-3">
           <Form.Label>메시지</Form.Label>
-          <textarea onChange={handleChange} rows={5} />
+          <textarea value={contactMSG} onChange={handleChange} rows={5} />
         </Form.Group>
         {isClicked ? (
           <OkModal show={isClicked} onHide={() => setIsClicked(false)} />
