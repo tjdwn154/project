@@ -61,8 +61,10 @@ const InfoPanel = (props) => {
 
   //전화번호: 010으로 시작하게끔 하려고(아직 안함)
   const onNumHandler = (e) => {
-    setNum(e.target.value);
-    if (e.target.value.length < 11) {
+    const numCheck = /^01(?:0|1|[6-9])(?:\d{3}|\d{4})\d{4}$/;
+    const numCurrent = e.target.value;
+    setNum(numCurrent);
+    if (numCurrent.length < 11 || !numCheck.test(numCurrent)) {
       setNumMessage("전화번호를 입력해주세요.");
       setIsNum(false);
     } else {
@@ -71,10 +73,16 @@ const InfoPanel = (props) => {
     }
   };
 
-  //이메일: @들어가고 앞뒤로 영어 있어야 함(아직 안함)
+  //이메일
   const onEmailHandler = (e) => {
-    setEmail(e.target.value);
-    if (e.target.value.length < 9) {
+    //영문 대소문자, 숫자로 시작+2번째 글짜부터는 영대소문자, 숫자(-_. 포함)
+    //@ 중간에 들어감, 도메인 부분 영문 대소문자, 숫자시작 이후 -_. 가능(.하나 최소 포함)
+    //.뒤에 도메인 들어갈 자리(2-3)
+    const emailCheck =
+      /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/i;
+    const emailCurrent = e.target.value;
+    setEmail(emailCurrent);
+    if (!emailCheck.test(emailCurrent)) {
       setEmailMessage("이메일을 제대로 입력해주세요.");
       setIsEmail(false);
     } else {
