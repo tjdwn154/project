@@ -24,13 +24,6 @@ const InfoPanel = (props) => {
   const [enteredNum, setNum] = useState("");
   const [enteredEmail, setEmail] = useState("");
 
-  //티켓수령방법
-  const [ticketWay, setTicketWay] = useState("");
-  const ticketWayChange = (e) => {
-    e.preventDefault();
-    setTicketWay(e.target.value);
-  };
-
   //오류메시지 상태저장
   const [nameMessage, setNameMessage] = useState("");
   const [birthMessage, setBirthMessage] = useState("");
@@ -99,11 +92,22 @@ const InfoPanel = (props) => {
     }
   };
 
+  //티켓수령방법
+  const [ticketWay, setTicketWay] = useState("");
+  const ticketWayChange = (e) => {
+    e.preventDefault();
+    setTicketWay(e.target.value);
+  };
+
   //버튼 관련 함수
   const [infoCheck, setState] = useState(false);
 
   const handleLoginClick = () => {
-    setState(true);
+    if (ticketWay == false) {
+      alert("티켓수령방법을 선택해주세요.");
+    } else {
+      setState(true);
+    }
   };
   const handleLogoutClick = () => {
     setState(false);
@@ -161,7 +165,6 @@ const InfoPanel = (props) => {
               name="tickway"
               value="현장수령"
               onChange={ticketWayChange}
-              checked
             />
             <label for="opt1">현장수령</label>
           </div>
@@ -172,7 +175,6 @@ const InfoPanel = (props) => {
               name="tickway"
               value="배송"
               onChange={ticketWayChange}
-              disabled
             />
             <label for="opt2">배송</label>
           </div>
