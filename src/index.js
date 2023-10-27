@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./assets/css/reset.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
@@ -10,20 +10,28 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import {
   faPaperPlane,
-  faCircleCheck
+  faCircleCheck,
 } from "@fortawesome/free-regular-svg-icons";
 import {
   faInstagram,
   faTwitter,
-  faYoutube
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import ScrollUp from "./components/ScrollUp";
 
-library.add(fas, faInstagram, faTwitter, faYoutube,faCircleCheck,faPaperPlane);
-
+library.add(
+  fas,
+  faInstagram,
+  faTwitter,
+  faYoutube,
+  faCircleCheck,
+  faPaperPlane
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
+    <ScrollUp />
     <App />
   </BrowserRouter>
 );
