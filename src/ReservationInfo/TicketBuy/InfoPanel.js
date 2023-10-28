@@ -1,5 +1,7 @@
 import "./InfoPanel.css";
+import { useLocation } from "react-router-dom";
 import { useState } from "react";
+import MyticketInfo from "./MyticketInfo";
 
 //버튼 명시
 const Button = ({ name, onClick, className, type, form, disabled, style }) => {
@@ -18,6 +20,8 @@ const Button = ({ name, onClick, className, type, form, disabled, style }) => {
 };
 
 const InfoPanel = (props) => {
+  const location = useLocation();
+  const performanceData = location.state.performanceData;
   //고객 정보 관련 데이터
   const [enteredName, setName] = useState("");
   const [enteredBirth, setBirth] = useState("");
@@ -101,6 +105,7 @@ const InfoPanel = (props) => {
 
   //버튼 관련 함수
   const [infoCheck, setState] = useState(false);
+  const [finInfoCheck, setFinInfoCheck] = useState(false);
 
   const handleLoginClick = () => {
     if (ticketWay == false) {
@@ -112,9 +117,14 @@ const InfoPanel = (props) => {
   const handleLogoutClick = () => {
     setState(false);
   };
-
+  const CheckBtnClick = () => {
+    alert("정보가 확인되었습니다.");
+    setFinInfoCheck(true);
+  };
+  const infoFinCheck = !finInfoCheck;
   const infoTFCheck = !(isName && isEmail && isBirth && isNum);
   let button;
+  let checkBtn;
   if (infoCheck) {
     button = (
       <Button
@@ -122,6 +132,9 @@ const InfoPanel = (props) => {
         name="이전"
         onClick={handleLogoutClick}
       />
+    );
+    checkBtn = (
+      <Button className="customer-btnOk" name="확인" onClick={CheckBtnClick} />
     );
   } else {
     button = (
@@ -140,117 +153,134 @@ const InfoPanel = (props) => {
   //infoCheck에 따른 페이지 반환
   if (infoCheck) {
     return (
-      <div id="checkInfoBox">
-        <h1>정보를 확인하세요</h1>
-        <ul>
-          <li>티켓수령방법: {ticketWay}</li>
-          <li>이름: {enteredName}</li>
-          <li>생년월일: {enteredBirth}</li>
-          <li>연락처: {enteredNum}</li>
-          <li>이메일: {enteredEmail}</li>
-        </ul>
-        {button}
+      <div id="checkInfoBox-content">
+        <div id="checkInfoBox">
+          <h1>정보를 확인하세요</h1>
+          <ul>
+            <li>티켓수령방법: {ticketWay}</li>
+            <li>이름: {enteredName}</li>
+            <li>생년월일: {enteredBirth}</li>
+            <li>연락처: {enteredNum}</li>
+            <li>이메일: {enteredEmail}</li>
+          </ul>
+          {button}
+          {checkBtn}
+        </div>
+        <div className="mytickInfo-content">
+          <MyticketInfo
+            performanceData={performanceData}
+            infoFinCheck={infoFinCheck}
+          />
+        </div>
       </div>
     );
   }
   return (
-    <div id="panelContent">
-      <div id="ticketContent">
-        <h2>티켓수령방법</h2>
-        <form id="ticketForm">
-          <div>
-            <input
-              type="radio"
-              id="opt1"
-              name="tickway"
-              value="현장수령"
-              onChange={ticketWayChange}
-            />
-            <label for="opt1">현장수령</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              id="opt2"
-              name="tickway"
-              value="배송"
-              onChange={ticketWayChange}
-            />
-            <label for="opt2">배송</label>
-          </div>
-        </form>
+    <div id="main-panelContent">
+      <div id="panelContent">
+        <div id="ticketContent">
+          <h2>티켓수령방법</h2>
+          <form id="ticketForm">
+            <div>
+              <input
+                type="radio"
+                id="opt1"
+                name="tickway"
+                value="현장수령"
+                onChange={ticketWayChange}
+              />
+              <label for="opt1">현장수령</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="opt2"
+                name="tickway"
+                value="배송"
+                onChange={ticketWayChange}
+              />
+              <label for="opt2">배송</label>
+            </div>
+          </form>
+        </div>
+        <div id="customerContent">
+          <h2>예매자 확인</h2>
+          <form id="customerForm">
+            <ul>
+              <li className="customer-formList">
+                <div className="customer-form-boxlist">
+                  <label id="name">이름</label>
+                  <input
+                    id="name"
+                    type="text"
+                    maxLength="4"
+                    required
+                    value={enteredName}
+                    onChange={onNameHandler}
+                  />
+                </div>
+                {enteredName.length > 0 && <span>{nameMessage}</span>}
+              </li>
+              <li className="customer-formList">
+                <div className="customer-form-boxlist">
+                  <label id="birth">생년월일</label>
+                  <input
+                    id="birth"
+                    type="text"
+                    required
+                    minLength="6"
+                    maxLength="6"
+                    value={enteredBirth}
+                    onChange={onBirthHandler}
+                  />
+                </div>
+                {enteredBirth.length > 0 && <span>{birthMessage}</span>}
+                <p className="birth-ex">
+                  예{")"} 980110 {"("}YYMMDD{")"}
+                </p>
+              </li>
+              <li className="customer-formList">
+                <div className="customer-form-boxlist">
+                  <label id="num">연락처</label>
+                  <input
+                    className="num"
+                    id="num"
+                    type="text"
+                    minLength="10"
+                    maxLength="11"
+                    required
+                    value={enteredNum}
+                    onChange={onNumHandler}
+                  />
+                </div>
+                {enteredNum.length > 0 && <span>{numMessage}</span>}
+                <p className="birth-ex">
+                  예{")"} 01012345678 {'(" - "'}표시 없이 입력{")"}
+                </p>
+              </li>
+              <li className="customer-formList">
+                <div className="customer-form-boxlist">
+                  <label id="email">이메일</label>
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    value={enteredEmail}
+                    onChange={onEmailHandler}
+                  />
+                </div>
+                {enteredEmail.length > 0 && <span>{emailMessage}</span>}
+              </li>
+            </ul>
+            {button}
+          </form>
+        </div>
       </div>
-      <div id="customerContent">
-        <h2>예매자 확인</h2>
-        <form id="customerForm">
-          <ul>
-            <li className="customer-formList">
-              <div className="customer-form-boxlist">
-                <label id="name">이름</label>
-                <input
-                  id="name"
-                  type="text"
-                  maxLength="4"
-                  required
-                  value={enteredName}
-                  onChange={onNameHandler}
-                />
-              </div>
-              {enteredName.length > 0 && <span>{nameMessage}</span>}
-            </li>
-            <li className="customer-formList">
-              <div className="customer-form-boxlist">
-                <label id="birth">생년월일</label>
-                <input
-                  id="birth"
-                  type="text"
-                  required
-                  minLength="6"
-                  maxLength="6"
-                  value={enteredBirth}
-                  onChange={onBirthHandler}
-                />
-              </div>
-              {enteredBirth.length > 0 && <span>{birthMessage}</span>}
-              <p className="birth-ex">
-                예{")"} 980110 {"("}YYMMDD{")"}
-              </p>
-            </li>
-            <li className="customer-formList">
-              <div className="customer-form-boxlist">
-                <label id="num">연락처</label>
-                <input
-                  className="num"
-                  id="num"
-                  type="text"
-                  minLength="10"
-                  maxLength="11"
-                  required
-                  value={enteredNum}
-                  onChange={onNumHandler}
-                />
-              </div>
-              {enteredNum.length > 0 && <span>{numMessage}</span>}
-              <p className="birth-ex">
-                예{")"} 01012345678 {'(" - "'}표시 없이 입력{")"}
-              </p>
-            </li>
-            <li className="customer-formList">
-              <div className="customer-form-boxlist">
-                <label id="email">이메일</label>
-                <input
-                  id="email"
-                  type="email"
-                  required
-                  value={enteredEmail}
-                  onChange={onEmailHandler}
-                />
-              </div>
-              {enteredEmail.length > 0 && <span>{emailMessage}</span>}
-            </li>
-          </ul>
-          {button}
-        </form>
+      <div className="mytickInfo-content">
+        <MyticketInfo
+          performanceData={performanceData}
+          infoFinCheck={infoFinCheck}
+        />
       </div>
     </div>
   );

@@ -1,6 +1,11 @@
 /* 티켓수령방법 + 예매자 확인 */
+
+#main-panelContent {
+  display: flex;
+}
 #panelContent {
   display: flex;
+  margin-right: 30px;
 }
 
 /* 티켓수령방법 */
@@ -121,23 +126,37 @@
   text-align: center;
   margin-left: 460px;
   margin-top: 20px;
-  &.true {
-    background-color: #1a7dbe;
-  }
-  &.false {
-    background-color: gray;
-  }
+}
+
+.customer-btnOk {
+  width: 70px;
+  height: 45px;
+  font-size: 20px;
+  border: 1px solid rgb(70, 70, 70);
+  border-radius: 10px;
+  padding: 5px 8px;
+  background-color: #1a7dbe;
+  color: white;
+  text-align: center;
+  margin-left: 250px;
+  margin-top: 20px;
 }
 
 /* ************************ */
 /* 정보를 확인하세요 페이지 */
+#checkInfoBox-content {
+  display: flex;
+}
+
 #checkInfoBox {
-  width: 930px;
+  width: 980px;
   text-align: left;
   padding: 20px 10px;
+  margin-right: 30px;
 }
 
 #checkInfoBox > h1 {
+  width: 930px;
   font-size: 23px;
   padding-bottom: 30px;
   border-bottom: 1px solid lightgray;
@@ -147,4 +166,9 @@
 #checkInfoBox > ul > li {
   padding: 15px 5px;
   font-size: 17px;
+}
+
+/* 티켓 예매하기 위치 조정 */
+.mytickInfo-content {
+  margin-top: -15px;
 }

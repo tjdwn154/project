@@ -54,7 +54,12 @@ const MyticketInfo = (props) => {
     //     console.error("예약 실패:", error);
     //   });
     navigate("/orderComplete", {
-      state: { performanceData, reservationNumber, selectedPrice, selectedSeat },
+      state: {
+        performanceData,
+        reservationNumber,
+        selectedPrice,
+        selectedSeat,
+      },
     });
   };
 
@@ -70,7 +75,9 @@ const MyticketInfo = (props) => {
           <p className="myticketInfo">{performanceData.prfpdfrom}</p>
           <p className="myticketInfo">{performanceData.prfpdto}</p>
           <p className="myticketInfo">{performanceData.fcltynm}</p>
-          <p className="myticketInfo">관람 시간 : {performanceData.prfruntime}</p>
+          <p className="myticketInfo">
+            관람 시간 : {performanceData.prfruntime}
+          </p>
         </div>
       </div>
 
@@ -92,7 +99,12 @@ const MyticketInfo = (props) => {
           <p className="price-info">원</p>
         </div>
 
-        <button id="reservation-ing-btn" onClick={handleOrderClick}>
+        <button
+          id="reservation-ing-btn"
+          onClick={handleOrderClick}
+          disabled={props.infoFinCheck}
+          style={{ backgroundColor: props.infoFinCheck ? "gray" : "#b72727" }}
+        >
           예매하기
         </button>
       </div>
