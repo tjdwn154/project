@@ -17,7 +17,7 @@ export default function SearchPage() {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get(`http://localhost:3001/api/data/${searchTerm}`)
+      .get(`${process.env.REACT_APP_API_URL}/api/data/${searchTerm}`)
       .then((response) => {
         setPerformanceData(response.data.dbs.db);
         setIsLoading(false);
@@ -44,7 +44,7 @@ export default function SearchPage() {
             </div>
           ) : performanceData && performanceData.length > 0 ? (
             performanceData.map((performance) => (
-              <Col sm={2} key={performance.mt20id}>
+              <Col key={performance.mt20id}>
                 <Link to={`/Reservation/${performance.mt20id}`}>
                   <div className="movieBox" key={performance.mt20id}>
                     <div className="posterBox">

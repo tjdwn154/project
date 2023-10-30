@@ -20,7 +20,7 @@ export default function NewCarousel() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/data`)
+      .get(`${process.env.REACT_APP_API_URL}/api/data`)
       .then((response) => {
         const newData = response.data.dbs.db;
         setPerformances(newData);

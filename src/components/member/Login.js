@@ -38,7 +38,7 @@ function Login() {
 
     if (Object.keys(errors).length === 0) {
       axios
-        .post("http://localhost:3001/api/login", formData)
+        .post(`${process.env.REACT_APP_API_URL}/api/login`, formData)
         .then((response) => {
           // 로그인 성공 시 처리
           console.log("로그인 성공", response.data);
@@ -47,12 +47,9 @@ function Login() {
             Date.now() + 3600000 * 24
           ).toUTCString()}`;
           navigate("/");
-          // 로그인 성공 후의 동작을 정의
         })
         .catch((error) => {
-          // 로그인 실패 시 처리
           console.error("로그인 실패", error);
-          // 로그인 실패 시의 동작을 정의
         });
     } else {
       // 유효성 검사 실패 시 에러 상태를 설정

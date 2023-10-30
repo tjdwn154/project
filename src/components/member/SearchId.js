@@ -1,6 +1,7 @@
-import axios from "axios";
 import React, { useState } from "react";
-import { Container, Form, Button, Modal } from "react-bootstrap";
+import axios from "axios";
+import { Container, Form, Button } from "react-bootstrap";
+import SearchModal from "./SearchModal";
 
 function SearchId() {
   const [findId, setFindId] = useState(null);
@@ -23,7 +24,7 @@ function SearchId() {
   const handleFindID = () => {
     if (email && phoneNum) {
       axios
-        .get(`http://localhost:3001/api/find-id?email=${email}&phone=${phoneNum}`)
+        .get(`${process.env.REACT_APP_API_URL}/find-id?email=${email}&phone=${phoneNum}`)
         .then((response) => {
           if (response.data.memberId) {
             setFindId(response.data.memberId);
@@ -81,20 +82,7 @@ function SearchId() {
             </Button>
           </Form>
         </div>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>아이디 찾기</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            {findId && <p>회원님의 아이디는 "{findId}" 입니다.</p>}
-            {!findId && <p>{alertMessage}</p>}
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="primary" onClick={handleClose}>
-              확인
-            </Button>
-          </Modal.Footer>
-        </Modal>
+        <SearchModal show={show} handleClose={handleClose} findId={findId} alertMessage={alertMessage} />
       </div>
     </Container>
   );

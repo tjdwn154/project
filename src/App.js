@@ -7,6 +7,7 @@ import Home from "./pages/Home.js";
 import SignUp from "./components/member/Signup";
 import Login from "./components/member/Login";
 import SeacrhMember from "./components/member/SeacrhMember";
+import ResetPw from "./components/member/ResetPw";
 // 예매:
 import Reservation from "./ReservationInfo/Reservation.js";
 import MainTicketPage from "./ReservationInfo/TicketBuy/MainTicketPage";
@@ -64,6 +65,7 @@ export default function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/seacrhmember" element={<SeacrhMember />} />
+        <Route path="/resetPw" element={<ResetPw />} />
 
         {/* 고객센터페이지: */}
         <Route path="/cs" element={<CS />}>

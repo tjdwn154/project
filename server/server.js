@@ -1,15 +1,16 @@
 const express = require("express");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
 const crypto = require("crypto");
 const axios = require("axios");
 const { parseString } = require("xml2js");
 const cors = require("cors");
 const app = express();
-const port = 3001;
-
+app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
+require("dotenv").config();
 
 // XML 파싱 함수
 function parseXML(xmlData) {
@@ -26,12 +27,10 @@ function parseXML(xmlData) {
 
 // KOPIS API(공연 정보) 요청 함수
 async function ParseAPI() {
-  const apiKey = "bd2222103ca442c492dbbeb301af94ab";
-
   const today = new Date();
   const formatstdate = today.toISOString().slice(0, 10).replace(/-/g, "");
 
-  const apiUrl = `http://www.kopis.or.kr/openApi/restful/pblprfr?service=${apiKey}&stdate=${formatstdate}&eddate=20240301&cpage=1&rows=10&prfstate=02&`;
+  const apiUrl = `http://www.kopis.or.kr/openApi/restful/pblprfr?service=${process.env.KOPIS_API}&stdate=${formatstdate}&eddate=20240301&cpage=1&rows=10&prfstate=02&`;
   const response = await axios.get(apiUrl);
   const result = await parseXML(response.data);
 
@@ -48,13 +47,11 @@ app.get("/api/data", async (req, res) => {
   }
 });
 
-async function SeacrhAPI(searchTerm) {
-  const apiKey = "bd2222103ca442c492dbbeb301af94ab";
-
+async function SearchAPI(searchTerm) {
   const today = new Date();
   const formatstdate = today.toISOString().slice(0, 10).replace(/-/g, "");
 
-  const apiUrl = `http://www.kopis.or.kr/openApi/restful/pblprfr?service=${apiKey}&stdate=${formatstdate}&eddate=20240301&cpage=1&rows=10&prfstate=02&shprfnm=${searchTerm}`;
+  const apiUrl = `http://www.kopis.or.kr/openApi/restful/pblprfr?service=${process.env.KOPIS_API}&stdate=${formatstdate}&eddate=20240301&cpage=1&rows=10&prfstate=02&shprfnm=${searchTerm}`;
   const response = await axios.get(apiUrl);
   const result = await parseXML(response.data);
 
@@ -64,7 +61,7 @@ async function SeacrhAPI(searchTerm) {
 app.get("/api/data/:searchTerm", async (req, res) => {
   const searchTerm = req.params.searchTerm; // URL 경로에서 searchTerm 매개변수를 가져옵니다.
   try {
-    const apiData = await SeacrhAPI(searchTerm);
+    const apiData = await SearchAPI(searchTerm);
     res.json(apiData);
   } catch (error) {
     res.status(500).json({ error: "API 연결 에러" });
@@ -75,7 +72,6 @@ app.get("/api/data/:searchTerm", async (req, res) => {
 
 // KOPIS API(박스오피스 정보) 요청 함수
 async function ParseBoxOfficeAPI(catecode) {
-  const apiKey = "bd2222103ca442c492dbbeb301af94ab";
   const ststype = "day"; // 일별 예매상황판 목록 요청
 
   const yesterday = new Date();
@@ -83,7 +79,7 @@ async function ParseBoxOfficeAPI(catecode) {
   const formattedDate = yesterday.toISOString().slice(0, 10).replace(/-/g, "");
 
   // 서버에서 받은 catecode 및 어제 날짜를 동적으로 API 주소에 추가
-  const apiUrl = `http://www.kopis.or.kr/openApi/restful/boxoffice?service=${apiKey}&ststype=${ststype}&date=${formattedDate}&catecode=${catecode}`;
+  const apiUrl = `http://www.kopis.or.kr/openApi/restful/boxoffice?service=${process.env.KOPIS_API}&ststype=${ststype}&date=${formattedDate}&catecode=${catecode}`;
 
   const response = await axios.get(apiUrl);
   const result = await parseXML(response.data);
@@ -107,8 +103,7 @@ app.get("/api/boxoffice", async (req, res) => {
 
 // 공연 상세 API
 const performanceData = async (mt20id) => {
-  const apiKey = "bd2222103ca442c492dbbeb301af94ab";
-  const apiUrl = `http://www.kopis.or.kr/openApi/restful/pblprfr/${mt20id}?service=${apiKey}`;
+  const apiUrl = `http://www.kopis.or.kr/openApi/restful/pblprfr/${mt20id}?service=${process.env.KOPIS_API}`;
 
   const response = await axios.get(apiUrl);
   const result = await parseXML(response.data);
@@ -154,6 +149,6 @@ app.use("/", signupRouter);
 const loginRouter = require("./routes/login");
 app.use("/", loginRouter);
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(process.env.SERVER_PORT, () => {
+  console.log(`Server is running on port ${process.env.SERVER_PORT}`);
 });

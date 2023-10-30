@@ -16,7 +16,7 @@ export default function GenresCarousel() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/boxoffice?catecode=${selectedGenre}`)
+      .get(`${process.env.REACT_APP_API_URL}/api/boxoffice?catecode=${selectedGenre}`)
       .then((response) => {
         const boxOfData = response.data.boxofs.boxof;
 
