@@ -8,7 +8,7 @@ import { CookieValue } from "../util/cookieutil";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(true);
   const [logoSrc, setLogoSrc] = useState("/white_logo.png");
-   // 검색어 제작중
+  // 검색어 제작중
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const handleImageHover = () => {
@@ -36,7 +36,7 @@ export default function Header() {
 
   const handleLogout = () => {
     axios
-      .post("http://localhost:3001/api/logout")
+      .post(`${process.env.REACT_APP_API_URL}/api/logout`)
       .then((response) => {
         if (response.data.message === "로그아웃 성공") {
           // 쿠키를 삭제 로직

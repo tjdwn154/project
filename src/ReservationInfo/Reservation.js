@@ -13,7 +13,7 @@ const Reservation = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/pblprfr/${mt20id}`)
+      .get(`${process.env.REACT_APP_API_URL}/api/pblprfr/${mt20id}`)
       .then((response) => {
         const data = response.data.dbs.db[0]; // 데이터 추출
         setPerformanceData(data);

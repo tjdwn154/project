@@ -6,7 +6,7 @@ function Regist() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/api/members") // 포트 번호를 3001로 수정
+      .get(`${process.env.REACT_APP_API_URL}/api/members`) // 포트 번호를 3001로 수정
       .then((response) => {
         setMembers(response.data);
       })
