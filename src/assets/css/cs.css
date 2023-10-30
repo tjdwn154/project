@@ -142,6 +142,7 @@
   margin-bottom: 6vh;
 }
 
+#noticeWrap{padding: 0 5dvw;}
 #noticeWrap p {
   color: rgba(0, 0, 0, 0.8);
   margin-bottom: 40px;
@@ -167,6 +168,7 @@
   cursor: pointer;
   height: 35px;
   line-height: 35px;
+  font-size: 16px;
 }
 
 #noticeWrap .table .table-striped>tbody>tr:nth-of-type(odd)>* {
@@ -261,7 +263,7 @@
   box-shadow: none;
 }
 
-#contactWrap {}
+#contactWrap p>a{color: var(--primary-color1);}
 
 #contactWrap .titleBox {
   max-width: 600px;

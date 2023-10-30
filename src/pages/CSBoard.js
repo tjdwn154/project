@@ -1,10 +1,9 @@
 import { Link,useLocation } from "react-router-dom";
 import { Breadcrumb } from "react-bootstrap";
-export default function CSBoard(props) {
+export default function CSBoard() {
   const location = useLocation();
   const { state } = location;
   const boardInfo = state.boardInfo;
-  console.log(state);
   return (
     <div id="noticeBoardWrap">
       <Breadcrumb>

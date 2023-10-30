@@ -29,7 +29,7 @@ function OkModal(props) {
 }
 export default function ContactUs() {
   const [contactMSG, setContactMSG] = useState("");
-  const handleChange = (e) => {
+  const storeContent = (e) => {
     setContactMSG(e.target.value);
   };
   const [isClicked, setIsClicked] = useState(false);
@@ -38,7 +38,7 @@ export default function ContactUs() {
       <div className="titleBox">
         <h3>문의하기</h3>
         <p>
-          <Link to="/cs/faq">FAQ</Link>에서도 찾으시는 답변이 없으신가요?아래
+          <Link to="/cs/faq">FAQ</Link>에서도 찾으시는 답변이 없으신가요? 아래
           양식을 작성하여 문의해주세요.
         </p>
       </div>
@@ -55,15 +55,20 @@ export default function ContactUs() {
         </div>
         <Form.Group className="mb-3">
           <Form.Label>메시지</Form.Label>
-          <textarea value={contactMSG} onChange={handleChange} rows={5} />
+          <textarea value={contactMSG} onChange={storeContent} rows={5} />
         </Form.Group>
         {isClicked ? (
-          <OkModal show={isClicked} onHide={() => setIsClicked(false)} />
+          <OkModal 
+          show={isClicked} onHide={() => setIsClicked(false)} />
         ) : null}
         <Button
           variant="primary"
           onClick={() => {
-            setIsClicked(true);
+            if (contactMSG.trim() === '') {
+              alert('내용을 입력하세요.');
+            } else {
+              setIsClicked(true);
+            }
           }}
         >
           접수
