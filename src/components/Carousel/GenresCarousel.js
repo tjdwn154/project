@@ -9,9 +9,6 @@ import { Button, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function GenresCarousel() {
-  // 추후 수정 예정:
-  const [increNum, setIncreNum] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-
   const [selectedGenre, setSelectedGenre] = useState("AAAA");
   const [performances, setPerformances] = useState([]);
 
