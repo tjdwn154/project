@@ -1,31 +1,89 @@
 #re-calendarBox {
-  margin-top: -80px;
-  margin-right: 80px;
-  margin-bottom: 70px;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 1180px;
   background-color: white;
-  border: 1px solid lightgray;
+  border: 1px solid rgb(151, 151, 151);
   border-radius: 10px;
-  padding: 20px;
-  padding-bottom: 50px;
-}
-
-.calendar-text1 {
-  text-align: left;
-  font-weight: 800;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding: 10px 10px;
+  display: flex;
 }
 
 .calendar-line {
   width: 350px;
-  margin: 30px 0px 30px 0px;
+  margin: 20px 0px 30px 0px;
+}
+
+/* 캘린더 info title 문구 */
+.calendar-text {
+  text-align: center;
+  width: 390px;
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  color: rgb(39, 39, 39);
+  /* border-bottom: 1px solid lightgray; */
+}
+
+/* 날짜 클릭 시 나오는 콘텐츠 */
+#calendar-content {
+  margin-left: 10px;
+  display: flex;
+}
+
+/* 관람시간, 좌석 체크하기  */
+#calendar-innerInfo {
+  padding: 20px 0px 0px 0px;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+}
+
+/* 관람 시간 */
+.perform-info {
+  padding: 0px 0px 30px 0px;
+  font-size: 17px;
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.calendar-btn {
+  padding: 10px 0px 10px 0px;
+}
+
+#time-btn {
+  margin: 5px;
+}
+
+/* 좌석 선택 */
+#seat-info {
+  margin-top: 40px;
+}
+
+.seat-btn-box {
+  padding: 10px;
+  text-align: center;
+}
+
+#seat-btn {
+  margin: 5px;
+}
+
+/* 정보를 확인하세요 */
+.calendar-checkInfo {
+  padding-top: 60px;
+  width: 355px;
+  margin-top: 0px;
 }
 
 .calendar-text2 {
   text-align: center;
-  font-weight: 800;
+  margin: 15px;
+}
+
+#calendar-reserve-btn {
+  text-align: center;
   margin-top: 30px;
-  margin-bottom: 10px;
 }
 
 /*react-calendar 기본 설정*/
@@ -38,6 +96,8 @@
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.125em;
   border-radius: 10px;
+  margin-left: 30px;
+  margin-top: 30px;
 }
 
 .react-calendar--doubleView {

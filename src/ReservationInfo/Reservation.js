@@ -6,6 +6,7 @@ import DownContent from "./DownContent/DownContent";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import SubHeader from "../components/SubHeader";
 
 const Reservation = () => {
   const { mt20id } = useParams();
@@ -25,16 +26,19 @@ const Reservation = () => {
   }, [mt20id]);
 
   return (
-    <div id="reserve-mainContent">
-      <div id="reserve-content">
-        <ReTitle performanceData={performanceData} />
-        <div id="reserve-innerContent">
-          <ReInfoContent performanceData={performanceData} />
-          <ReCalendar performanceData={performanceData} />
+    <div>
+      <SubHeader />
+      <div id="reserve-mainContent">
+        <div id="reserve-content">
+          <ReTitle performanceData={performanceData} />
+          <div id="reserve-innerContent">
+            <ReInfoContent performanceData={performanceData} />
+            <ReCalendar performanceData={performanceData} />
+          </div>
         </div>
-      </div>
-      <div id="reserve-downContent">
-        <DownContent performanceData={performanceData} />
+        <div id="reserve-downContent">
+          <DownContent performanceData={performanceData} />
+        </div>
       </div>
     </div>
   );

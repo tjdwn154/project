@@ -64,7 +64,7 @@ const InfoPanel = (props) => {
     }
   };
 
-  //전화번호: 010으로 시작하게끔 하려고(아직 안함)
+  //전화번호: 010으로 시작
   const onNumHandler = (e) => {
     const numCheck = /^01(?:0|1|[6-9])(?:\d{3}|\d{4})\d{4}$/;
     const numCurrent = e.target.value;

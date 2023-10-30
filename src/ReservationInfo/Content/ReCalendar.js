@@ -20,9 +20,15 @@ function ReCalendar(props) {
 
   useEffect(() => {
     if (dtguidance) {
-      const selectedDate = value.toLocaleDateString("ko", { year: "numeric", month: "long", day: "numeric" });
+      const selectedDate = value.toLocaleDateString("ko", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
       setSelectedDay(selectedDate); // 선택한 요일 저장
-      const selectedDay = value.toLocaleDateString("en-EN", { weekday: "long" });
+      const selectedDay = value.toLocaleDateString("en-EN", {
+        weekday: "long",
+      });
       // 요일 정보를 영어로 번역
       const translateDtguidance = dtguidance
         .replace(/월요일/g, "Monday")
@@ -41,7 +47,9 @@ function ReCalendar(props) {
         const [dayTime, timeString] = part.split("(");
         const times = timeString.replace(")", "").split(",");
 
-        const days = dayTime.includes("~") ? getDaysBetween(dayTime) : [dayTime];
+        const days = dayTime.includes("~")
+          ? getDaysBetween(dayTime)
+          : [dayTime];
 
         days.forEach((day) => {
           scheduleObject[day] = times;
@@ -49,7 +57,15 @@ function ReCalendar(props) {
       });
 
       function getDaysBetween(dayTime) {
-        const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        const days = [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ];
         const [startDay, endDay] = dayTime.split(" ~ ");
         const startIndex = days.indexOf(startDay);
         const endIndex = days.indexOf(endDay);
@@ -101,48 +117,108 @@ function ReCalendar(props) {
   // };
 
   const handleReserveClick = () => {
-    navigate("/ticketBuy", { state: { performanceData, selectedTime, selectedPrice, selectedDay, selectedSeat } });
+    navigate("/ticketBuy", {
+      state: {
+        performanceData,
+        selectedTime,
+        selectedPrice,
+        selectedDay,
+        selectedSeat,
+      },
+    });
   };
 
   return (
     <div id="re-calendarBox">
-      <div className="calendar-text1">관람일</div>
-      <Calendar onChange={onChange} value={value} locale="en-EN" />
-      <div className="calendar-line"></div>
-      <div className="calendar-text2">{selectedDay}</div>
-      {selectedDayInfo && (
-        <div>
-          {selectedDayInfo.split(", ").map((time, index) => (
-            <button key={index} className="btn btn-outline-primary" onClick={() => handleTimeSelection(time)}>
-              {time}
-            </button>
-          ))}
+      {/* 캘린더 */}
+      <div>
+        <div className="calendar-text">1. 관람일을 선택하세요</div>
+        <Calendar onChange={onChange} value={value} locale="en-EN" />
+        <div className="calendar-line"></div>
+      </div>
+      {/* 날짜 클릭시 버튼 */}
+      <div id="calendar-content">
+        <div id="calendar-innerInfo">
+          <div>
+            {selectedDayInfo && (
+              <div>
+                <div className="calendar-text">2. 관람 시간을 선택하세요.</div>
+                <div className="perform-info">
+                  <div>관람 가능한 시간</div>
+
+                  <div className="calendar-btn">
+                    {selectedDayInfo.split(", ").map((time, index) => (
+                      <button
+                        key={index}
+                        id="time-btn"
+                        className="btn btn-outline-primary"
+                        onClick={() => handleTimeSelection(time)}
+                      >
+                        {time}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+            {!selectedDayInfo && (
+              <>
+                <div className="calendar-text">2. 관람 시간을 선택하세요.</div>
+                <div className="perform-info">
+                  선택한 날짜에 공연이 없습니다.
+                </div>
+              </>
+            )}
+          </div>
+
+          {/* 날짜 존재X 문구 추가 */}
+          <div id="seat-info">
+            {showSeats && ( // showSeats 상태가 true인 경우에만 좌석 버튼을 표시
+              <div>
+                <div className="calendar-text">3. 좌석을 선택하세요.</div>
+                <div className="seat-btn-box">
+                  {priceData &&
+                    priceData.split(", ").map((dataInfo, index) => {
+                      const [seat, price] = dataInfo.split(" ");
+                      return (
+                        <button
+                          key={index}
+                          id="seat-btn"
+                          className={`btn btn-outline-primary`}
+                          onClick={() => handleSeatSelection(seat, price)}
+                        >
+                          {seat}
+                        </button>
+                      );
+                    })}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
-      )}
-      {showSeats && ( // showSeats 상태가 true인 경우에만 좌석 버튼을 표시
-        <div className="seat-buttons">
-          {priceData &&
-            priceData.split(", ").map((dataInfo, index) => {
-              const [seat, price] = dataInfo.split(" ");
-              return (
-                <button
-                  key={index}
-                  className={`btn btn-outline-primary`}
-                  onClick={() => handleSeatSelection(seat, price)}
-                >
-                  {seat}
-                </button>
-              );
-            })}
+
+        {/* 공연 선택 정보 + 예약버튼 */}
+        <div className="calendar-checkInfo">
+          <div className="calendar-text">정보를 확인하세요.</div>
+          <div className="calendar-text2">선택 날짜: {selectedDay}</div>
+          {selectedTime && (
+            <div className="calendar-text2">공연 시간: {selectedTime}</div>
+          )}
+          {selectedPrice && (
+            <div className="calendar-text2">좌석의 가격: {selectedPrice}</div>
+          )}
+          {showSeats && selectedTime && selectedPrice && (
+            <div id="calendar-reserve-btn">
+              <button
+                class="btn btn-primary btn-lg"
+                onClick={handleReserveClick}
+              >
+                예약하기
+              </button>
+            </div>
+          )}
         </div>
-      )}
-      {selectedTime && <div>공연 시간: {selectedTime}</div>}
-      {selectedPrice && <div>좌석의 가격: {selectedPrice}</div>}
-      {showSeats && selectedTime && selectedPrice && (
-        <button class="btn btn-primary btn-lg" onClick={handleReserveClick}>
-          예약하기
-        </button>
-      )}
+      </div>
     </div>
   );
 }

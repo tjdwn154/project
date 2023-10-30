@@ -34,25 +34,19 @@ const ReInfoContent = (props) => {
             </div>
           </li>
         </ul>
-        {/* <div className="reinfo-line"></div> */}
         <div id="reinfo-addText">
           <ul>
-            <li>
+            <li className="reinfo-li">
               <strong className="reinfo-addInLabel">공연시간 안내</strong>
               <div id="reinfo-performTime" className="reinfo-addInLabel">
                 {performanceData?.dtguidance}
               </div>
             </li>
-            <li>
+            <li className="reinfo-li">
               <strong className="reinfo-addInLabel">배송정보</strong>
               <div className="reinfo-addInLabel">현장 수령만 가능</div>
             </li>
           </ul>
-        </div>
-        <div id="reinfo-btn">
-          {/* <button class="btn btn-primary btn-lg" onClick={handleReserveClick}>
-            예약하기
-          </button> */}
         </div>
       </div>
     </div>

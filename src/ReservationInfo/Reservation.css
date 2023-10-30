@@ -1,20 +1,20 @@
 #reserve-mainContent {
-  width: 1500px;
+  width: 1300px;
   margin: 0 auto;
-  height: 1200px;
+  height: 2000px;
 }
 
 #reserve-content {
-  width: 1500px;
-  height: 850px;
-  background-color: rgb(236, 236, 236);
+  width: 1300px;
+  height: 1200px;
+  /* background-color: rgb(245, 245, 245); */
 }
 
 #reserve-innerContent {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  width: 1500px;
+  width: 1300px;
 }
 
 #reserve-downContent {
