@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Table, Pagination } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import {CSBoardInfo} from '../util/CSBoardInfo.js';
 export default function Notice() {
-  const navi = useNavigate();
-  const [noticeTitle] = useState([
-    "티켓1번가에 오신 것을 환영합니다.",
-    "티켓1번가 고객센터 운영시간"
-  ]);
+  let navi=useNavigate();
+  const [boardInfo,setBoardInfo] = useState(CSBoardInfo);
+  const naviListClick = (i) => {
+    const data = {
+      boardInfo: boardInfo[i]
+    };
+    navi(`/cs/notice/${i}`, { state: data });
+  };
   return (
     <div id="noticeWrap">
       <div className="titleBox">
@@ -22,18 +26,12 @@ export default function Notice() {
             </tr>
           </thead>
           <tbody>
-            {noticeTitle.map((a, i) => {
+            {boardInfo.map((a, i) => {
               return (
-                <tr
-                  onClick={() => {
-                    navi(`/cs/notice/${i}`, {
-                      state: noticeTitle[i]
-                    });
-                  }}
-                  i={i}
-                >
-                  <td>{i}</td>
-                  <td>{noticeTitle[i]}</td>
+                <tr key={i}
+                onClick={() => naviListClick(i)}>
+                  <td>{i+1}</td>
+                  <td>{a.title}</td>
                 </tr>
               );
             })}
