@@ -133,9 +133,13 @@ app.use(
   })
 );
 
-// 멤버 정보 가져오기 라우팅
+// 멤버 정보 라우팅
 const memberRouter = require("./routes/member");
 app.use("/", memberRouter);
+
+// 리뷰 라우팅
+const reviewRouter = require("./routes/reviews");
+app.use("/", reviewRouter);
 
 // 예약 라우팅
 const reservationRouter = require("./routes/reservation");

@@ -64,7 +64,6 @@ router.get("/api/reservation-check", (req, res) => {
       res.status(500).json({ error: "데이터베이스 오류" });
       return;
     }
-
     res.json(results);
   });
 });
