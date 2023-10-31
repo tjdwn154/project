@@ -5,10 +5,36 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 
+// 회원정보 불러오기
 router.get("/api/members", (req, res) => {
-  db.query("SELECT * FROM member", (err, results) => {
-    if (err) throw err;
-    res.json(results);
+  const memberId = req.query.memberId;
+  const sql = "SELECT * FROM member WHERE memberId = ?";
+
+  db.query(sql, [memberId], (err, result) => {
+    if (err) {
+      return res.status(500).json({ error: "멤버 검색 오류" });
+    }
+    if (result.length > 0) {
+      return res.json(result[0]); // 데이터베이스에서 가져온 정보를 반환
+    } else {
+      return res.json({ memberId: null });
+    }
+  });
+});
+
+//회원정보 수정
+router.put("/api/update-member", (req, res) => {
+  const updatedData = req.body;
+  const memberId = updatedData.memberId;
+
+  const sql = "UPDATE member SET ? WHERE memberId = ?";
+
+  db.query(sql, [updatedData, memberId], (err, result) => {
+    if (err) {
+      res.status(500).json({ error: "회원 정보 업데이트 오류" });
+    } else {
+      res.status(200).json({ message: "회원 정보 업데이트 완료" });
+    }
   });
 });
 
