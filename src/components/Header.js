@@ -127,8 +127,7 @@ export default function Header() {
                   </Form>
                   <Nav className="justify-content-end flex-grow-1">
                     <Nav.Link href="/mypage/check">예매확인</Nav.Link>
-                    <Nav.Link href="/mypage">마이페이지</Nav.Link>
-                    {/* {CookieValue("memberId") ? ( ///////////////////////////////////////////////////////////////////////
+                    {CookieValue("memberId") ? (
                       <Nav.Link href="/mypage">마이페이지</Nav.Link>
                     ) : (
                       <>
@@ -142,7 +141,7 @@ export default function Header() {
                           마이페이지
                         </Nav.Link>
                       </>
-                    )} */}
+                    )}
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>

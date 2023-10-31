@@ -69,4 +69,52 @@ router.get("/api/reservation-check", (req, res) => {
   });
 });
 
+// 예매 취소
+router.delete("/api/cancel-reservation", (req, res) => {
+  const { reservationNumber } = req.query;
+  const deleteSql = "DELETE FROM reservation WHERE reservationNumber = ?";
+
+  db.query(deleteSql, [reservationNumber], (err, results) => {
+    if (err) {
+      console.error("예매 취소 중 오류가 발생했습니다.", err);
+      res.status(500).json({ error: "예매 취소 중 오류가 발생했습니다." });
+    } else {
+      res.status(200).json({ message: "예매가 취소되었습니다." });
+    }
+  });
+});
+
+// 예매 취소 정보
+router.post("/api/add-refund", (req, res) => {
+  const { refundNumber, reservationNumber, memberId, performanceName, refundPrice, refundDate } = req.body;
+  const sql =
+    "INSERT INTO refund (refundNumber, reservationNumber, memberId, performanceName, refundPrice, refundDate) VALUES (?, ?, ?, ?, ?, ?)";
+  const values = [refundNumber, reservationNumber, memberId, performanceName, refundPrice, refundDate];
+  // MySQL 데이터베이스에 환불 정보 저장
+  db.query(sql, values, (err, results) => {
+    if (err) {
+      console.error("환불 정보를 저장하는 중 오류가 발생했습니다.");
+      res.status(500).json({ error: "환불 정보 저장 실패" });
+      return;
+    }
+    console.log("환불 정보가 성공적으로 저장되었습니다.");
+    res.status(200).json({ message: "환불 정보 저장 성공" });
+  });
+});
+
+router.get("/api/refund-check", (req, res) => {
+  const memberId = req.query.memberId;
+  const sql = "SELECT * FROM refund WHERE memberId = ?";
+
+  db.query(sql, [memberId], (err, results) => {
+    if (err) {
+      console.error("데이터베이스 오류:", err);
+      res.status(500).json({ error: "데이터베이스 오류" });
+      return;
+    }
+
+    res.json(results);
+  });
+});
+
 module.exports = router;
