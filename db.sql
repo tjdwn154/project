@@ -30,27 +30,13 @@ CREATE TABLE reservation (
     FOREIGN KEY (memberId) REFERENCES member (memberId)
 );
 
--- -- reservation 테이블
--- CREATE TABLE reservation (
---     reservationId INT NOT NULL,
---     memberId varchar(15) NOT NULL,
---     performanceId INT NOT NULL,
---     Field VARCHAR(255) NULL,
---     PRIMARY KEY (reservationId, memberId, performanceId),
---     FOREIGN KEY (memberId) REFERENCES member (memberId),
---     FOREIGN KEY (performanceId) REFERENCES performance (performanceId)
--- );
-
--- -- review 테이블
--- CREATE TABLE review (
---     reviewId INT NOT NULL,
---     reservationId INT NOT NULL,
---     memberId varchar(15) NOT NULL,
---     performanceId INT NOT NULL,
---     comment TEXT NULL,
---     reviewDate DATE NOT NULL,
---     PRIMARY KEY (reviewId, reservationId, memberId, performanceId),
---     FOREIGN KEY (reservationId) REFERENCES reservation (reservationId),
---     FOREIGN KEY (memberId) REFERENCES reservation (memberId),
---     FOREIGN KEY (performanceId) REFERENCES reservation (performanceId)
+CREATE TABLE refund (
+    refundNumber VARCHAR(50) NOT NULL,
+    reservationNumber VARCHAR(50) NOT NULL,
+    memberId VARCHAR(15) NOT NULL,
+    performanceName VARCHAR(50) NOT NULL,
+    refundPrice VARCHAR(20) NOT NULL,
+    refundDate DATE NOT NULL,
+    PRIMARY KEY (refundNumber),
+    FOREIGN KEY (memberId) REFERENCES member (memberId)
 );

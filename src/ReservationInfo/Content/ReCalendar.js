@@ -47,9 +47,7 @@ function ReCalendar(props) {
         const [dayTime, timeString] = part.split("(");
         const times = timeString.replace(")", "").split(",");
 
-        const days = dayTime.includes("~")
-          ? getDaysBetween(dayTime)
-          : [dayTime];
+        const days = dayTime.includes("~") ? getDaysBetween(dayTime) : [dayTime];
 
         days.forEach((day) => {
           scheduleObject[day] = times;
@@ -57,15 +55,7 @@ function ReCalendar(props) {
       });
 
       function getDaysBetween(dayTime) {
-        const days = [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday",
-        ];
+        const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
         const [startDay, endDay] = dayTime.split(" ~ ");
         const startIndex = days.indexOf(startDay);
         const endIndex = days.indexOf(endDay);
@@ -100,32 +90,19 @@ function ReCalendar(props) {
     setShowSeats(true);
   };
 
-  // 작업을 위해 주석 처리함
-  // const handleReserveClick = () => {
-  // const memberIdCookie = CookieValue("memberId");
-
-  // if (memberIdCookie) {
-  //   // 사용자가 로그인한 경우
-  //   // 페이지 이동 및 데이터 전달
-  // navigate("/ticketBuy", { state: { performanceData, selectedTime, selectedPrice, selectedDay, selectedSeat } });
-  //   } else {
-  //     // 사용자가 로그인하지 않은 경우
-  //     // 로그인 페이지로 이동하도록 할 수 있습니다.
-  //     alert("로그인 상태가 아닙니다. 로그인 페이지로 이동합니다.");
-  //     navigate("/login"); // 로그인 페이지로 이동
-  //   }
-  // };
-
   const handleReserveClick = () => {
-    navigate("/ticketBuy", {
-      state: {
-        performanceData,
-        selectedTime,
-        selectedPrice,
-        selectedDay,
-        selectedSeat,
-      },
-    });
+    const memberIdCookie = CookieValue("memberId");
+
+    if (memberIdCookie) {
+      // 사용자가 로그인한 경우
+      // 페이지 이동 및 데이터 전달
+      navigate("/ticketBuy", { state: { performanceData, selectedTime, selectedPrice, selectedDay, selectedSeat } });
+    } else {
+      // 사용자가 로그인하지 않은 경우
+      // 로그인 페이지로 이동하도록 할 수 있습니다.
+      alert("로그인 상태가 아닙니다. 로그인 페이지로 이동합니다.");
+      navigate("/login"); // 로그인 페이지로 이동
+    }
   };
 
   return (
@@ -164,9 +141,7 @@ function ReCalendar(props) {
             {!selectedDayInfo && (
               <>
                 <div className="calendar-text">2. 관람 시간을 선택하세요.</div>
-                <div className="perform-info">
-                  선택한 날짜에 공연이 없습니다.
-                </div>
+                <div className="perform-info">선택한 날짜에 공연이 없습니다.</div>
               </>
             )}
           </div>
@@ -201,18 +176,11 @@ function ReCalendar(props) {
         <div className="calendar-checkInfo">
           <div className="calendar-text">정보를 확인하세요.</div>
           <div className="calendar-text2">선택 날짜: {selectedDay}</div>
-          {selectedTime && (
-            <div className="calendar-text2">공연 시간: {selectedTime}</div>
-          )}
-          {selectedPrice && (
-            <div className="calendar-text2">좌석의 가격: {selectedPrice}</div>
-          )}
+          {selectedTime && <div className="calendar-text2">공연 시간: {selectedTime}</div>}
+          {selectedPrice && <div className="calendar-text2">좌석의 가격: {selectedPrice}</div>}
           {showSeats && selectedTime && selectedPrice && (
             <div id="calendar-reserve-btn">
-              <button
-                class="btn btn-primary btn-lg"
-                onClick={handleReserveClick}
-              >
+              <button class="btn btn-primary btn-lg" onClick={handleReserveClick}>
                 예약하기
               </button>
             </div>
