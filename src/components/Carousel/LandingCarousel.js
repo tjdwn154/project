@@ -7,7 +7,7 @@ import "swiper/css/thumbs";
 
 export default function LandingCarousel() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const [imageSrcList, setImageSrcList] = useState([
+  const [imageSrcList] = useState([
     'https://cdn.pixabay.com/photo/2016/11/23/00/43/audio-1851517_1280.jpg',
     'https://cdn.pixabay.com/photo/2016/11/19/09/57/violins-1838390_1280.jpg',
     'https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_1280.jpg',

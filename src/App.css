@@ -857,9 +857,8 @@ a:hover {
 }
 #footer .flex {
   display: flex;
-  align-items: center;
 }
-
+#footer .inner .container .footer_logobox img{height: 4dvw;}
 #footer .container__about {
   margin-bottom: 30px;
 }
@@ -876,7 +875,6 @@ a:hover {
 }
 
 #footer .container-pages ul {
-  padding-top: 10px;
   list-style: none;
   line-height: 24px;
 }
@@ -889,7 +887,8 @@ a:hover {
 }
 
 #footer .container-pages ul a:hover {
-  color: #017143;
+  color: var(--primary-color1);
+  text-decoration: underline 1px solid var(--primary-color1);
 }
 
 #footer address {

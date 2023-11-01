@@ -5,6 +5,9 @@ export default function Footer() {
     <footer id="footer">
       <div className="inner">
         <div className="container flex">
+          <div className="footer_logobox">
+            <Link to="/"><img src="/white_logo.png" alt="티켓1번가" /></Link>
+          </div>
           <div className="container__about">
             <h4>고객센터</h4>
             <p>1111-1111</p>

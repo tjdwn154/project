@@ -266,7 +266,7 @@
   bottom: 0;
 }
 /* 랜딩후크용1: */
-.landingBox1 {
+/* .landingBox1 {
   position: relative;
   background: url(https://cdn.pixabay.com/photo/2018/06/17/10/38/artist-3480274_1280.jpg)
     #45434c no-repeat center center fixed;
@@ -311,7 +311,7 @@
 }
 .landingBox1 .landingInner button{background-color: var(--primary-color1); color: white; border: none; font-weight: bold; cursor: pointer;}
 /* 랜딩후크용2: */
-.landingBox2 {
+/* .landingBox2 {
   position: relative;
   background: url(https://cdn.pixabay.com/photo/2019/07/25/10/43/ballerina-4362282_1280.jpg)
     #45434c no-repeat center 85%;
@@ -352,7 +352,7 @@
     line-height: 1.1;
     letter-spacing: -0.25px;
     margin-bottom: 25px;
-}
+} */
 
 /* 메인-장르별공연(Carousel1): */
 #genresCarouselBox {
@@ -363,9 +363,6 @@
   position: relative;
   background-position: bottom;
 }
-
-/* background: url(https://cdn.pixabay.com/photo/2018/06/17/10/38/artist-3480274_1280.jpg)center fixed no-repeat #282725; */
-/* background-size: 100% 87%; */
 #genresCarouselBox .sliderTabs {
   display: flex;
   justify-content: center;
@@ -414,7 +411,31 @@
   font-size: 10px;
   border-radius: 4px;
 }
-
+.banners{display: flex;
+  justify-content: center; align-items: center;}
+.banners .ticketBanner{display: flex;
+  background-color: white;
+  justify-content: space-between;
+  margin-right: 2%;
+  width: 250px;
+  height: 90px;
+  border: 1px solid #333;
+  border-radius: 12px;
+  align-items: center;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);}
+.banners .ticketBanner .txtBox{}
+.banners .ticketBanner .imgBox{background-color: #f8f8f8;
+  border-radius: 50%;
+  background-color: #f8f8f8;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banners .ticketBanner .imgBox img{height: 26px;
+  line-height: 26px;}
 /* swiper 기본 css: */
 .swiper {
   width: 100%;

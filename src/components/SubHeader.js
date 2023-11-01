@@ -24,7 +24,7 @@ export default function SubHeader() {
         <nav id="nav">
           <h1>
             <Link title="티켓1번가로" to="/">
-              <img src="/color_logo.png" alt="티켓1번가 로고" />
+            <img src="/white_logo.png" alt="티켓1번가 로고" />
             </Link>
           </h1>
           <ul>
