@@ -35,7 +35,7 @@ export default function SearchPage() {
                         key={select + index}
                         className={select}
                         onClick={() => setCurrentId(index + 1)}
-                        style={{ marginRight: "20px", cursor: "pointer", border: "1px solid black" }}
+                        style={{ marginRight: "20px", cursor: "pointer" }}
                       >
                         {select}
                       </li>
