@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
-const { parseXML } = require("../parseXML");
+const { parseXML } = require("./parseXML");
 
 // KOPIS API(공연 정보) 요청 함수
 async function ParseAPI() {

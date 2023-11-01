@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
-const { parseXML } = require("../parseXML");
+const { parseXML } = require("./parseXML");
 
 const performanceData = async (mt20id) => {
   const apiUrl = `http://www.kopis.or.kr/openApi/restful/pblprfr/${mt20id}?service=${process.env.KOPIS_API}`;
