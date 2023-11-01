@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cookieParser()); // cookie-parser 미들웨어 설정
 app.use(
   session({
-    secret: process.env.SESSION_SECRET_KEY, // 32바이트 길이의 랜덤 키 생성
+    secret: process.env.SESSION_SECRET_KEY,
     resave: false,
     saveUninitialized: true,
   })
