@@ -3,6 +3,7 @@ import { CookieValue } from "../../../util/cookieutil";
 import axios from "axios";
 import { generateUniqueNumber } from "../../../util/ReservationNum";
 import "./Check.css";
+import { Link } from "react-router-dom";
 
 function Check() {
   const [data, setData] = useState([]);
@@ -89,7 +90,9 @@ function Check() {
             {data.map((reservation, index) => (
               <tr key={index}>
                 <td className="td-style">{reservation.reservationNumber}</td>
-                <td className="td-style">{reservation.performanceName}</td>
+                <td className="td-style">
+                  <Link to={`/Reservation/${reservation.performanceId}`}>{reservation.performanceName}</Link>
+                </td>
                 <td className="td-style">{reservation.venue}</td>
                 <td className="td-style">{reservation.selectedDay}</td>
                 <td className="td-style">{reservation.selectedTime}</td>

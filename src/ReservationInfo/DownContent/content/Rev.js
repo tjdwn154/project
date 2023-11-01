@@ -1,9 +1,26 @@
 import React, { useState } from "react";
 import { Form, FloatingLabel, Button, Stack } from "react-bootstrap";
+import axios from "axios";
+import { CookieValue } from "../../../util/cookieutil";
+import { useLocation } from "react-router-dom";
+import SearchModal from "../../../components/member/SearchModal";
 
-function Rev({ addReview }) {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+function Rev() {
+  const [show, setShow] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
+  const [reviewTitle, setReviewTitle] = useState("");
+  const [reviewContent, setReviewContent] = useState("");
+  const memberId = CookieValue("memberId");
+  // URL에 있는 공연번호 추출
+  const location = useLocation();
+  const parts = location.pathname.split("/");
+  const performanceId = parts[parts.length - 1];
+  // 날짜 형식
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  const reviewDate = `${year}-${month}-${day}`;
 
   const containerStyle = {
     display: "flex",
@@ -18,16 +35,31 @@ function Rev({ addReview }) {
     resize: "none",
   };
 
+  const handleClose = () => {
+    setShow(false);
+  };
+
   const handleSubmit = () => {
     const review = {
-      title: title,
-      content: content,
+      memberId,
+      performanceId,
+      reviewTitle: reviewTitle,
+      reviewContent: reviewContent,
+      reviewDate,
     };
-    // 작성한 후기를 ReviewInfo 컴포넌트로 전달
-    addReview(review);
-    // 후기 작성 후 폼 초기화
-    setTitle("");
-    setContent("");
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/api/add-review`, review)
+      .then((response) => {
+        setReviewTitle("");
+        setReviewContent("");
+        setAlertMessage("소중한 리뷰 감사합니다.");
+        setShow(true);
+      })
+      .catch((error) => {
+        console.error("리뷰 작성 중 오류 발생:", error);
+        setAlertMessage("리뷰 작성 중 오류가 발생하였습니다.");
+        setShow(true);
+      });
   };
 
   return (
@@ -35,13 +67,18 @@ function Rev({ addReview }) {
       <h2>후기 작성</h2>
       <Form>
         <FloatingLabel controlId="floatingTextarea" label="제목" className="mb-3">
-          <Form.Control as="textarea" value={title} onChange={(e) => setTitle(e.target.value)} style={textAreaStyle} />
+          <Form.Control
+            as="textarea"
+            value={reviewTitle}
+            onChange={(e) => setReviewTitle(e.target.value)}
+            style={textAreaStyle}
+          />
         </FloatingLabel>
         <FloatingLabel controlId="floatingTextarea2" label="내용">
           <Form.Control
             as="textarea"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
+            value={reviewContent}
+            onChange={(e) => setReviewContent(e.target.value)}
             style={{ ...textAreaStyle, height: "200px" }}
           />
         </FloatingLabel>
@@ -51,6 +88,7 @@ function Rev({ addReview }) {
           </Button>
         </Stack>
       </Form>
+      <SearchModal show={show} handleClose={handleClose} alertMessage={alertMessage} />
     </div>
   );
 }

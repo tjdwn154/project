@@ -40,3 +40,12 @@ CREATE TABLE refund (
     PRIMARY KEY (refundNumber),
     FOREIGN KEY (memberId) REFERENCES member (memberId)
 );
+
+CREATE TABLE review (
+    reviewId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    memberId VARCHAR(15) NOT NULL,
+    performanceId VARCHAR(50) NOT NULL,
+    reviewTitle VARCHAR(255) NOT NULL, 
+    reviewContent TEXT NOT NULL, 
+    reviewDate DATE NOT NULL
+);

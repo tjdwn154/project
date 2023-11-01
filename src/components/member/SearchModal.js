@@ -6,7 +6,7 @@ function SearchModal({ show, handleClose, findId, alertMessage }) {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>아이디 찾기</Modal.Title>
+        <Modal.Title>티켓 1번가</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {findId && <p>회원님의 아이디는 "{findId}" 입니다.</p>}

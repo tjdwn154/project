@@ -1,0 +1,42 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  grid-gap: 1rem;
+  max-height: 700px;
+  overflow-x: scroll;
+  width: 50em;
+  overflow-y: auto;
+}
+
+.card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.card-subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  margin-bottom: 5%;
+}
+
+.card-Text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.card-Body {
+  height: 6rem;
+  width: 12rem;
+}
+
+.review-image {
+  max-width: 100%;
+  height: 20em;
+}

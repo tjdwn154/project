@@ -22,7 +22,6 @@ const MyticketInfo = (props) => {
 
   // 예매 번호 생성
   const reservationNumber = generateUniqueNumber();
-  console.log("예매 번호 :", reservationNumber);
 
   const handleOrderClick = () => {
     axios

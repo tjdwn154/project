@@ -4,26 +4,13 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const crypto = require("crypto");
 const axios = require("axios");
-const { parseString } = require("xml2js");
+const { parseXML } = require("./parseXML");
 const cors = require("cors");
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
 require("dotenv").config();
-
-// XML 파싱 함수
-function parseXML(xmlData) {
-  return new Promise((resolve, reject) => {
-    parseString(xmlData, (err, result) => {
-      if (err) {
-        reject({ error: "파싱 에러" });
-      } else {
-        resolve(result);
-      }
-    });
-  });
-}
 
 // KOPIS API(공연 정보) 요청 함수
 async function ParseAPI() {

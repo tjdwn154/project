@@ -4,11 +4,12 @@ import Rev from "./Rev";
 import { Button } from "react-bootstrap";
 import { CookieValue } from "../../../util/cookieutil";
 import axios from "axios";
+import { Card } from "react-bootstrap";
 
 function ReviewInfo() {
   const [data, setData] = useState([]);
+  const [showData, setShowData] = useState([]);
   const [isShow, setIsShow] = useState(false);
-  const [reviews, setReviews] = useState([]);
   const memberId = CookieValue("memberId");
   // URL에 있는 공연번호 추출
   const location = useLocation();
@@ -16,24 +17,42 @@ function ReviewInfo() {
   const performanceId = parts[parts.length - 1];
 
   useEffect(() => {
+    // 리뷰 권한 확인
     axios
       .get(`${process.env.REACT_APP_API_URL}/api/review-check?memberId=${memberId}&performanceId=${performanceId}`)
       .then((response) => {
         const dataInfo = response.data;
         setData(dataInfo);
-        console.log(dataInfo[0]);
       })
       .catch((error) => {
         console.error("오류 발생", error);
       });
   }, [memberId, performanceId]);
 
+  useEffect(() => {
+    // 리뷰 데이터를 불러오는 요청
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/api/reviews?performanceId=${performanceId}`)
+      .then((response) => {
+        const showDataInfo = response.data.results;
+        // 날짜를 한국 시간으로 변환
+        const transReservations = showDataInfo.map((showData) => ({
+          ...showData,
+          reviewDate: new Date(showData.reviewDate).toLocaleString("ko", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }),
+        }));
+        setShowData(transReservations);
+      })
+      .catch((error) => {
+        console.error("오류 발생", error);
+      });
+  }, [performanceId]);
+
   const toggleShow = () => {
     setIsShow(!isShow);
-  };
-
-  const addReview = (newReview) => {
-    setReviews([...reviews, newReview]);
   };
 
   return (
@@ -45,17 +64,24 @@ function ReviewInfo() {
       ) : (
         <p>해당 공연에 대한 리뷰 권한이 없습니다.</p>
       )}
-      {isShow && <Rev addReview={addReview} />}
+      {isShow && <Rev />}
       <div style={{ marginTop: "5em" }}>
-        <h2>Reviews</h2>
-        {reviews.map((review, index) => (
-          <ul key={index}>
-            <li>
-              <div>제목: {review.title}</div>
-              <div>내용: {review.content}</div>
-            </li>
-          </ul>
-        ))}
+        <h2>공연 관람 후기</h2>
+        {showData.length > 0 ? (
+          showData.map((review) => (
+            <div key={review.reviewId}>
+              <Card key={review.reviewId} style={{ width: "18rem", margin: "0 auto", marginTop: "5em" }}>
+                <Card.Body>
+                  <Card.Title>{review.reviewTitle}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">작성일: {review.reviewDate}</Card.Subtitle>
+                  <Card.Text>{review.reviewContent}</Card.Text>
+                </Card.Body>
+              </Card>
+            </div>
+          ))
+        ) : (
+          <p>리뷰가 없습니다.</p>
+        )}
       </div>
     </div>
   );
