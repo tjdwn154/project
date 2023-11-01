@@ -27,7 +27,7 @@ router.post("/api/signup", async (req, res) => {
   }
 });
 
-// 유효성 검사 API
+// 중복 검사 API
 router.get("/api/check-id", (req, res) => {
   const memberId = req.query.memberId;
 

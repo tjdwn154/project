@@ -20,7 +20,7 @@ CREATE TABLE reservation (
     reservationNumber VARCHAR(50) NOT NULL,
     performanceId VARCHAR(50) NOT NULL,
     memberId varchar(15) NOT NULL,
-    performanceName VARCHAR(50) NOT NULL,
+    performanceName VARCHAR(255) NOT NULL,
     runtime TIME NOT NULL,
     venue VARCHAR(50) NOT NULL,
     selectedTime TIME NOT NULL,

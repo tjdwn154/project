@@ -80,7 +80,7 @@ router.post("/api/reset-pw", (req, res) => {
       const mailOptions = {
         from: "tiket1st@gmail.com",
         to: email,
-        subject: "비밀번호 재설정",
+        subject: "티켓1번가 비밀번호 재설정",
         text: `비밀번호를 재설정하려면 아래 링크를 클릭하세요: ${emailTokenLink}`,
       };
 
