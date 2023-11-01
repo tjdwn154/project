@@ -7,6 +7,8 @@ import GenresCarousel from "../components/Carousel/GenresCarousel.js";
 import ToTopBtn from '../components/ToTopBtn';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
 export default function Home() {
   return (
     <div id="wrap">
@@ -21,19 +23,6 @@ export default function Home() {
         </div>
         <ToTopBtn />
         <RanksCarousel />
-        {/* <div className="landingBox1">
-          <div className="landingInner">
-            <div className="content"><p>asdasdasdasdasdasd</p>
-              <h2 className="">티켓1번가</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-                ratione, eum voluptas quidem magni quam repudiandae explicabo
-                vero. Architecto, tenetur temporibus placeat reiciendis magni ut
-                tempore voluptates eveniet facere dicta!
-              </p>
-            </div>
-          </div>
-        </div> */}
         <GenresCarousel />
         <NewCarousel />
         {/* <div className="landingBox2">
@@ -41,6 +30,25 @@ export default function Home() {
             <div className="right">
               <p className="titleThin1"><strong>시간</strong>과 <strong>예술</strong>의 조화로운 여행</p>
               <h2 className="titleBold1">티켓1번가</h2>
+            </div>
+          </div>
+        </div> */}
+        {/* <div className="landingBox1">
+          <div className="landingInner">
+            <div className="content">
+              <div className="left" ref={Left1}>
+              <img src="https://cdn.pixabay.com/photo/2017/08/10/01/44/concert-2616946_1280.jpg" alt="" />
+              </div>
+              <div className="right" ref={Right1}>
+                <p>asdasdasdasdasdasd</p>
+                <h2 className="">후기를 남겨주세요!</h2>
+                <p>
+                  공연이 즐거우셨다면 간단한 후기를 남겨주시면 감사하겠습니다. 티켓1번가에 큰 힘이 됩니다.
+                </p>
+                <button onClick={()=>{
+                  scrollTo()
+                }}>바로가기</button>
+              </div>
             </div>
           </div>
         </div> */}

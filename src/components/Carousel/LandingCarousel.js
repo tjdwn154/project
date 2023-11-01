@@ -17,6 +17,12 @@ export default function LandingCarousel() {
     'https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg',
     'https://cdn.pixabay.com/photo/2018/04/13/08/06/father-and-son-3315817_1280.jpg',
   ]);
+  const scrollTo = () => {
+    window.scrollTo({
+      top: window.innerHeight * 0.8,
+      behavior: "smooth"
+    });
+  };
   return (
     <div id="landingCarouselBox">
       <Swiper
@@ -34,10 +40,18 @@ export default function LandingCarousel() {
         {imageSrcList.map((src, i) => (
           <SwiperSlide key={i}>
             <div class="txtBox">
-          <strong><span>티켓1번가</span></strong>
-          <p><span>음악과 쇼의 황홀한 조화에 빠져보세요</span></p>
-        </div>
-
+              <strong><span>티켓1번가</span></strong>
+              <p><span>음악과 쇼의 황홀한 조화에 빠져보세요</span></p>
+              <button onClick={()=>{
+                scrollTo()
+              }}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                둘러보기
+              </button>
+            </div>
             <img src={src} alt={`티켓1번가 랜딩${i}`} />
           </SwiperSlide>
         ))}
