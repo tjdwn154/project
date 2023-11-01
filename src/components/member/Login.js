@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import { Link, useNavigate } from "react-router-dom";
+import SearchModal from "./SearchModal";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -13,6 +14,8 @@ function Login() {
   });
   const [errors, setErrors] = useState({}); // 유효성 검사 오류 메세지
   const navigate = useNavigate();
+  const [show, setShow] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,7 +57,13 @@ function Login() {
     } else {
       // 유효성 검사 실패 시 에러 상태를 설정
       setErrors(errors);
+      setAlertMessage("아이디와 비밀번호를 확인하세요");
+      setShow(true);
     }
+  };
+
+  const handleClose = () => {
+    setShow(false);
   };
 
   return (
@@ -122,6 +131,7 @@ function Login() {
           </p>
         </div>
       </Container>
+      <SearchModal show={show} handleClose={handleClose} alertMessage={alertMessage} />
     </div>
   );
 }

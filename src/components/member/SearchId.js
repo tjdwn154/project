@@ -6,7 +6,7 @@ import SearchModal from "./SearchModal";
 function SearchId() {
   const [findId, setFindId] = useState(null);
   const [email, setEmail] = useState("");
-  const [phoneNum, setPhoneNum] = useState("");
+  const [phone, setPhone] = useState("");
   const [show, setShow] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
 
@@ -18,13 +18,13 @@ function SearchId() {
     setEmail(e.target.value);
   };
   const handlephoneNumChange = (e) => {
-    setPhoneNum(e.target.value);
+    setPhone(e.target.value);
   };
 
   const handleFindID = () => {
-    if (email && phoneNum) {
+    if (email && phone) {
       axios
-        .get(`${process.env.REACT_APP_API_URL}/find-id?email=${email}&phone=${phoneNum}`)
+        .get(`${process.env.REACT_APP_API_URL}/api/find-id?email=${email}&phone=${phone}`)
         .then((response) => {
           if (response.data.memberId) {
             setFindId(response.data.memberId);
@@ -37,10 +37,10 @@ function SearchId() {
         .catch((error) => {
           console.error("아이디 찾기 오류:", error);
         });
-    } else if (!email && phoneNum) {
+    } else if (!email && phone) {
       setAlertMessage("이메일을 입력해주세요");
       setShow(true);
-    } else if (email && !phoneNum) {
+    } else if (email && !phone) {
       setAlertMessage("전화번호를 입력해주세요");
       setShow(true);
     } else {
@@ -70,12 +70,7 @@ function SearchId() {
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>전화번호</Form.Label>
-              <Form.Control
-                type="text"
-                value={phoneNum}
-                placeholder="ex) 01011119999"
-                onChange={handlephoneNumChange}
-              />
+              <Form.Control type="text" value={phone} placeholder="ex) 01011119999" onChange={handlephoneNumChange} />
             </Form.Group>
             <Button className="btn-lg px-4 rounded-pill mt-4" type="button" onClick={handleFindID}>
               아이디 찾기
