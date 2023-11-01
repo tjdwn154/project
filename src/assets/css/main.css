@@ -311,7 +311,7 @@
 }
 .landingBox1 .landingInner button{background-color: var(--primary-color1); color: white; border: none; font-weight: bold; cursor: pointer;}
 /* 랜딩후크용2: */
-/* .landingBox2 {
+.landingBox2 {
   position: relative;
   background: url(https://cdn.pixabay.com/photo/2019/07/25/10/43/ballerina-4362282_1280.jpg)
     #45434c no-repeat center 85%;
@@ -352,7 +352,7 @@
     line-height: 1.1;
     letter-spacing: -0.25px;
     margin-bottom: 25px;
-} */
+}
 
 /* 메인-장르별공연(Carousel1): */
 #genresCarouselBox {
@@ -399,7 +399,7 @@
   width: 100%;
   height: 100%;
   padding: 50px 2% 8%;
-  background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(232, 232, 232, 0.37));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(232, 232, 232, 0.37));
 }
 #newCarouselBox .mainInner2{max-width: 890px; margin: 0 auto;}
 #newCarouselBox .mainInner2 .swiper{padding: 0 6%;}
@@ -412,30 +412,36 @@
   border-radius: 4px;
 }
 .banners{display: flex;
-  justify-content: center; align-items: center;}
-.banners .ticketBanner{display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1rem solid #f0f4f4;
+  margin-top: 2.5rem; padding: 28px 0; }
+.banners .banner{display: flex;
   background-color: white;
   justify-content: space-between;
   margin-right: 2%;
-  width: 250px;
-  height: 90px;
-  border: 1px solid #333;
+  width: 310px;
+  height: 120px;
+  border: 1px solid #eee;
   border-radius: 12px;
-  align-items: center;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);}
-.banners .ticketBanner .txtBox{}
-.banners .ticketBanner .imgBox{background-color: #f8f8f8;
+  align-items: center; padding: 2dvw 3dvh;}
+.banners .banner .txtBox{}
+.banners .banner .txtBox h2{font-size: 18px;
+  font-weight: bold;
+  letter-spacing: -1.8px;}
+.banners .banner .txtBox p{margin: 0;
+  font-size: 13px;
+  color: #666;}
+.banners .banner .imgBox{background-color: #f8f8f8;
   border-radius: 50%;
-  background-color: #f8f8f8;
-    border-radius: 50%;
     width: 70px;
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.banners .ticketBanner .imgBox img{height: 26px;
-  line-height: 26px;}
+.banners .banner:first-child .imgBox img{height: 26px;}
+.banners .banner:nth-child(2) .imgBox img{height: 46px;}
 /* swiper 기본 css: */
 .swiper {
   width: 100%;

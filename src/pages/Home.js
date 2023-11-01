@@ -1,6 +1,5 @@
 import React from "react";
 import "../assets/css/main.css";
-import Button from 'react-bootstrap/Button';
 import LandingCarousel from "../components/Carousel/LandingCarousel";
 import RanksCarousel from "../components/Carousel/RanksCarousel.js";
 import NewCarousel from "../components/Carousel/NewCarousel";
@@ -22,30 +21,51 @@ export default function Home() {
         </div>
         <ToTopBtn />
         <RanksCarousel />
-        <div className="landingBox1">
-        <div className="landingInner">
-          <div className="content">
-            {/* <p>asdasdasdasdasdasd</p>
-            <h2 className="">티켓1번가</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-              ratione, eum voluptas quidem magni quam repudiandae explicabo
-              vero. Architecto, tenetur temporibus placeat reiciendis magni ut
-              tempore voluptates eveniet facere dicta!
-            </p> */}
+        {/* <div className="landingBox1">
+          <div className="landingInner">
+            <div className="content"><p>asdasdasdasdasdasd</p>
+              <h2 className="">티켓1번가</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+                ratione, eum voluptas quidem magni quam repudiandae explicabo
+                vero. Architecto, tenetur temporibus placeat reiciendis magni ut
+                tempore voluptates eveniet facere dicta!
+              </p>
+            </div>
           </div>
-        </div>
-      </div>
+        </div> */}
         <GenresCarousel />
         <NewCarousel />
-        <div className="landingBox2">
-        <div className="landingInner">
-          <div className="right">
-            <p className="titleThin1"><strong>시간</strong>과 <strong>예술</strong>의 조화로운 여행</p>
-            <h2 className="titleBold1">티켓1번가</h2>
+        {/* <div className="landingBox2">
+          <div className="landingInner">
+            <div className="right">
+              <p className="titleThin1"><strong>시간</strong>과 <strong>예술</strong>의 조화로운 여행</p>
+              <h2 className="titleBold1">티켓1번가</h2>
+            </div>
+          </div>
+        </div> */}
+        <div className="banners">
+          <div className="banner">
+            <div className="txtBox">
+              <h2>오늘은 어떤 공연 볼까</h2> 
+              <p>다양한 공연을 한 눈에!</p>
+              <p>티켓1번가와 함께 하세요!</p>
+            </div>
+            <div className="imgBox">
+              <img src="/ticketIcon.png" alt="티켓 아이콘" />
+            </div>
+          </div>
+          <div className="banner">
+            <div className="txtBox">
+              <h2>공유하면 1000P</h2> 
+              <p>친구에게 공유하면</p>
+              <p>무려 1000P를 드려요~!</p>
+            </div>
+            <div className="imgBox">
+              <img src="/coinIcon.png" alt="티켓 아이콘" />
+            </div>
           </div>
         </div>
-      </div>
       </div>
       <Footer />
     </div>

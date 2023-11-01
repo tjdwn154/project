@@ -8,7 +8,6 @@ import { CookieValue } from "../util/cookieutil";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(true);
   const [logoSrc, setLogoSrc] = useState("/white_logo.png");
-  // 검색어 제작중
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const handleImageHover = () => {

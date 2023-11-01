@@ -1,12 +1,9 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { useLocation } from "react-router-dom";
-
 export const EmailModal = (props) => {
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
         "service_u6gr05c",
