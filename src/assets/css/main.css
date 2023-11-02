@@ -264,7 +264,7 @@
 .scrollDownBox {
   z-index: 8;
   position: absolute;
-  top: 10%;
+  top: 30%;
   right: 0;
   width: 100px;
   height: 100%;

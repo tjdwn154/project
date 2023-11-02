@@ -134,7 +134,7 @@ body{font-family: 'Noto Sans', sans-serif;}
 
 #header .navbar>.container-fluid form {
   position: absolute;
-  left: 30%;
+  right: 10%;
 }
 
 #header .inner #nav2 form input {

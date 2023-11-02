@@ -121,7 +121,7 @@ export default function Header() {
                       }}
                     />
                     <Button variant="outline-success" onClick={handleSeacrh}>
-                      <FontAwesomeIcon icon="fa-solid fa-hat-wizard" />
+                    <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
                     </Button>
                   </Form>
                   <Nav className="justify-content-end flex-grow-1">
